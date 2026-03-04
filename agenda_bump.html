@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit Recepción que Agenda | Fintec Consultores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fintec: {
+                            main: '#439B94', // Teal Médico
+                            dark: '#0F292D', // Oscuro profundo
+                            light: '#E6F2F1', // Fondo clínico limpio
+                            accent: '#F59E0B', // Naranja/Dorado
+                            surface: '#FFFFFF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'card': '0 10px 30px -5px rgba(0, 0, 0, 0.08)',
+                        'glow': '0 0 20px rgba(245, 158, 11, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        .bg-pattern { background-image: radial-gradient(#439B94 1px, transparent 1px); background-size: 24px 24px; opacity: 0.1; }
+        
+        .btn-magnetic { 
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4), inset 0 1px 0 rgba(255,255,255,0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+        .btn-magnetic:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 10px 25px rgba(245, 158, 11, 0.6); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Navbar Minimalista -->
+    <nav class="bg-white/90 backdrop-blur-md border-b border-gray-100 py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-center md:justify-start items-center max-w-4xl">
+            <div class="flex items-center gap-3">
+                <img src="img/logo.jpeg" alt="Fintec Consultores" class="h-8 md:h-10 w-auto object-contain" onerror="this.src='https://placehold.co/150x50/ffffff/0f292d?text=FINTEC&font=Montserrat'">
+                <div class="hidden sm:flex flex-col leading-none border-l border-slate-200 pl-3 ml-1">
+                    <span class="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Salud & Clínicas</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🔴 HERO SECTION: El Gancho del Dolor -->
+    <header class="relative bg-fintec-dark text-white overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 z-0 pointer-events-none"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-red-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 max-w-4xl text-center">
+            
+            <div class="inline-flex items-center gap-2 bg-red-500/20 border border-red-500/40 rounded-full px-4 py-1.5 mb-8 animate-pulse">
+                <i class="fas fa-phone-slash text-red-400 text-xs"></i>
+                <span class="text-xs font-bold text-red-100 uppercase tracking-wide">Fuga de Pacientes Detectada</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading leading-tight mb-8">
+                Los pacientes llaman. Preguntan el precio. <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">Y nunca vuelven a llamar.</span>
+            </h1>
+            
+            <div class="bg-slate-900/50 border border-slate-700 p-6 md:p-8 rounded-2xl max-w-2xl mx-auto text-left mb-10 backdrop-blur-sm shadow-xl relative">
+                <i class="fas fa-quote-left text-4xl text-slate-700 absolute top-4 left-4 opacity-50"></i>
+                <p class="text-lg text-slate-300 leading-relaxed font-light relative z-10 pl-6 border-l-2 border-fintec-accent">
+                    "Pago una recepcionista todos los meses... Tenemos el consultorio medio lleno, pero yo sé que <strong>estamos perdiendo pacientes en la llamada</strong> y no sé qué les están diciendo para arreglarlo."
+                </p>
+            </div>
+            
+            <div class="flex flex-col items-center gap-4">
+                <a href="#oferta" class="btn-magnetic w-full sm:w-auto text-white font-extrabold py-5 px-12 rounded-xl text-xl flex items-center justify-center gap-3 group">
+                    QUIERO DETENER ESTA FUGA
+                    <i class="fas fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
+                </a>
+                <p class="text-slate-400 text-xs font-medium mt-2">Descarga inmediata de los Guiones de Recepción</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 🔴 SECCIÓN 2: EL PROBLEMA INVISIBLE -->
+    <section class="py-20 bg-slate-50 border-b border-slate-200 relative overflow-hidden">
+        <div class="absolute inset-0 bg-pattern pointer-events-none"></div>
+        <div class="container mx-auto px-4 max-w-3xl relative z-10">
+            
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-heading font-extrabold text-fintec-dark mb-4">El problema que ninguna calculadora resuelve</h2>
+            </div>
+
+            <div class="bg-white p-8 md:p-10 rounded-3xl shadow-card border border-slate-100">
+                <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                    Puedes tener los precios perfectamente calculados, pero... <strong>¿Sabes exactamente qué le dice tu recepcionista a alguien que llama preguntando por una ortodoncia?</strong>
+                </p>
+                
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-start gap-4 p-4 bg-red-50 rounded-xl border border-red-100">
+                        <i class="fas fa-times-circle text-red-500 mt-1 text-lg shrink-0"></i>
+                        <span class="text-slate-700 font-medium">¿Cómo responde cuando dicen <em>"está muy caro"</em>?</span>
+                    </li>
+                    <li class="flex items-start gap-4 p-4 bg-red-50 rounded-xl border border-red-100">
+                        <i class="fas fa-times-circle text-red-500 mt-1 text-lg shrink-0"></i>
+                        <span class="text-slate-700 font-medium">¿Qué hace cuando el paciente dice <em>"lo pienso y le llamo"</em>?</span>
+                    </li>
+                    <li class="flex items-start gap-4 p-4 bg-red-50 rounded-xl border border-red-100">
+                        <i class="fas fa-times-circle text-red-500 mt-1 text-lg shrink-0"></i>
+                        <span class="text-slate-700 font-medium">¿Se queda en silencio cuando preguntan <em>"tienen descuento"</em>?</span>
+                    </li>
+                </ul>
+
+                <div class="text-center p-6 bg-slate-900 rounded-2xl">
+                    <p class="text-white text-lg font-light leading-relaxed">
+                        Si no lo sabes, estás perdiendo entre <strong class="text-fintec-accent">3 y 8 pacientes al mes</strong> sin darte cuenta. 
+                    </p>
+                    <p class="text-slate-400 text-sm mt-2">Eso nunca aparece en tu software de citas, pero sí aparece en tu cuenta bancaria.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 🔴 SECCIÓN 3: LA SOLUCIÓN (EL KIT) -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-16">
+                <span class="bg-fintec-light text-fintec-main font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest border border-fintec-main/20">La Solución Definitiva</span>
+                <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-fintec-dark mt-6 mb-4">Kit "Recepción que Agenda"</h2>
+                <p class="text-slate-500 text-lg max-w-2xl mx-auto">Entrégale a tu equipo de recepción las herramientas exactas para convertir preguntas curiosas en pacientes sentados en tu silla.</p>
+            </div>
+
+            <div class="space-y-8">
+                
+                <!-- PIEZA 1 -->
+                <div class="flex flex-col md:flex-row items-center gap-8 bg-slate-50 p-8 md:p-10 rounded-3xl border border-slate-100 hover:border-fintec-main/40 transition group">
+                    <div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center text-fintec-main text-3xl shadow-sm border border-slate-200 shrink-0 group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-comments-dollar"></i>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-fintec-main font-bold uppercase tracking-widest mb-1 block">Pieza 1</span>
+                        <h3 class="text-2xl font-bold font-heading text-fintec-dark mb-3">Guión de Llamada Perfecta</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                            El paso a paso exacto de cómo debe responder tu recepcionista desde que suena el teléfono hasta que el paciente agenda. Con las frases precisas, de copiar y leer, para manejar objeciones letales como: <em>"está muy caro"</em>, <em>"lo consulto con mi esposo"</em> y <em>"¿y tienen descuento?"</em>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- PIEZA 2 -->
+                <div class="flex flex-col md:flex-row items-center gap-8 bg-slate-50 p-8 md:p-10 rounded-3xl border border-slate-100 hover:border-fintec-main/40 transition group">
+                    <div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center text-fintec-accent text-3xl shadow-sm border border-slate-200 shrink-0 group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-fintec-accent font-bold uppercase tracking-widest mb-1 block">Pieza 2</span>
+                        <h3 class="text-2xl font-bold font-heading text-fintec-dark mb-3">Protocolo de Seguimiento 48h</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                            El 60% de los pacientes que no agendan en la primera llamada <strong>SÍ agendan</strong> si alguien los contacta inteligentemente antes de 48 horas. Este protocolo le dice a tu equipo exactamente cuándo llamar, qué escribir por WhatsApp y cómo hacerlo para que la clínica no parezca desesperada.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- PIEZA 3 -->
+                <div class="flex flex-col md:flex-row items-center gap-8 bg-slate-50 p-8 md:p-10 rounded-3xl border border-slate-100 hover:border-fintec-main/40 transition group">
+                    <div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center text-fintec-dark text-3xl shadow-sm border border-slate-200 shrink-0 group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-1 block">Pieza 3</span>
+                        <h3 class="text-2xl font-bold font-heading text-fintec-dark mb-3">Checklist de Atención al Paciente</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                            12 puntos innegociables que tu recepcionista debe cumplir en cada interacción presencial. Diseñado para garantizar que la experiencia de llegar a tu clínica sea tan buena y premium como el tratamiento médico que ofreces.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔴 SECCIÓN 4: OFERTA IRRESISTIBLE (ROI) -->
+    <section id="oferta" class="py-24 bg-fintec-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-tech-grid opacity-10 pointer-events-none"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            
+            <div class="max-w-3xl mx-auto bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl text-center border-t-8 border-fintec-accent">
+                
+                <h3 class="text-3xl md:text-4xl font-heading font-extrabold text-fintec-dark mb-6">Descarga el Kit Hoy</h3>
+                
+                <div class="bg-yellow-50 border border-yellow-200 p-6 rounded-2xl mb-8">
+                    <p class="text-yellow-800 font-bold text-lg mb-2">La Matemática del Retorno:</p>
+                    <p class="text-yellow-700/80 leading-relaxed text-sm md:text-base">
+                        Piénsalo un segundo. Si con estos guiones y este protocolo tu recepcionista logra recuperar <strong>un solo paciente al mes</strong> que se iba a ir por precio... <br><span class="font-bold text-yellow-900 bg-yellow-200 px-2 mt-2 inline-block rounded">Este kit se paga a sí mismo 10 veces en su primer uso.</span>
+                    </p>
+                </div>
+
+                <div class="mb-8">
+                    <p class="text-slate-400 text-sm font-bold uppercase tracking-widest mb-2">Inversión Única</p>
+                    <div class="text-7xl font-extrabold text-fintec-dark font-heading leading-none">$17</div>
+                    <p class="text-slate-500 font-medium mt-2">Dólares Americanos</p>
+                </div>
+
+                <!-- BOTÓN A HOTMART -->
+                <!-- Reemplaza el href con el enlace de pago de Hotmart para este producto de $17 -->
+                <a href="https://pay.hotmart.com/TU_CHECKOUT_AQUI" target="_blank" class="btn-magnetic w-full block py-6 rounded-2xl text-xl md:text-2xl font-extrabold text-white text-center shadow-glow mb-4 transform transition hover:scale-[1.02]">
+                    👉 SÍ, QUIERO EL KIT "RECEPCIÓN QUE AGENDA"
+                </a>
+
+                <div class="flex items-center justify-center gap-2 text-xs font-medium text-slate-500 mt-4">
+                    <i class="fas fa-bolt text-fintec-accent"></i> Acceso digital inmediato
+                </div>
+            </div>
+            
+            <!-- Garantía -->
+            <div class="mt-8 text-center max-w-lg mx-auto flex items-start justify-center gap-3 text-slate-400 text-sm">
+                <i class="fas fa-shield-alt text-emerald-500 text-2xl mt-1"></i>
+                <p class="text-left leading-relaxed">
+                    <strong>Compra Segura y Garantizada.</strong> Tienes 7 días para revisar los guiones. Si no crees que ayudarán a tu clínica a agendar más citas, te devolvemos tus $17 dólares sin preguntas.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Simple -->
+    <footer class="bg-black text-slate-500 py-10 text-sm border-t border-slate-900 relative z-10">
+        <div class="container mx-auto px-4 flex flex-col justify-center items-center gap-6 text-center">
+            <p class="text-xs max-w-md">&copy; 2026 Fintec Consultores. Todos los derechos reservados. Este sitio no es parte de Facebook ni está respaldado por Facebook Inc.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
