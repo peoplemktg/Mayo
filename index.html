@@ -1,0 +1,516 @@
+<!-- 
+=========================================================================
+GUÍA DE IMÁGENES REQUERIDAS (Carpeta img/)
+=========================================================================
+- img/logo.jpeg
+- img/autoridad-fintec.jpg
+=========================================================================
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit de Rentabilidad para Clínicas | Fintec Consultores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fintec: { main: '#0EA5E9', dark: '#0F172A', light: '#F0F9FF', accent: '#F59E0B', surface: '#FFFFFF', success: '#10B981', danger: '#EF4444' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Montserrat', 'sans-serif'] },
+                    boxShadow: {
+                        'neon': '0 0 20px rgba(14, 165, 233, 0.4)',
+                        'card': '0 10px 30px -5px rgba(0, 0, 0, 0.1)',
+                        'floating': '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        .bg-tech-grid { background-size: 50px 50px; background-image: linear-gradient(to right, rgba(14, 165, 233, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(14, 165, 233, 0.05) 1px, transparent 1px); }
+        .btn-magnetic { background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4), inset 0 1px 0 rgba(255,255,255,0.4); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; z-index: 50; }
+        .btn-magnetic:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 10px 25px rgba(245, 158, 11, 0.6); }
+        .product-card { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; }
+        .product-card:hover { border-color: #0EA5E9; box-shadow: 0 0 30px rgba(14, 165, 233, 0.15); transform: translateY(-5px); }
+        .typing-indicator span { display: inline-block; width: 6px; height: 6px; background-color: #0EA5E9; border-radius: 50%; animation: typing 1s infinite; margin: 0 2px; }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        details summary::-webkit-details-marker { display:none; }
+        details > summary { list-style: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Navbar -->
+    <nav class="bg-white/90 backdrop-blur-md border-b border-slate-100 py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center max-w-5xl">
+            <div class="flex items-center gap-3">
+                <!-- Se reemplazó el texto por el Logo como protagonista -->
+                <img src="img/logo.jpeg" alt="Logo Fintec Consultores" class="h-10 md:h-12 w-auto object-contain" onerror="this.src='https://placehold.co/150x50/ffffff/0f172a?text=FINTEC&font=Montserrat'">
+                
+                <!-- Subtítulo sutil (Opcional, lo puedes borrar si tu logo ya lo trae) -->
+                <div class="hidden sm:flex flex-col leading-none border-l border-slate-200 pl-3 ml-1">
+                    <span class="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Salud & Clínicas</span>
+                </div>
+            </div>
+            <!-- Botón lleva a la sección de oferta -->
+            <a href="#oferta" class="hidden md:inline-flex bg-fintec-dark text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-slate-800 transition shadow-lg z-50">Obtener Kit - $37</a>
+        </div>
+    </nav>
+
+    <!-- 🔴 SECCIÓN 1: HEADLINE PRINCIPAL (EL GANCHO) -->
+    <header class="relative bg-fintec-dark text-white overflow-hidden pt-16 pb-20 lg:pt-28 lg:pb-32">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 z-0 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-fintec-dark via-slate-900 to-slate-900 z-0"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 max-w-4xl text-center">
+            
+            <div class="inline-flex items-center gap-2 bg-fintec-main/20 border border-fintec-main/40 rounded-full px-4 py-1.5 mb-8 animate-pulse">
+                <span class="flex h-2 w-2 rounded-full bg-fintec-main"></span>
+                <span class="text-xs font-bold text-fintec-light uppercase tracking-wide">Acceso Fundador • Solo 100 cupos</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading leading-tight mb-6">
+                Tu clínica está llena de pacientes. <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-fintec-main to-emerald-400">Tu cuenta bancaria no lo refleja.</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed font-light max-w-3xl mx-auto">
+                Y en el fondo sabes que algo está muy mal, pero no sabes exactamente qué. <strong class="text-white font-medium">El Kit de Rentabilidad para Clínicas</strong> es el sistema de 4 herramientas que te dice exactamente cuánto ganas, cuánto cobrar, y qué decisión tomar para dejar de trabajar gratis en tu propio negocio.
+            </p>
+            
+            <div class="flex flex-col items-center gap-4">
+                <!-- Botón lleva a la sección de oferta -->
+                <a href="#oferta" class="btn-magnetic w-full sm:w-auto text-white font-extrabold py-5 px-12 rounded-xl text-xl flex items-center justify-center gap-3 group">
+                    QUIERO MI KIT DE RENTABILIDAD POR $37
+                    <i class="fas fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
+                </a>
+                
+                <div class="flex items-center justify-center gap-4 text-xs font-medium text-slate-400 mt-2">
+                    <span class="flex items-center gap-1"><i class="fas fa-shield-alt text-fintec-success"></i> Garantía 7 Días</span>
+                    <span class="text-slate-600">|</span>
+                    <span class="flex items-center gap-1"><i class="fas fa-bolt text-fintec-accent"></i> Descarga Inmediata</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 🔴 SECCIÓN 2: AGITACIÓN DEL DOLOR -->
+    <section class="py-20 bg-slate-50 border-b border-slate-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12">
+                <p class="text-slate-500 font-medium text-lg leading-relaxed max-w-2xl mx-auto">
+                    Estudiaste medicina, odontología o estética porque querías ayudar a las personas y construir una vida digna haciendo lo que amas.
+                </p>
+                <h2 class="text-3xl font-heading font-extrabold text-fintec-dark mt-4">Pero nadie te preparó para esto:</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex gap-4">
+                    <div class="mt-1 text-red-500"><i class="fas fa-times-circle text-xl"></i></div>
+                    <p class="text-slate-700 text-sm leading-relaxed font-medium">Terminar el mes con el consultorio lleno y la cuenta casi en cero.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex gap-4">
+                    <div class="mt-1 text-red-500"><i class="fas fa-times-circle text-xl"></i></div>
+                    <p class="text-slate-700 text-sm leading-relaxed font-medium">Poner precios "al ojo", copiando a la competencia, rezando para que alcance.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex gap-4">
+                    <div class="mt-1 text-red-500"><i class="fas fa-times-circle text-xl"></i></div>
+                    <p class="text-slate-700 text-sm leading-relaxed font-medium">Pagar nómina, arriendo e insumos... y que lo que quede sea menos que el sueldo de tu recepcionista.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex gap-4">
+                    <div class="mt-1 text-red-500"><i class="fas fa-times-circle text-xl"></i></div>
+                    <p class="text-slate-700 text-sm leading-relaxed font-medium">Saber que necesitas crecer, pero no saber si meter un equipo nuevo sin arruinarte.</p>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 text-white p-8 md:p-10 rounded-3xl shadow-xl text-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-fintec-main/20 blur-3xl rounded-full"></div>
+                <p class="text-lg font-light leading-relaxed mb-6 relative z-10">
+                    Llevas años así. Trabajando más horas que cualquiera de tus empleados. Siendo el primero en llegar y el último en irse. Y aun así, sintiéndote como el esclavo más mal pagado de tu propio negocio.
+                </p>
+                <div class="w-16 h-1 bg-fintec-main mx-auto mb-6"></div>
+                <p class="text-xl font-heading font-bold text-fintec-light relative z-10">
+                    Ser excelente clínico y ser dueño rentable de una clínica son dos habilidades completamente distintas. <span class="text-fintec-accent">Solo te enseñaron una.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔴 SECCIÓN 3: QUIEBRE Y ESPERANZA -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-3xl text-center">
+            <h2 class="text-3xl font-heading font-extrabold text-fintec-dark mb-6">No es tu culpa. Pero sí es tu responsabilidad.</h2>
+            <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                La buena noticia: no necesitas volverte contador. No necesitas un MBA. No necesitas contratar a un consultor que te cobre $3,000 para decirte lo que ya sospechas.
+            </p>
+            <p class="text-slate-800 text-lg font-bold">
+                Solo necesitas las herramientas correctas, en el orden correcto, para ver con claridad lo que hoy está oculto en tu clínica.
+            </p>
+            <div class="mt-8">
+                <i class="fas fa-arrow-down text-3xl text-fintec-main animate-bounce"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔴 SECCIÓN 4 y 5: PRESENTACIÓN DEL PRODUCTO (EL KIT) -->
+    <section class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-fintec-main/10 rounded-full blur-[120px]"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 max-w-5xl">
+            <div class="text-center mb-16">
+                <span class="bg-fintec-main/20 text-fintec-main font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest border border-fintec-main/30">
+                    🩺 Kit de Rentabilidad para Clínicas
+                </span>
+                <h2 class="text-3xl md:text-5xl font-heading font-extrabold mt-6 mb-4">El fin de las finanzas "al ojo"</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">4 Herramientas diseñadas exclusivamente para que los profesionales de la salud recuperen el control de su dinero.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                
+                <!-- HERRAMIENTA 1: Brújula -->
+                <div class="product-card rounded-2xl p-8 flex flex-col group relative z-20">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center shadow-lg shrink-0">
+                            <i class="fas fa-compass text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-blue-400 font-bold uppercase tracking-wide">Herramienta 1</span>
+                            <h3 class="text-xl font-bold font-heading text-white">Brújula de Rentabilidad 2026</h3>
+                        </div>
+                    </div>
+                    <p class="text-fintec-light text-sm italic border-l-2 border-blue-500 pl-3 mb-4">"Por fin sabes a dónde va tu dinero, y adónde debe ir"</p>
+                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
+                        ¿Cuánto necesitas facturar para ganar lo que mereces? ¿Cuánto puedes gastar en publicidad sin hundirte? Esta brújula es tu GPS anual. Define metas reales basadas en gastos reales y te dice qué números vigilar cada mes para saber si vas bien o mal.
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-slate-700">
+                        <p class="text-xs text-blue-300 font-medium"><i class="fas fa-bolt mr-2 opacity-70"></i> Dejar de operar "a ciegas" y tomar decisiones con datos reales.</p>
+                    </div>
+                </div>
+
+                <!-- HERRAMIENTA 2: Calculadora -->
+                <div class="product-card rounded-2xl p-8 flex flex-col group relative z-20">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl flex items-center justify-center shadow-lg shrink-0">
+                            <i class="fas fa-calculator text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-emerald-400 font-bold uppercase tracking-wide">Herramienta 2</span>
+                            <h3 class="text-xl font-bold font-heading text-white">Calculadora de Costos</h3>
+                        </div>
+                    </div>
+                    <p class="text-fintec-light text-sm italic border-l-2 border-emerald-500 pl-3 mb-4">"Deja de regalar tu trabajo sin saberlo"</p>
+                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
+                        La herramienta que más duele usar la primera vez. Ingresa tus insumos, tiempo y costos fijos (arriendo, nómina), y el sistema te dirá el <strong>precio mínimo rentable</strong>. No más copiar a la competencia ni dar descuentos que se comen tu utilidad.
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-slate-700">
+                        <p class="text-xs text-emerald-300 font-medium"><i class="fas fa-bolt mr-2 opacity-70"></i> Saber exactamente cuánto cobrar para que cada cita sume dinero a tu bolsillo.</p>
+                    </div>
+                </div>
+
+                <!-- HERRAMIENTA 3: Simulador -->
+                <div class="product-card rounded-2xl p-8 flex flex-col group relative z-20">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center shadow-lg shrink-0">
+                            <i class="fas fa-chart-line text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-wide">Herramienta 3</span>
+                            <h3 class="text-xl font-bold font-heading text-white">Simulador de Escenarios</h3>
+                        </div>
+                    </div>
+                    <p class="text-fintec-light text-sm italic border-l-2 border-purple-500 pl-3 mb-4">"Toma decisiones grandes sin apostar a ciegas"</p>
+                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
+                        ¿Qué pasa con mi ganancia si hago 8 limpiezas más? ¿Si invierto $500 en Ads, cuántos pacientes necesito para recuperarlo? Responde estas preguntas con números reales en 5 minutos. Ve el impacto inmediato en tu utilidad antes de que pase.
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-slate-700">
+                        <p class="text-xs text-purple-300 font-medium"><i class="fas fa-bolt mr-2 opacity-70"></i> Nunca más tomar decisiones importantes basándote en suposiciones y esperanza.</p>
+                    </div>
+                </div>
+
+                <!-- HERRAMIENTA 4: Comunidad -->
+                <div class="product-card rounded-2xl p-8 flex flex-col group relative z-20 border border-fintec-main/30">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-fintec-main to-blue-600 rounded-xl flex items-center justify-center shadow-lg shrink-0">
+                            <i class="fas fa-users text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-fintec-main font-bold uppercase tracking-wide">Herramienta 4</span>
+                            <h3 class="text-xl font-bold font-heading text-white">Comunidad Privada VIP</h3>
+                        </div>
+                    </div>
+                    <p class="text-fintec-light text-sm italic border-l-2 border-fintec-main pl-3 mb-4">"Por fin rodeado de personas que entienden lo que vives"</p>
+                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
+                        Los dueños de clínicas están solos. Los empleados no entienden, los colegas no hablan de dinero. Obtén acceso de por vida a la comunidad donde dueños rentables comparten lo que funciona, más acceso a la plataforma educativa en constante actualización.
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-slate-700">
+                        <p class="text-xs text-fintec-main font-medium"><i class="fas fa-bolt mr-2 opacity-70"></i> Dejar de estar solo frente a problemas que nadie en tu círculo entiende.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔴 SECCIÓN 6: BONUS DE ACTIVACIÓN -->
+    <section class="py-16 bg-gradient-to-b from-slate-900 to-fintec-dark border-t border-slate-800">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="bg-gradient-to-r from-fintec-accent to-orange-600 p-1 rounded-3xl shadow-glow relative overflow-hidden">
+                <div class="bg-slate-900 rounded-[23px] p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 relative z-10">
+                    <div class="md:w-1/3 text-center">
+                        <i class="fas fa-gift text-7xl text-fintec-accent mb-4"></i>
+                        <div class="text-white font-bold text-xl font-heading">Regalo Especial</div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <span class="text-fintec-accent font-bold text-xs uppercase tracking-widest mb-2 block">BONUS DE ACTIVACIÓN HOY</span>
+                        <h3 class="text-2xl font-bold text-white mb-3 leading-tight">Los 7 Errores Financieros Más Costosos en Clínicas</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                            (Y cómo corregirlos esta semana). Una guía de acción inmediata basada en errores que vemos repetirse en toda Latam. Errores que parecen pequeños pero te cuestan entre $500 y $2,000 al mes sin saberlo.
+                        </p>
+                        <div class="inline-block bg-slate-800 border border-slate-700 px-4 py-2 rounded-lg">
+                            <span class="text-slate-400 text-sm line-through mr-2">Valor: $27 USD</span>
+                            <span class="text-emerald-400 font-bold text-sm">GRATIS CON TU KIT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 💡 SECCIÓN IA INTERACTIVA (Mantenida como valor extra del sitio) -->
+    <section class="py-20 bg-fintec-light/50 border-y border-slate-200">
+        <div class="container mx-auto px-4 max-w-3xl text-center">
+            <h2 class="text-2xl font-heading font-extrabold text-fintec-dark mb-2">Haz una prueba ahora mismo</h2>
+            <p class="text-slate-600 mb-8 text-sm">Cuéntale a nuestro Consultor AI tu mayor duda (ej: "Siento que pago mucho laboratorio"). Obtén un consejo gratis en segundos.</p>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-left relative z-10">
+                <textarea id="painInput" rows="2" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-fintec-main/20 outline-none text-sm resize-none" placeholder="Escribe aquí tu situación..."></textarea>
+                <div class="mt-4 flex justify-between items-center">
+                    <span class="text-xs text-slate-400"><i class="fas fa-lock"></i> 100% Privado</span>
+                    <button onclick="analyzePainPoint()" id="analyzeBtn" class="bg-fintec-dark hover:bg-slate-800 text-white px-6 py-2 rounded-lg font-bold text-sm transition flex items-center gap-2"><i class="fas fa-robot"></i> Analizar gratis</button>
+                </div>
+                <div id="aiResult" class="hidden mt-6 p-4 bg-fintec-light border-l-4 border-fintec-main rounded-r-lg text-sm text-slate-700 shadow-inner"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔴 SECCIÓN 7 y 8: RESUMEN DE VALOR Y CTA PRINCIPAL (EL BUNDLE CENTRADO) -->
+    <section id="oferta" class="py-24 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-fintec-dark">¿Qué obtienes hoy?</h2>
+                <p class="text-slate-500 mt-4 text-lg">Todo lo que necesitas en un solo paquete, con acceso inmediato.</p>
+            </div>
+            
+            <div class="bg-slate-50 rounded-[2.5rem] p-8 md:p-14 shadow-floating border border-slate-200 relative overflow-hidden max-w-3xl mx-auto">
+                <!-- Barra superior decorativa -->
+                <div class="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-fintec-main via-fintec-accent to-fintec-main"></div>
+                
+                <h3 class="text-2xl font-bold text-fintec-dark text-center mb-8 font-heading">El Kit Incluye:</h3>
+
+                <!-- Lista centralizada estilo ticket -->
+                <div class="max-w-md mx-auto space-y-4 mb-10">
+                    <div class="flex items-center justify-between text-slate-700 font-medium pb-2 border-b border-slate-200 border-dashed">
+                        <div class="flex items-center gap-3"><i class="fas fa-check-circle text-fintec-main"></i> Brújula de Rentabilidad</div>
+                        <span class="text-slate-400 text-sm line-through">$47</span>
+                    </div>
+                    <div class="flex items-center justify-between text-slate-700 font-medium pb-2 border-b border-slate-200 border-dashed">
+                        <div class="flex items-center gap-3"><i class="fas fa-check-circle text-fintec-main"></i> Calculadora de Costos</div>
+                        <span class="text-slate-400 text-sm line-through">$67</span>
+                    </div>
+                    <div class="flex items-center justify-between text-slate-700 font-medium pb-2 border-b border-slate-200 border-dashed">
+                        <div class="flex items-center gap-3"><i class="fas fa-check-circle text-fintec-main"></i> Simulador de Escenarios</div>
+                        <span class="text-slate-400 text-sm line-through">$57</span>
+                    </div>
+                    <div class="flex items-center justify-between text-slate-700 font-medium pb-2 border-b border-slate-200 border-dashed">
+                        <div class="flex items-center gap-3"><i class="fas fa-check-circle text-fintec-main"></i> Comunidad Privada VIP</div>
+                        <span class="text-slate-400 text-sm line-through">$97</span>
+                    </div>
+                    <div class="flex items-center justify-between text-fintec-accent font-bold bg-orange-50 px-4 py-3 rounded-xl border border-orange-100 shadow-sm mt-4">
+                        <div class="flex items-center gap-3"><i class="fas fa-gift text-lg"></i> BONUS: 7 Errores Financieros</div>
+                        <span class="text-slate-400 text-sm line-through font-normal">$27</span>
+                    </div>
+                </div>
+
+                <!-- PRECIO CENTRALIZADO -->
+                <div class="text-center mb-10">
+                    <p class="text-slate-400 text-sm font-bold uppercase tracking-widest mb-1">TOTAL REAL: <span class="line-through">$295 USD</span></p>
+                    <p class="text-fintec-main text-xs font-bold uppercase tracking-widest mb-3 mt-6">Tu inversión hoy (Acceso Fundador)</p>
+                    <div class="text-7xl md:text-8xl font-extrabold text-fintec-dark font-heading leading-none">$37</div>
+                    <p class="text-slate-500 font-medium mt-2">Dólares Americanos</p>
+                </div>
+
+                <!-- CTA (Botón de Compra) -->
+                <!-- REEMPLAZA EL HREF CON TU LINK DE PAGO DE HOTMART -->
+                <a href="https://pay.hotmart.com/TU_PRODUCTO_AQUI" target="_blank" class="btn-magnetic w-full block py-6 rounded-2xl text-xl md:text-2xl font-extrabold text-white text-center shadow-glow mb-6 transform transition hover:scale-[1.02]">
+                    👉 QUIERO MI KIT DE RENTABILIDAD
+                </a>
+                
+                <!-- Beneficios bajo el CTA -->
+                <div class="flex flex-col md:flex-row justify-center gap-6 text-xs font-medium text-slate-500 bg-white py-4 px-6 rounded-xl border border-slate-100">
+                    <span class="flex items-center justify-center gap-2"><i class="fas fa-unlock text-fintec-main text-lg"></i> Acceso Inmediato</span>
+                    <span class="hidden md:block w-px bg-slate-200"></span>
+                    <span class="flex items-center justify-center gap-2"><i class="fas fa-shield-alt text-fintec-success text-lg"></i> Garantía 7 días</span>
+                </div>
+            </div>
+
+            <!-- Agitación Costo de Inacción (Debajo del Bundle) -->
+            <div class="max-w-3xl mx-auto bg-red-50 border border-red-100 rounded-2xl p-8 text-center mt-8 shadow-sm">
+                <p class="text-red-700 font-bold text-lg mb-3">¿Cuánto te está costando cada mes no saber esto?</p>
+                <p class="text-sm md:text-base text-red-600/90 leading-relaxed">
+                    Si llevas 6 meses sin claridad financiera, dejando ir aunque sea $300 al mes en decisiones mal tomadas, precios mal calculados o costos que no controlas... <strong class="text-red-800 bg-red-100 px-2 py-1 rounded">Ya perdiste $1,800.</strong> El kit cuesta $37. Una sola decisión mejor tomada te lo devuelve el mismo día.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔴 SECCIÓN 9: OBJECIONES (FAQ) -->
+    <section class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-3xl font-bold text-fintec-dark text-center mb-10 font-heading">Resolvamos las dudas silenciosas</h2>
+            <div class="space-y-4">
+                <details class="group bg-white p-6 rounded-xl cursor-pointer border border-slate-200 shadow-sm transition hover:border-fintec-main">
+                    <summary class="font-bold text-slate-800 text-sm md:text-base flex justify-between items-center select-none">
+                        "¿Y si no soy bueno con los números?"
+                        <span class="text-fintec-main font-bold text-xl group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p class="text-slate-600 text-sm mt-4 leading-relaxed border-t border-slate-100 pt-4">
+                        Estas herramientas están diseñadas para médicos y clínicos, no para contadores. Si sabes cuánto pagas de arriendo y cuántos pacientes atiendes al mes, puedes usarlas. No se necesita nada más. Las fórmulas ya están listas.
+                    </p>
+                </details>
+
+                <details class="group bg-white p-6 rounded-xl cursor-pointer border border-slate-200 shadow-sm transition hover:border-fintec-main">
+                    <summary class="font-bold text-slate-800 text-sm md:text-base flex justify-between items-center select-none">
+                        "¿Esto funciona para mi tipo de clínica?"
+                        <span class="text-fintec-main font-bold text-xl group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p class="text-slate-600 text-sm mt-4 leading-relaxed border-t border-slate-100 pt-4">
+                        Sí. El sistema funciona para consultorios odontológicos, clínicas médicas, centros de estética, spas médicos y cualquier negocio de salud donde los ingresos dependen de procedimientos, insumos y tiempo clínico.
+                    </p>
+                </details>
+
+                <details class="group bg-white p-6 rounded-xl cursor-pointer border border-slate-200 shadow-sm transition hover:border-fintec-main">
+                    <summary class="font-bold text-slate-800 text-sm md:text-base flex justify-between items-center select-none">
+                        "¿Por qué tan barato si vale tanto?"
+                        <span class="text-fintec-main font-bold text-xl group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p class="text-slate-600 text-sm mt-4 leading-relaxed border-t border-slate-100 pt-4">
+                        Porque este es el primer paso. Queremos que entres, veas los resultados inmediatos y confíes en nosotros. Si estas herramientas te dan claridad, vas a querer nuestro acompañamiento más profundo después. Todos ganan cuando empezamos bien.
+                    </p>
+                </details>
+
+                <details class="group bg-white p-6 rounded-xl cursor-pointer border border-slate-200 shadow-sm transition hover:border-fintec-main">
+                    <summary class="font-bold text-slate-800 text-sm md:text-base flex justify-between items-center select-none">
+                        "¿Qué pasa si no me sirve?"
+                        <span class="text-fintec-main font-bold text-xl group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p class="text-slate-600 text-sm mt-4 leading-relaxed border-t border-slate-100 pt-4">
+                        Tienes 7 días respaldados por Hotmart para pedir tu dinero de vuelta. Sin formularios, sin explicaciones, sin llamadas incómodas. Creemos al 100% en lo que construimos.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔴 SECCIÓN 10: CIERRE EMOCIONAL -->
+    <section class="py-24 bg-fintec-dark text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-tech-grid opacity-20 pointer-events-none"></div>
+        <div class="container mx-auto px-4 max-w-3xl relative z-10 text-center">
+            
+            <h2 class="text-3xl font-heading font-extrabold mb-8">Una última cosa antes de que decidas.</h2>
+            
+            <div class="text-slate-300 text-lg leading-relaxed font-light space-y-6 mb-12 text-left bg-slate-900/80 backdrop-blur-sm p-8 md:p-12 rounded-3xl border border-slate-700 shadow-2xl">
+                <p>Dentro de 12 meses vas a estar en uno de dos lugares.</p>
+                <p><strong>En el primero</strong>, sigues haciendo lo mismo. Los mismos precios al ojo, los mismos meses confusos, el mismo agotamiento de trabajar mucho para ganar poco. Y la misma pregunta sin respuesta: <em>¿para qué monté esto?</em></p>
+                <p><strong>En el segundo</strong>, sabes exactamente cuánto genera tu clínica, cuánto te queda a ti, y qué mover para crecer. Tomas decisiones con datos. Duermes mejor. Y empiezas a sentir que el sacrificio de todos esos años de estudio está valiendo la pena.</p>
+                <div class="pt-6 border-t border-slate-700 mt-6">
+                    <p class="text-xl">La diferencia entre esos dos futuros no es esfuerzo. Ya tienes de sobra. <br><strong class="text-white text-2xl mt-2 block font-heading">Es información. Y hoy cuesta $37.</strong></p>
+                </div>
+            </div>
+
+            <!-- Botón de Cierre (Hotmart) -->
+            <a href="https://pay.hotmart.com/TU_PRODUCTO_AQUI" target="_blank" class="btn-magnetic w-full md:w-auto inline-flex items-center justify-center gap-3 text-white font-extrabold py-5 px-12 rounded-xl text-xl shadow-glow mb-6">
+                👉 EMPEZAR AHORA — $37 USD
+            </a>
+
+            <div class="text-xs text-slate-500 font-medium space-y-2">
+                <p>Acceso inmediato · Garantía 7 días · Cupos fundadores limitados</p>
+                <p class="mt-4 pt-4 border-t border-slate-800 text-[10px] text-slate-600 max-w-lg mx-auto">Este no es un producto de entretenimiento. Es una herramienta de trabajo diseñada para dueños de clínicas que van en serio.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Simple -->
+    <footer class="bg-black text-slate-500 py-10 text-sm border-t border-slate-900 relative z-10">
+        <div class="container mx-auto px-4 flex flex-col justify-center items-center gap-6">
+            <!-- Botón WhatsApp Fijo -->
+            <a href="https://wa.me/XXXXXXXX" target="_blank" class="bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 transition transform hover:scale-105 shadow-lg mb-2">
+                <i class="fab fa-whatsapp text-xl"></i> Tengo una pregunta antes de comprar
+            </a>
+            
+            <p class="text-xs">&copy; 2026 Fintec Consultores. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script IA -->
+    <script>
+        const apiKey = "AIzaSyC0JHL4t5Hyh3JYCzUN-7Sxy_t3O-Def8M"; 
+
+        async function analyzePainPoint() {
+            const input = document.getElementById('painInput').value;
+            const btn = document.getElementById('analyzeBtn');
+            const resultArea = document.getElementById('aiResult');
+            
+            if (!input.trim()) { alert("Por favor describe tu situación."); return; }
+
+            const originalBtnText = btn.innerHTML;
+            btn.innerHTML = '<span class="typing-indicator"><span></span><span></span><span></span></span>';
+            btn.disabled = true;
+            resultArea.classList.add('hidden');
+
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [{
+                                text: `Actúa como consultor financiero experto en clínicas. El usuario tiene este problema: "${input}". 
+                                Responde en español, corto (<50 palabras), muy empático y directo al dolor financiero del médico.
+                                Termina con: "La solución está en el Kit de Rentabilidad."`
+                            }]
+                        }]
+                    })
+                });
+
+                const data = await response.json();
+                if(data.error) throw new Error(data.error.message);
+
+                const text = data.candidates[0].content.parts[0].text;
+                const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-fintec-main">$1</strong>');
+
+                resultArea.innerHTML = `<p class="leading-relaxed"><i class="fas fa-robot mr-2 text-fintec-main"></i> ${formattedText}</p>`;
+                resultArea.classList.remove('hidden');
+
+            } catch (e) {
+                console.error(e);
+                resultArea.innerHTML = '<div class="text-red-500 text-sm"><i class="fas fa-exclamation-triangle"></i> Hubo un error de conexión. Verifica tu internet.</div>';
+                resultArea.classList.remove('hidden');
+            } finally {
+                btn.innerHTML = originalBtnText;
+                btn.disabled = false;
+            }
+        }
+    </script>
+
+</body>
+</html>

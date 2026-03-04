@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Compra Confirmada! | Fintec Consultores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fintec: { main: '#0EA5E9', dark: '#0F172A', light: '#F0F9FF', accent: '#F59E0B', surface: '#FFFFFF', success: '#10B981' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Montserrat', 'sans-serif'] },
+                    boxShadow: {
+                        'neon': '0 0 20px rgba(14, 165, 233, 0.4)',
+                        'card': '0 10px 30px -5px rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; background-color: #f8fafc; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        .bg-tech-grid { background-size: 50px 50px; background-image: linear-gradient(to right, rgba(14, 165, 233, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(14, 165, 233, 0.05) 1px, transparent 1px); }
+        
+        /* Animaciones para el Quiz y Modal */
+        .fade-in-up { animation: fadeInUp 0.4s ease-out forwards; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in { animation: fadeIn 0.3s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Estilo opciones del Quiz */
+        .quiz-option {
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+        .quiz-option:hover {
+            border-color: #0EA5E9;
+            background-color: #F0F9FF;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.1);
+        }
+        
+        .btn-magnetic { 
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            transition: all 0.3s ease; 
+        }
+        .btn-magnetic:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(245, 158, 11, 0.6); }
+
+        /* Ocultar scrollbar en el modal pero permitir scroll */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="text-slate-800 antialiased">
+
+    <!-- BARRA SUPERIOR -->
+    <div class="bg-fintec-dark text-white text-center py-3 text-xs md:text-sm font-bold tracking-wide relative z-40 shadow-md">
+        <div class="container mx-auto px-4 flex justify-center items-center gap-2">
+            <span class="animate-pulse">🎉</span> 
+            <span>Compra confirmada · Revisa tu correo · Acceso enviado en los próximos 5 minutos</span>
+        </div>
+    </div>
+
+    <!-- HEADER / VSL SECTION -->
+    <header class="relative bg-white pt-12 pb-16 border-b border-slate-200 overflow-hidden">
+        <div class="absolute inset-0 bg-tech-grid z-0 pointer-events-none"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 max-w-4xl text-center">
+            <!-- BADGE -->
+            <div class="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-full px-4 py-1.5 mb-6 shadow-sm">
+                <i class="fas fa-check-circle text-emerald-500"></i>
+                <span class="text-xs font-bold uppercase tracking-wide">Pago confirmado</span>
+            </div>
+            
+            <!-- H1 -->
+            <h1 class="text-3xl md:text-5xl font-extrabold font-heading leading-tight mb-4 text-fintec-dark">
+                Tomaste la decisión correcta.<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-fintec-main to-blue-600">Ahora viene lo importante.</span>
+            </h1>
+            
+            <!-- SUBTÍTULO -->
+            <p class="text-lg text-slate-600 mb-10 leading-relaxed font-light max-w-3xl mx-auto">
+                Antes de ir a tu correo, mira este video. Lo que te voy a decir en los próximos 4 minutos puede cambiar completamente el rumbo de tu clínica este año.
+            </p>
+
+            <!-- VSL (Video Placeholder) -->
+            <div class="relative w-full max-w-3xl mx-auto aspect-video bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-700 group">
+                <div class="absolute inset-0 bg-[url('img/hero-bg.jpg')] bg-cover bg-center opacity-40 mix-blend-overlay"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-20 h-20 bg-fintec-main hover:bg-blue-500 rounded-full flex items-center justify-center text-white text-3xl shadow-neon cursor-pointer transition transform hover:scale-110">
+                        <i class="fas fa-play ml-1"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CALL TO ACTION SECTION (SIGUIENTES PASOS) -->
+    <section class="py-20 bg-slate-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold font-heading text-fintec-dark mb-4">Tus siguientes pasos</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">
+                    Las herramientas que acabas de adquirir te van a dar claridad sobre tus números. Pero hay una diferencia entre entender tus números y tener a alguien que te acompañe a transformarlos con estrategia.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                
+                <!-- OPCIÓN 1: COMUNIDAD (Low commitment) -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center hover:shadow-card transition duration-300">
+                    <div class="w-16 h-16 bg-blue-50 text-fintec-main rounded-2xl flex items-center justify-center text-3xl mb-6">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-heading text-slate-800 mb-3">Paso 1: La Comunidad</h3>
+                    <p class="text-slate-500 text-sm mb-8 leading-relaxed flex-1">
+                        Únete a nuestro grupo privado. Presenta tu clínica, conoce a otros doctores y accede al material educativo en línea.
+                    </p>
+                    <a href="URL_GRUPO_FACEBOOK_O_PLATAFORMA" target="_blank" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-4 rounded-xl transition">
+                        Ir a la Comunidad
+                    </a>
+                </div>
+
+                <!-- OPCIÓN 2: ACOMPAÑAMIENTO (High commitment - Abre Modal) -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-fintec-main/30 flex flex-col items-center text-center relative overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-fintec-main to-fintec-accent"></div>
+                    <div class="absolute -right-4 -top-4 bg-fintec-main text-white text-[10px] font-bold px-4 py-1.5 rounded shadow-lg transform rotate-12">VIP</div>
+                    
+                    <div class="w-16 h-16 bg-orange-50 text-fintec-accent rounded-2xl flex items-center justify-center text-3xl mb-6">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-heading text-slate-800 mb-3">Paso 2: Acompañamiento</h3>
+                    <p class="text-slate-500 text-sm mb-8 leading-relaxed flex-1">
+                        ¿Quieres que te ayudemos a implementar esto mes a mes? Aplica para nuestro programa de consultoría avanzada.
+                    </p>
+                    <button onclick="openQuizModal()" class="w-full btn-magnetic text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2">
+                        Aplicar Ahora <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Simple -->
+    <footer class="bg-white py-8 border-t border-slate-200">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-xs text-slate-400">&copy; 2026 Fintec Consultores. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- MODAL DEL QUIZ DE CALIFICACIÓN -->
+    <!-- ========================================== -->
+    <div id="quiz-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6">
+        <!-- Backdrop oscuro (Cierra el modal al hacer clic fuera) -->
+        <div class="absolute inset-0 bg-slate-900/70 backdrop-blur-sm fade-in" onclick="closeQuizModal()"></div>
+        
+        <!-- Contenedor del Modal -->
+        <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-2xl relative z-10 max-h-[90vh] overflow-y-auto no-scrollbar fade-in-up">
+            
+            <!-- Botón Cerrar -->
+            <button onclick="closeQuizModal()" class="absolute top-5 right-5 w-10 h-10 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center text-slate-500 transition z-50">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="p-8 md:p-12">
+                <!-- Progreso y Encabezado -->
+                <div id="quiz-header" class="mb-8 text-center">
+                    <span class="bg-fintec-light text-fintec-main text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-fintec-main/20">Acompañamiento Avanzado</span>
+                    <h3 class="text-2xl font-heading font-extrabold text-fintec-dark mt-4 mb-2">¿Calificas para el programa?</h3>
+                    <p class="text-slate-500 text-sm">Esto nos ayuda a entender si podemos generarte resultados reales. Sin filtros raros, solo preguntas honestas.</p>
+                </div>
+
+                <!-- Barra de progreso -->
+                <div id="quiz-progress" class="w-full bg-slate-100 h-2 rounded-full mb-10 overflow-hidden">
+                    <div id="progress-bar" class="bg-fintec-main h-full transition-all duration-500 ease-out" style="width: 20%;"></div>
+                </div>
+
+                <!-- FORMULARIO DINÁMICO (PREGUNTAS) - Modificado sin position absolute para evitar cortes -->
+                <div id="questions-container" class="w-full">
+                    
+                    <!-- PREGUNTA 1 -->
+                    <div id="step-1" class="w-full fade-in-up">
+                        <p class="text-xs font-bold text-fintec-main mb-2 uppercase tracking-wide">Pregunta 1 de 5</p>
+                        <h4 class="text-xl font-bold text-fintec-dark mb-6 leading-snug">¿Cuánto factura tu clínica al mes aproximadamente?</h4>
+                        <div class="space-y-3">
+                            <button onclick="handleAnswer(1, 'DQ')" class="quiz-option w-full text-left p-4 rounded-xl bg-slate-50 text-slate-700 font-medium border border-slate-100">Menos de $3,000 USD al mes</button>
+                            <button onclick="handleAnswer(1, 'PASS')" class="quiz-option w-full text-left p-4 rounded-xl bg-slate-50 text-slate-700 font-medium border border-slate-100">Entre $3,000 y $8,000 USD al mes</button>
+                            <button onclick="handleAnswer(1, 'PASS')" class="quiz-option w-full text-left p-4 rounded-xl bg-slate-50 text-slate-700 font-medium border border-slate-100">Entre $8,000 y $20,000 USD al mes</button>
+                            <button onclick="handleAnswer(1, 'PASS')" class="quiz-option w-full text-left p-4 rounded-xl bg-slate-50 text-slate-700 font-medium border border-slate-100">Más de $20,000 USD al mes</button>
+                        </div>
+                    </div>
+
+                    <!-- PREGUNTA 2 -->
+                    <div id="step-2" class="w-full hidden">
+                        <p class="text-xs font-bold text-fintec-main mb-2 uppercase tracking-wide">Pregunta 2 de 5</p>
+                        <h4 class="text-xl font-bold text-fintec-dark mb-6 leading-snug">¿Cuál es tu mayor frustración financiera en este momento?</h4>
+                        <div class="space-y-3">
+                            <button onclick="handleAnswer(2, 'PASS')" class="quiz-option w-full text-left p-4 rounded-xl bg-slate-50 text-slate-700 font-medium leading-relaxed border border-slate-100">No sé exactamente cuánto me queda a mí después de gastos</button>
+                            <button onclick="handleAnswer(2, 'PASS')" class="quiz-option w-full text-left p-4 rounded-xl bg-slate-50 text-slate-700 font-medium leading-relaxed border border-slate-100">Siento que trabajo mucho pero no logro crecer la utilidad</button>
+                            <button onclick="handleAnswer(2, 'PASS')" class="quiz-option w-full text-left p-4 rounded-xl bg-slate-50 text-slate-700 font-medium leading-relaxed border border-slate-100">No tengo claro cómo escalar sin que los gastos se disparen</button>
+                            <button onclick="handleAnswer(2, 'PASS')" class="quiz-option w-full text-left p-4 rounded-xl bg-slate-50 text-slate-700 font-medium leading-relaxed border border-slate-100">Tengo claridad financiera, solo quiero optimizar</button>
+                        </div>
+                    </div>
+
+                    <!-- PREGUNTA 3 -->
+                    <div id="step-3" class="w-full hidden">
+                        <p class="text-xs font-bold text-fintec-main mb-2 uppercase tracking-wide">Pregunta 3 de 5</p>
+                        <h4 class="text-xl font-bold text-fintec-dark mb-6 leading-snug">¿Tienes equipo trabajando contigo en la clínica?</h4>
+                        <div class="space-y-3">
+                            <button onclick="handleAnswer(3, 'PASS')" class="quiz-option w-full text-left p-4 rounded-xl bg-slate-50 text-slate-700 font-medium border border-slate-100">Trabajo solo, soy el único proveedor de servicio</button>
+                            <button onclick="handleAnswer(3, 'PASS')" class="quiz-option w-full text-left p-4 rounded-xl bg-slate-50 text-slate-700 font-medium border border-slate-100">Tengo 1 a 3 personas en mi equipo</button>
+                            <button onclick="handleAnswer(3, 'PASS')" class="quiz-option w-full text-left p-4 rounded-xl bg-slate-50 text-slate-700 font-medium border border-slate-100">Tengo 4 o más personas en mi equipo</button>
+                        </div>
+                    </div>
+
+                    <!-- PREGUNTA 4 -->
+                    <div id="step-4" class="w-full hidden">
+                        <p class="text-xs font-bold text-fintec-main mb-2 uppercase tracking-wide">Pregunta 4 de 5</p>
+                        <h4 class="text-xl font-bold text-fintec-dark mb-6 leading-snug">¿Qué tan comprometido estás con mejorar la rentabilidad de tu clínica este año?</h4>
+                        <div class="space-y-3">
+                            <button onclick="handleAnswer(4, 'DQ')" class="quiz-option w-full text-left p-4 rounded-xl bg-slate-50 text-slate-700 font-medium leading-relaxed border border-slate-100">Quiero información pero no estoy listo para invertir más tiempo o dinero</button>
+                            <button onclick="handleAnswer(4, 'PASS')" class="quiz-option w-full text-left p-4 rounded-xl bg-slate-50 text-slate-700 font-medium leading-relaxed border border-slate-100">Estoy dispuesto a dedicar tiempo y aprender si veo que funciona</button>
+                            <button onclick="handleAnswer(4, 'PASS')" class="quiz-option w-full text-left p-4 rounded-xl bg-slate-50 text-slate-700 font-medium leading-relaxed border border-slate-100">Esto es prioridad. Estoy dispuesto a invertir en lo que sea necesario para resolver esto</button>
+                        </div>
+                    </div>
+
+                    <!-- PREGUNTA 5 -->
+                    <div id="step-5" class="w-full hidden">
+                        <p class="text-xs font-bold text-fintec-main mb-2 uppercase tracking-wide">Pregunta 5 de 5</p>
+                        <h4 class="text-xl font-bold text-fintec-dark mb-6 leading-snug">Si en una sesión de 45 minutos pudiéramos identificar exactamente dónde está tu clínica perdiendo rentabilidad, ¿estarías disponible para esa conversación?</h4>
+                        <div class="space-y-3">
+                            <button onclick="handleAnswer(5, 'PASS')" class="quiz-option w-full text-left p-4 rounded-xl bg-slate-50 text-slate-700 font-medium leading-relaxed border border-slate-100">Sí, definitivamente. Eso es exactamente lo que necesito</button>
+                            <button onclick="handleAnswer(5, 'PASS')" class="quiz-option w-full text-left p-4 rounded-xl bg-slate-50 text-slate-700 font-medium leading-relaxed border border-slate-100">Posiblemente, dependiendo de los detalles</button>
+                            <button onclick="handleAnswer(5, 'DQ')" class="quiz-option w-full text-left p-4 rounded-xl bg-slate-50 text-slate-700 font-medium leading-relaxed border border-slate-100">No, por ahora prefiero avanzar solo con las herramientas</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RESULTADOS (Ocultos inicialmente) -->
+
+                <!-- RESULTADO: CALIFICA (AGENDA CALENDLY EMBEDDED) -->
+                <div id="result-qualified" class="hidden fade-in-up text-center py-2">
+                    <h3 class="text-3xl font-heading font-extrabold text-fintec-dark mb-2">🎯 Calificas para el programa</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed text-sm">
+                        Tu clínica está en el momento exacto. Agenda tu sesión de diagnóstico <strong class="text-fintec-main">100% gratuita</strong> eligiendo la fecha y hora en el calendario de abajo.
+                    </p>
+                    
+                    <!-- CALENDARIO INCRUSTADO (IFRAME) -->
+                    <div class="w-full bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-inner relative" style="height: 550px;">
+                        <!-- REEMPLAZA "https://calendly.com/tu-usuario" CON TU LINK REAL DE CALENDLY -->
+                        <iframe src="https://calendly.com/tu-usuario" width="100%" height="100%" frameborder="0" class="absolute inset-0"></iframe>
+                    </div>
+                    
+                    <p class="text-slate-400 text-xs font-medium mt-4"><i class="fas fa-video mr-1"></i> Sesión por videollamada de 45 minutos</p>
+                </div>
+
+                <!-- RESULTADO: NO CALIFICA (COMUNIDAD Y HERRAMIENTAS) -->
+                <div id="result-unqualified" class="hidden fade-in-up text-center py-2">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">💡</span>
+                    </div>
+                    <h3 class="text-2xl font-heading font-extrabold text-fintec-dark mb-4">Por ahora, el acompañamiento no es tu siguiente paso</h3>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        Y eso está completamente bien. Las herramientas que acabas de obtener son exactamente lo que necesitas en este momento. Antes de dar el siguiente paso, enfócate en esto:
+                    </p>
+                    
+                    <div class="text-left space-y-4 mb-8 bg-slate-50 p-6 rounded-xl border border-slate-100">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-arrow-right text-fintec-main mt-1"></i>
+                            <p class="text-sm text-slate-700">Usa la Calculadora de Costos esta semana para conocer el precio real de tus 3 procedimientos principales.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-arrow-right text-fintec-main mt-1"></i>
+                            <p class="text-sm text-slate-700">Completa la Brújula de Rentabilidad antes del 15 del mes para tener tu meta de facturación clara.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-arrow-right text-fintec-main mt-1"></i>
+                            <p class="text-sm text-slate-700">Únete a la comunidad y presenta tu clínica. Aprenderás más en 30 días de observar que en 6 meses solo.</p>
+                        </div>
+                        <div class="flex items-start gap-3 mt-4 pt-4 border-t border-slate-200">
+                            <i class="fas fa-chart-line text-fintec-accent mt-1"></i>
+                            <p class="text-sm text-slate-800 font-bold">Cuando tu facturación supere los $5,000 USD mensuales, vuelve a aplicar. Ese es el momento correcto.</p>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-500 text-sm mb-6">Mientras tanto, la comunidad es tu mejor herramienta.</p>
+
+                    <a href="URL_GRUPO_FACEBOOK_O_PLATAFORMA" target="_blank" class="bg-fintec-dark hover:bg-slate-800 transition inline-flex items-center justify-center w-full text-white font-extrabold py-4 rounded-xl text-lg mb-2 shadow-lg">
+                        Ir a la Comunidad Privada <i class="fas fa-users ml-2"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- LÓGICA DEL MODAL Y EL QUIZ (JAVASCRIPT) -->
+    <script>
+        const modal = document.getElementById('quiz-modal');
+        let currentStep = 1;
+        let isDisqualified = false;
+        const totalSteps = 5;
+
+        // Abrir y reiniciar el Modal
+        function openQuizModal() {
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Evitar scroll de fondo
+            resetQuiz();
+        }
+
+        // Cerrar el Modal
+        function closeQuizModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restaurar scroll
+        }
+
+        // Reiniciar el estado del quiz al abrir
+        function resetQuiz() {
+            currentStep = 1;
+            isDisqualified = false;
+            
+            // Mostrar interfaz base
+            document.getElementById('quiz-header').classList.remove('hidden');
+            document.getElementById('quiz-progress').classList.remove('hidden');
+            document.getElementById('questions-container').classList.remove('hidden');
+            
+            // Ocultar resultados
+            document.getElementById('result-qualified').classList.add('hidden');
+            document.getElementById('result-unqualified').classList.add('hidden');
+
+            // Resetear barra de progreso
+            document.getElementById('progress-bar').style.width = '20%';
+
+            // Ocultar todos los pasos y mostrar solo el paso 1
+            for(let i = 1; i <= totalSteps; i++) {
+                const stepDiv = document.getElementById(`step-${i}`);
+                if (i === 1) {
+                    stepDiv.classList.remove('hidden');
+                    stepDiv.classList.add('fade-in-up');
+                } else {
+                    stepDiv.classList.add('hidden');
+                    stepDiv.classList.remove('fade-in-up');
+                }
+            }
+        }
+
+        function handleAnswer(step, result) {
+            // Registrar si fue descalificado
+            if (result === 'DQ') {
+                isDisqualified = true;
+            }
+
+            // Ocultar paso actual
+            const currentDiv = document.getElementById(`step-${step}`);
+            currentDiv.classList.remove('fade-in-up');
+            currentDiv.classList.add('hidden');
+
+            // Mostrar siguiente paso o resultados
+            if (step < totalSteps) {
+                currentStep++;
+                const nextDiv = document.getElementById(`step-${currentStep}`);
+                nextDiv.classList.remove('hidden');
+                nextDiv.classList.add('fade-in-up');
+                
+                // Actualizar barra de progreso
+                const progressPercentage = (currentStep / totalSteps) * 100;
+                document.getElementById('progress-bar').style.width = `${progressPercentage}%`;
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            // Ocultar zona de preguntas
+            document.getElementById('quiz-header').classList.add('hidden');
+            document.getElementById('quiz-progress').classList.add('hidden');
+            document.getElementById('questions-container').classList.add('hidden');
+
+            // Mostrar resultado según calificación
+            if (isDisqualified) {
+                document.getElementById('result-unqualified').classList.remove('hidden');
+            } else {
+                document.getElementById('result-qualified').classList.remove('hidden');
+            }
+        }
+    </script>
+
+</body>
+</html>
