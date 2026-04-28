@@ -1,524 +1,836 @@
-<!-- 
-=========================================================================
-GUÍA DE IMÁGENES REQUERIDAS (Carpeta img/)
-=========================================================================
-- img/logo.png
-- img/autoridad-fintec.jpg
-=========================================================================
--->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kit de Rentabilidad para Clínicas | Fintec Consultores</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        fintec: { main: '#0EA5E9', dark: '#0F172A', light: '#F0F9FF', accent: '#F59E0B', surface: '#FFFFFF', success: '#10B981', danger: '#EF4444' }
-                    },
-                    fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Montserrat', 'sans-serif'] },
-                    boxShadow: {
-                        'neon': '0 0 20px rgba(14, 165, 233, 0.4)',
-                        'card': '0 10px 30px -5px rgba(0, 0, 0, 0.1)',
-                        'floating': '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
-        .bg-tech-grid { background-size: 50px 50px; background-image: linear-gradient(to right, rgba(14, 165, 233, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(14, 165, 233, 0.05) 1px, transparent 1px); }
-        .btn-magnetic { background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4), inset 0 1px 0 rgba(255,255,255,0.4); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; z-index: 50; }
-        .btn-magnetic:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 10px 25px rgba(245, 158, 11, 0.6); }
-        .product-card { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; }
-        .product-card:hover { border-color: #0EA5E9; box-shadow: 0 0 30px rgba(14, 165, 233, 0.15); transform: translateY(-5px); }
-        .typing-indicator span { display: inline-block; width: 6px; height: 6px; background-color: #0EA5E9; border-radius: 50%; animation: typing 1s infinite; margin: 0 2px; }
-        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
-        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes typing { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-        details summary::-webkit-details-marker { display:none; }
-        details > summary { list-style: none; }
-    </style>
+<meta charset="UTF-8">
+<title>Plan Mayo 2026 — David Muñoz</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#0F1729; --navy:#1F3864; --gold:#C9A84C; --gold-light:#F5EDD4;
+    --cream:#FAF7F0; --cream-dark:#F2EDE0; --gray:#6B7280; --gray-light:#E5E7EB;
+    --white:#FFFFFF; --green:#2D7A3B; --green-bg:#E8F5EA;
+    --red:#9B3939; --plum:#4A2668;
+    --f1-bg:#E3EDF7; --f1-ac:#1F3864;
+    --f2a-bg:#F5EDD4; --f2a-ac:#7A6614;
+    --f2b-bg:#F8E0DC; --f2b-ac:#8B2020;
+    --f2c-bg:#FCE8C4; --f2c-ac:#8B5A14;
+    --f3-bg:#DCEEE4; --f3-ac:#1A5C2A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:var(--ink);padding:28px 16px;line-height:1.5;}
+  .page{max-width:1140px;margin:0 auto;}
+
+  /* HEADER */
+  .hdr{text-align:center;margin-bottom:32px;padding-bottom:24px;position:relative;}
+  .hdr::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80px;height:2px;background:var(--gold);}
+  .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px;}
+  h1{font-family:'Fraunces',serif;font-size:44px;font-weight:700;color:var(--navy);letter-spacing:-1px;margin-bottom:6px;}
+  h1 em{font-style:italic;color:var(--gold);}
+  .stitle{font-size:14px;color:var(--gray);}
+
+  /* SECCIÓN */
+  .sec{margin-bottom:32px;}
+  .sec-h{font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--navy);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--gold-light);display:flex;align-items:center;gap:10px;}
+  .sec-h span{font-size:12px;color:var(--gray);font-family:'Inter',sans-serif;font-weight:400;}
+
+  /* FASES OVERVIEW */
+  .fases{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:10px;}
+  .fase{border-radius:6px;padding:13px 15px;border-left:4px solid;}
+  .fase.f1{background:var(--f1-bg);border-left-color:var(--f1-ac);}
+  .fase.f2a{background:var(--f2a-bg);border-left-color:var(--f2a-ac);}
+  .fase.f2b{background:var(--f2b-bg);border-left-color:var(--f2b-ac);}
+  .fase.f2c{background:var(--f2c-bg);border-left-color:var(--f2c-ac);}
+  .fase.f3{background:var(--f3-bg);border-left-color:var(--f3-ac);}
+  .fn{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;margin-bottom:3px;}
+  .f1 .fn{color:var(--f1-ac);} .f2a .fn{color:var(--f2a-ac);} .f2b .fn{color:var(--f2b-ac);} .f2c .fn{color:var(--f2c-ac);} .f3 .fn{color:var(--f3-ac);}
+  .fase h4{font-family:'Fraunces',serif;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px;}
+  .fase-d{font-size:11px;color:var(--gray);margin-bottom:5px;}
+  .fase-com{font-size:11px;font-weight:600;}
+  .f1 .fase-com,.f2a .fase-com,.f3 .fase-com{color:var(--green);}
+  .f2b .fase-com,.f2c .fase-com{color:var(--f2b-ac);}
+  .fase-ing{font-family:'Fraunces',serif;font-size:20px;font-weight:700;margin-top:6px;}
+  .f1 .fase-ing{color:var(--f1-ac);} .f2a .fase-ing{color:var(--f2a-ac);} .f2b .fase-ing{color:var(--f2b-ac);} .f2c .fase-ing{color:var(--f2c-ac);} .f3 .fase-ing{color:var(--f3-ac);}
+
+  .total-bar{background:var(--navy);color:white;padding:14px 22px;border-radius:6px;display:flex;justify-content:space-between;align-items:center;}
+  .total-bar .lbl{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#A0A8B8;}
+  .total-bar .val{font-family:'Fraunces',serif;font-size:30px;font-weight:700;color:var(--gold);}
+  .total-bar .sub{font-size:12px;color:#D0D4DE;margin-top:2px;}
+
+  /* CALENDARIO */
+  .cal-hdr{display:grid;grid-template-columns:repeat(7,1fr);background:var(--navy);color:white;border-radius:6px 6px 0 0;}
+  .cal-hdr div{padding:9px 4px;text-align:center;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-right:1px solid rgba(255,255,255,0.08);}
+  .cal-hdr div:last-child{border-right:none;}
+  .cal-hdr .we{color:#A0A8B8;background:rgba(0,0,0,0.08);}
+
+  .cal{display:grid;grid-template-columns:repeat(7,1fr);border:1px solid var(--gray-light);border-top:none;border-radius:0 0 6px 6px;overflow:hidden;}
+  .cd{min-height:120px;padding:8px 9px;border-right:1px solid var(--gray-light);border-bottom:1px solid var(--gray-light);background:white;position:relative;font-size:10px;}
+  .cd:nth-child(7n){border-right:none;}
+
+  /* Fase backgrounds para días del calendario */
+  .cd.f1{background:var(--f1-bg);}
+  .cd.f2a{background:var(--f2a-bg);}
+  .cd.f2b{background:var(--f2b-bg);}
+  .cd.f2c{background:var(--f2c-bg);}
+  .cd.f3{background:var(--f3-bg);}
+  .cd.we{background:#F8F8F8;}
+  .cd.empty{background:var(--cream-dark);}
+
+  .dn{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--navy);line-height:1;margin-bottom:4px;}
+  .cd.we .dn,.cd.empty .dn{color:var(--gray-light);}
+
+  /* Tags del calendario */
+  .ev{font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:2px;margin-bottom:2px;display:block;line-height:1.3;letter-spacing:0.3px;text-transform:uppercase;}
+  .ev-phase{color:white;}
+  .f1 .ev-phase{background:var(--f1-ac);}
+  .f2a .ev-phase{background:var(--f2a-ac);}
+  .f2b .ev-phase{background:var(--f2b-ac);}
+  .f2c .ev-phase{background:var(--f2c-ac);}
+  .f3 .ev-phase{background:var(--f3-ac);}
+  .ev-key{background:var(--red);color:white;}
+  .ev-live{background:var(--plum);color:white;}
+  .ev-std{background:rgba(31,56,100,0.12);color:var(--navy);}
+  .ev-we{background:rgba(201,168,76,0.2);color:#7A6614;}
+
+  /* Bloques de rutina en el calendario */
+  .cd-am{margin-top:3px;}
+  .cd-am-lbl{font-size:8px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:0.5px;}
+  .cd-pm-lbl{font-size:8px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:0.5px;margin-top:3px;}
+  .cd-txt{font-size:9px;color:var(--gray);line-height:1.3;}
+
+  /* CALCULADORA */
+  .calc-wrap{background:var(--white);border:1px solid var(--gray-light);border-radius:6px;overflow:hidden;}
+  .calc-top{background:var(--navy);color:white;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .calc-top h3{font-family:'Fraunces',serif;font-size:17px;font-weight:600;}
+  .kpis{display:flex;gap:18px;}
+  .kpi{text-align:center;}
+  .kpi-l{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#A0A8B8;}
+  .kpi-v{font-family:'Fraunces',serif;font-size:19px;font-weight:700;color:white;}
+  .kpi-v.gold{color:var(--gold);font-size:24px;}
+  .calc-body{padding:16px 22px;}
+  .crow{display:grid;grid-template-columns:155px 1fr 58px 68px 68px 100px;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--gray-light);}
+  .crow:last-child{border-bottom:none;}
+  .crow.hdr{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gray);font-weight:600;padding-bottom:6px;}
+  .pn{font-weight:600;font-size:12px;}
+  .pn small{font-weight:400;font-size:10px;color:var(--gray);display:block;}
+  input[type="range"]{width:100%;accent-color:var(--gold);cursor:pointer;}
+  .rv{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--navy);text-align:center;}
+  .tc{font-size:10px;color:var(--gray);text-align:center;}
+  .rc{font-family:'Fraunces',serif;font-weight:700;font-size:14px;color:var(--gold);text-align:right;}
+  .rc.big{font-size:22px;color:var(--green);}
+
+  /* BARRAS */
+  .bars{background:var(--white);border:1px solid var(--gray-light);border-radius:6px;padding:18px 22px;margin-top:14px;}
+  .bars h4{font-family:'Fraunces',serif;font-size:16px;color:var(--navy);font-weight:600;margin-bottom:14px;}
+  .bar{margin-bottom:14px;}
+  .bar:last-child{margin-bottom:0;}
+  .bar-h{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;}
+  .bar-l{color:var(--gray);display:flex;align-items:center;gap:8px;}
+  .bv{font-family:'Fraunces',serif;font-weight:700;color:var(--navy);font-size:13px;}
+  .badge{font-size:9px;padding:2px 6px;border-radius:3px;font-weight:700;text-transform:uppercase;}
+  .b-n{background:var(--cream-dark);color:var(--navy);}
+  .b-l{background:var(--f2b-bg);color:var(--f2b-ac);}
+  .b-m{background:var(--green-bg);color:var(--green);}
+  .bar-track{height:10px;background:var(--gray-light);border-radius:5px;overflow:hidden;}
+  .bar-fill{height:100%;border-radius:5px;transition:width 0.3s;}
+  .bred{background:var(--red);}
+  .borg{background:#C47020;}
+  .bgld{background:var(--gold);}
+  .bgrn{background:var(--green);}
+  .bmarks{display:flex;justify-content:space-between;margin-top:3px;}
+  .bm{font-size:9px;color:var(--gray);}
+  .bm.on{color:var(--gold);font-weight:700;}
+  .bm.ok{color:var(--green);font-weight:700;}
+
+  /* TIPS */
+  .alert-box{background:var(--f2b-bg);border:1px solid #D4614A;border-radius:6px;padding:13px 17px;font-size:13px;color:var(--f2b-ac);line-height:1.7;margin-bottom:14px;}
+  .alert-box strong{color:#6B0000;}
+  .tips{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .tip{background:var(--white);border:1px solid var(--gray-light);border-radius:6px;padding:15px 17px;}
+  .tip-i{font-size:20px;margin-bottom:7px;}
+  .tip-t{font-family:'Fraunces',serif;font-size:14px;font-weight:600;color:var(--navy);margin-bottom:5px;}
+  .tip-b{font-size:12px;color:var(--gray);line-height:1.6;}
+  .tip-b strong{color:var(--ink);}
+
+  .footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid var(--gray-light);font-size:12px;color:var(--gray);}
+  .footer em{color:var(--gold);font-style:italic;}
+</style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased">
+<body>
+<div class="page">
 
-    <!-- Navbar -->
-    <nav class="bg-white/90 backdrop-blur-md border-b border-slate-100 py-4 sticky top-0 z-50">
-        <div class="container mx-auto px-4 flex justify-between items-center max-w-5xl">
-            <div class="flex items-center gap-3">
-                <!-- Se reemplazó el texto por el Logo como protagonista -->
-                <img src="logo.png" alt="Logo Fintec Consultores" class="h-10 md:h-12 w-auto object-contain" onerror="this.src='https://placehold.co/150x50/ffffff/0f172a?text=FINTEC&font=Montserrat'">
-                
-                <!-- Subtítulo sutil (Opcional, lo puedes borrar si tu logo ya lo trae) -->
-                <div class="hidden sm:flex flex-col leading-none border-l border-slate-200 pl-3 ml-1">
-                    <span class="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Salud & Clínicas</span>
-                </div>
-            </div>
-            <!-- Botón lleva a la sección de oferta -->
-            <a href="#oferta" class="hidden md:inline-flex bg-fintec-dark text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-slate-800 transition shadow-lg z-50">Obtener Kit - $37</a>
-        </div>
-    </nav>
+  <div class="hdr">
+    <div class="eyebrow">Plan mensual específico</div>
+    <h1>Mayo <em>2026</em></h1>
+    <p class="stitle">Quiz 5 citas/día todos los días hábiles · Lanzamiento May 11–19 · Carrito May 14–19 · Com. normal vuelve May 26</p>
+  </div>
 
-    <!-- 🔴 SECCIÓN 1: HEADLINE PRINCIPAL (EL GANCHO) -->
-    <header class="relative bg-fintec-dark text-white overflow-hidden pt-16 pb-20 lg:pt-28 lg:pb-32">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 z-0 pointer-events-none"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-fintec-dark via-slate-900 to-slate-900 z-0"></div>
-        
-        <div class="container mx-auto px-4 relative z-10 max-w-4xl text-center">
-            
-            <div class="inline-flex items-center gap-2 bg-fintec-main/20 border border-fintec-main/40 rounded-full px-4 py-1.5 mb-8 animate-pulse">
-                <span class="flex h-2 w-2 rounded-full bg-fintec-main"></span>
-                <span class="text-xs font-bold text-fintec-light uppercase tracking-wide">Acceso Fundador • Solo 100 cupos</span>
-            </div>
-            
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading leading-tight mb-6">
-                Tu clínica está llena de pacientes. <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-fintec-main to-emerald-400">Tu cuenta bancaria no lo refleja.</span>
-            </h1>
-            
-            <p class="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed font-light max-w-3xl mx-auto">
-                Y en el fondo sabes que algo está muy mal, pero no sabes exactamente qué. <strong class="text-white font-medium">El Kit de Rentabilidad para Clínicas</strong> es el sistema de 4 herramientas que te dice exactamente cuánto ganas, cuánto cobrar, y qué decisión tomar para dejar de trabajar gratis en tu propio negocio.
-            </p>
-            
-            <div class="flex flex-col items-center gap-4">
-                <!-- Botón lleva a la sección de oferta -->
-                <a href="#oferta" class="btn-magnetic w-full sm:w-auto text-white font-extrabold py-5 px-12 rounded-xl text-xl flex items-center justify-center gap-3 group">
-                    QUIERO MI KIT DE RENTABILIDAD POR $37
-                    <i class="fas fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
-                </a>
-                
-                <div class="flex items-center justify-center gap-4 text-xs font-medium text-slate-400 mt-2">
-                    <span class="flex items-center gap-1"><i class="fas fa-shield-alt text-fintec-success"></i> Garantía 7 Días</span>
-                    <span class="text-slate-600">|</span>
-                    <span class="flex items-center gap-1"><i class="fas fa-bolt text-fintec-accent"></i> Descarga Inmediata</span>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- 🔴 SECCIÓN 2: AGITACIÓN DEL DOLOR -->
-    <section class="py-20 bg-slate-50 border-b border-slate-200">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <div class="text-center mb-12">
-                <p class="text-slate-500 font-medium text-lg leading-relaxed max-w-2xl mx-auto">
-                    Estudiaste medicina, odontología o estética porque querías ayudar a las personas y construir una vida digna haciendo lo que amas.
-                </p>
-                <h2 class="text-3xl font-heading font-extrabold text-fintec-dark mt-4">Pero nadie te preparó para esto:</h2>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-6 mb-12">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex gap-4">
-                    <div class="mt-1 text-red-500"><i class="fas fa-times-circle text-xl"></i></div>
-                    <p class="text-slate-700 text-sm leading-relaxed font-medium">Terminar el mes con el consultorio lleno y la cuenta casi en cero.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex gap-4">
-                    <div class="mt-1 text-red-500"><i class="fas fa-times-circle text-xl"></i></div>
-                    <p class="text-slate-700 text-sm leading-relaxed font-medium">Poner precios "al ojo", copiando a la competencia, rezando para que alcance.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex gap-4">
-                    <div class="mt-1 text-red-500"><i class="fas fa-times-circle text-xl"></i></div>
-                    <p class="text-slate-700 text-sm leading-relaxed font-medium">Pagar nómina, arriendo e insumos... y que lo que quede sea menos que el sueldo de tu recepcionista.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex gap-4">
-                    <div class="mt-1 text-red-500"><i class="fas fa-times-circle text-xl"></i></div>
-                    <p class="text-slate-700 text-sm leading-relaxed font-medium">Saber que necesitas crecer, pero no saber si meter un equipo nuevo sin arruinarte.</p>
-                </div>
-            </div>
-
-            <div class="bg-slate-900 text-white p-8 md:p-10 rounded-3xl shadow-xl text-center relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-fintec-main/20 blur-3xl rounded-full"></div>
-                <p class="text-lg font-light leading-relaxed mb-6 relative z-10">
-                    Llevas años así. Trabajando más horas que cualquiera de tus empleados. Siendo el primero en llegar y el último en irse. Y aun así, sintiéndote como el esclavo más mal pagado de tu propio negocio.
-                </p>
-                <div class="w-16 h-1 bg-fintec-main mx-auto mb-6"></div>
-                <p class="text-xl font-heading font-bold text-fintec-light relative z-10">
-                    Ser excelente clínico y ser dueño rentable de una clínica son dos habilidades completamente distintas. <span class="text-fintec-accent">Solo te enseñaron una.</span>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 🔴 SECCIÓN 3: QUIEBRE Y ESPERANZA -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4 max-w-3xl text-center">
-            <h2 class="text-3xl font-heading font-extrabold text-fintec-dark mb-6">No es tu culpa. Pero sí es tu responsabilidad.</h2>
-            <p class="text-slate-600 text-lg leading-relaxed mb-6">
-                La buena noticia: no necesitas volverte contador. No necesitas un MBA. No necesitas contratar a un consultor que te cobre $3,000 para decirte lo que ya sospechas.
-            </p>
-            <p class="text-slate-800 text-lg font-bold">
-                Solo necesitas las herramientas correctas, en el orden correcto, para ver con claridad lo que hoy está oculto en tu clínica.
-            </p>
-            <div class="mt-8">
-                <i class="fas fa-arrow-down text-3xl text-fintec-main animate-bounce"></i>
-            </div>
-        </div>
-    </section>
-
-    <!-- 🔴 SECCIÓN 4 y 5: PRESENTACIÓN DEL PRODUCTO (EL KIT) -->
-    <section class="py-24 bg-slate-900 text-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-fintec-main/10 rounded-full blur-[120px]"></div>
-        
-        <div class="container mx-auto px-4 relative z-10 max-w-5xl">
-            <div class="text-center mb-16">
-                <span class="bg-fintec-main/20 text-fintec-main font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest border border-fintec-main/30">
-                    🩺 Kit de Rentabilidad para Clínicas
-                </span>
-                <h2 class="text-3xl md:text-5xl font-heading font-extrabold mt-6 mb-4">El fin de las finanzas "al ojo"</h2>
-                <p class="text-slate-400 text-lg max-w-2xl mx-auto">4 Herramientas diseñadas exclusivamente para que los profesionales de la salud recuperen el control de su dinero.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-6">
-                
-                <!-- HERRAMIENTA 1: Brújula -->
-                <div class="product-card rounded-2xl p-8 flex flex-col group relative z-20">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center shadow-lg shrink-0">
-                            <i class="fas fa-compass text-2xl text-white"></i>
-                        </div>
-                        <div>
-                            <span class="text-[10px] text-blue-400 font-bold uppercase tracking-wide">Herramienta 1</span>
-                            <h3 class="text-xl font-bold font-heading text-white">Brújula de Rentabilidad 2026</h3>
-                        </div>
-                    </div>
-                    <p class="text-fintec-light text-sm italic border-l-2 border-blue-500 pl-3 mb-4">"Por fin sabes a dónde va tu dinero, y adónde debe ir"</p>
-                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
-                        ¿Cuánto necesitas facturar para ganar lo que mereces? ¿Cuánto puedes gastar en publicidad sin hundirte? Esta brújula es tu GPS anual. Define metas reales basadas en gastos reales y te dice qué números vigilar cada mes para saber si vas bien o mal.
-                    </p>
-                    <div class="mt-6 pt-4 border-t border-slate-700">
-                        <p class="text-xs text-blue-300 font-medium"><i class="fas fa-bolt mr-2 opacity-70"></i> Dejar de operar "a ciegas" y tomar decisiones con datos reales.</p>
-                    </div>
-                </div>
-
-                <!-- HERRAMIENTA 2: Calculadora -->
-                <div class="product-card rounded-2xl p-8 flex flex-col group relative z-20">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl flex items-center justify-center shadow-lg shrink-0">
-                            <i class="fas fa-calculator text-2xl text-white"></i>
-                        </div>
-                        <div>
-                            <span class="text-[10px] text-emerald-400 font-bold uppercase tracking-wide">Herramienta 2</span>
-                            <h3 class="text-xl font-bold font-heading text-white">Calculadora de Costos</h3>
-                        </div>
-                    </div>
-                    <p class="text-fintec-light text-sm italic border-l-2 border-emerald-500 pl-3 mb-4">"Deja de regalar tu trabajo sin saberlo"</p>
-                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
-                        La herramienta que más duele usar la primera vez. Ingresa tus insumos, tiempo y costos fijos (arriendo, nómina), y el sistema te dirá el <strong>precio mínimo rentable</strong>. No más copiar a la competencia ni dar descuentos que se comen tu utilidad.
-                    </p>
-                    <div class="mt-6 pt-4 border-t border-slate-700">
-                        <p class="text-xs text-emerald-300 font-medium"><i class="fas fa-bolt mr-2 opacity-70"></i> Saber exactamente cuánto cobrar para que cada cita sume dinero a tu bolsillo.</p>
-                    </div>
-                </div>
-
-                <!-- HERRAMIENTA 3: Simulador -->
-                <div class="product-card rounded-2xl p-8 flex flex-col group relative z-20">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center shadow-lg shrink-0">
-                            <i class="fas fa-chart-line text-2xl text-white"></i>
-                        </div>
-                        <div>
-                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-wide">Herramienta 3</span>
-                            <h3 class="text-xl font-bold font-heading text-white">Simulador de Escenarios</h3>
-                        </div>
-                    </div>
-                    <p class="text-fintec-light text-sm italic border-l-2 border-purple-500 pl-3 mb-4">"Toma decisiones grandes sin apostar a ciegas"</p>
-                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
-                        ¿Qué pasa con mi ganancia si hago 8 limpiezas más? ¿Si invierto $500 en Ads, cuántos pacientes necesito para recuperarlo? Responde estas preguntas con números reales en 5 minutos. Ve el impacto inmediato en tu utilidad antes de que pase.
-                    </p>
-                    <div class="mt-6 pt-4 border-t border-slate-700">
-                        <p class="text-xs text-purple-300 font-medium"><i class="fas fa-bolt mr-2 opacity-70"></i> Nunca más tomar decisiones importantes basándote en suposiciones y esperanza.</p>
-                    </div>
-                </div>
-
-                <!-- HERRAMIENTA 4: Comunidad -->
-                <div class="product-card rounded-2xl p-8 flex flex-col group relative z-20 border border-fintec-main/30">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 bg-gradient-to-br from-fintec-main to-blue-600 rounded-xl flex items-center justify-center shadow-lg shrink-0">
-                            <i class="fas fa-users text-2xl text-white"></i>
-                        </div>
-                        <div>
-                            <span class="text-[10px] text-fintec-main font-bold uppercase tracking-wide">Herramienta 4</span>
-                            <h3 class="text-xl font-bold font-heading text-white">Comunidad Privada VIP</h3>
-                        </div>
-                    </div>
-                    <p class="text-fintec-light text-sm italic border-l-2 border-fintec-main pl-3 mb-4">"Por fin rodeado de personas que entienden lo que vives"</p>
-                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
-                        Los dueños de clínicas están solos. Los empleados no entienden, los colegas no hablan de dinero. Obtén acceso de por vida a la comunidad donde dueños rentables comparten lo que funciona, más acceso a la plataforma educativa en constante actualización.
-                    </p>
-                    <div class="mt-6 pt-4 border-t border-slate-700">
-                        <p class="text-xs text-fintec-main font-medium"><i class="fas fa-bolt mr-2 opacity-70"></i> Dejar de estar solo frente a problemas que nadie en tu círculo entiende.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 🎁 NUEVA SECCIÓN DEL BONUS: 7 ERRORES -->
-<div class="max-w-6xl mx-auto mt-12 bg-gradient-to-r from-emerald-500 to-[#0EA5E9] p-1 rounded-3xl shadow-lg">
-    <div class="bg-slate-900 rounded-[23px] p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 lg:gap-12 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        
-        <div class="md:w-1/3 flex justify-center relative z-10">
-            <img src="mockup-bonus.jpg" alt="Bonus 7 Errores Financieros" class="w-full max-w-[280px] rounded-xl shadow-2xl transform -rotate-3 hover:rotate-0 transition duration-500 border border-emerald-900/50" onerror="this.src='https://placehold.co/500x500/0F292D/10B981?text=Mockup+Bonus'">
-        </div>
-        
-        <div class="md:w-2/3 text-center md:text-left relative z-10">
-            <span class="inline-block bg-emerald-500/20 text-emerald-400 font-bold text-xs px-3 py-1.5 rounded-full uppercase tracking-widest mb-4 border border-emerald-500/30">
-                <i class="fas fa-gift mr-1"></i> Bonus de Activación Hoy
-            </span>
-            <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-4 leading-tight" style="font-family: 'Montserrat', sans-serif;">
-                Los <span class="text-emerald-400">7 Errores Financieros</span> Más Costosos en Clínicas
-            </h3>
-            <p class="text-slate-300 text-sm md:text-base mb-6 leading-relaxed">
-                (Y cómo corregirlos esta semana). Una guía de acción inmediata basada en errores que vemos repetirse en toda Latam. Errores silenciosos que parecen pequeños pero te cuestan entre <strong class="text-white">$500 y $2,000 USD al mes</strong> sin saberlo.
-            </p>
-            <div class="inline-flex items-center gap-4 bg-slate-800 border border-slate-700 px-5 py-3 rounded-xl">
-                <span class="text-slate-400 text-sm line-through">Valor normal: $27 USD</span>
-                <span class="text-emerald-400 font-bold text-lg">GRATIS CON TU PACK</span>
-            </div>
-        </div>
+  <!-- FASES -->
+  <div class="sec">
+    <div class="sec-h">Vista general del mes <span>— 21 días hábiles, 5 citas cada uno</span></div>
+    <div class="fases">
+      <div class="fase f1">
+        <div class="fn">Fase 1</div>
+        <h4>Pre-launch</h4>
+        <div class="fase-d">May 1, 4–8 · 6 días</div>
+        <div class="fase-com">Com. normal · MST $300 · MDD $90</div>
+        <div class="fase-ing" id="fi1">$0</div>
+      </div>
+      <div class="fase f2a">
+        <div class="fn">Fase 2a</div>
+        <h4>Calentamiento</h4>
+        <div class="fase-d">May 11–13 · 3 días</div>
+        <div class="fase-com">Com. normal aún · carrito no abre</div>
+        <div class="fase-ing" id="fi2a">$0</div>
+      </div>
+      <div class="fase f2b">
+        <div class="fn">Fase 2b</div>
+        <h4>Carrito Abierto</h4>
+        <div class="fase-d">May 14–19 · 4 días hábiles</div>
+        <div class="fase-com">Lanzamiento · MDD $20 · MST $300</div>
+        <div class="fase-ing" id="fi2b">$0</div>
+      </div>
+      <div class="fase f2c">
+        <div class="fn">Fase 2c</div>
+        <h4>FUP Urgente</h4>
+        <div class="fase-d">May 20–25 · 4 días hábiles</div>
+        <div class="fase-com">Lanzamiento · MDD $20 · MST $300</div>
+        <div class="fase-ing" id="fi2c">$0</div>
+      </div>
+      <div class="fase f3">
+        <div class="fn">Fase 3</div>
+        <h4>Barrido + Quiz</h4>
+        <div class="fase-d">May 26–29 · 4 días hábiles</div>
+        <div class="fase-com">Com. normal · MST $300 · MDD $90</div>
+        <div class="fase-ing" id="fi3">$0</div>
+      </div>
     </div>
+    <div class="total-bar">
+      <div>
+        <div class="lbl">Total mes proyectado</div>
+        <div class="sub" id="total-sub">Ajusta los sliders en la calculadora</div>
+      </div>
+      <div class="val" id="total-mes">$0</div>
+    </div>
+  </div>
+
+  <!-- CALENDARIO -->
+  <div class="sec">
+    <div class="sec-h">Calendario Mayo 2026 <span>— cada día hábil con mañana + 5 citas tarde</span></div>
+
+    <div class="cal-hdr">
+      <div class="we">Dom</div>
+      <div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div>
+      <div class="we">Sáb</div>
+    </div>
+
+    <div class="cal">
+
+      <!-- FILA 1: vacíos (Dom-Jue de semana pasada) + May 1 (Vie) + May 2 (Sáb) -->
+      <div class="cd empty"><div class="dn"></div></div>
+      <div class="cd empty"><div class="dn"></div></div>
+      <div class="cd empty"><div class="dn"></div></div>
+      <div class="cd empty"><div class="dn"></div></div>
+      <div class="cd empty"><div class="dn"></div></div>
+
+      <!-- May 1 Vie — F1 Victory -->
+      <div class="cd f1">
+        <div class="dn">1</div>
+        <span class="ev ev-std">Victory · Juanjo 9am</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">FUP pipeline abril · activar asistentes clase</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz 13:30–18:15</div>
+        </div>
+      </div>
+      <!-- May 2 Sáb -->
+      <div class="cd we"><div class="dn">2</div><div class="cd-txt" style="margin-top:4px;font-size:9px;">FUP WhatsApp</div></div>
+
+      <!-- FILA 2: May 3–9 -->
+      <!-- May 3 Dom -->
+      <div class="cd we"><div class="dn">3</div></div>
+
+      <!-- May 4 Lun — F1 Warm Up -->
+      <div class="cd f1">
+        <div class="dn">4</div>
+        <span class="ev ev-std">Warm Up · Juanjo 9am</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">FUP día 1/3 leads · 13 asistentes clase</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · pitch MST→MDD</div>
+        </div>
+      </div>
+
+      <!-- May 5 Mar — F1 Cool Down -->
+      <div class="cd f1">
+        <div class="dn">5</div>
+        <span class="ev ev-std">Cool Down · 9am</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">FUP día 3 leads · 13 asistentes clase</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · pitch MST→MDD</div>
+        </div>
+      </div>
+
+      <!-- May 6 Mié — F1 Warm Up + LIVE -->
+      <div class="cd f1">
+        <div class="dn">6</div>
+        <span class="ev ev-std">Warm Up · 9am</span>
+        <span class="ev ev-live">Live Máquina 7pm</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">FUP día 5 · nurturing 21 leads</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz + prep Live noche</div>
+        </div>
+      </div>
+
+      <!-- May 7 Jue — F1 Cool Down -->
+      <div class="cd f1">
+        <div class="dn">7</div>
+        <span class="ev ev-std">Cool Down · 9am</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">FUP día 7 · cerrar ventana leads May 1 · calientes Live</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · pitch MST→MDD</div>
+        </div>
+      </div>
+
+      <!-- May 8 Vie — F1 Victory -->
+      <div class="cd f1">
+        <div class="dn">8</div>
+        <span class="ev ev-std">Victory · 9am</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">Métricas sem 1 · activar tibios CRM 10/día</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · preparar listas lanzamiento</div>
+        </div>
+      </div>
+
+      <!-- May 9 Sáb -->
+      <div class="cd we"><div class="dn">9</div><div class="cd-txt" style="margin-top:4px;font-size:9px;">FUP WA · preparar estrategia lanzam.</div></div>
+
+      <!-- FILA 3: May 10–16 -->
+      <!-- May 10 Dom -->
+      <div class="cd we"><div class="dn">10</div><div class="cd-txt" style="margin-top:4px;font-size:9px;">Revisar lista lanzamiento</div></div>
+
+      <!-- May 11 Lun — F2a Warm Up · LAUNCH STARTS -->
+      <div class="cd f2a">
+        <div class="dn">11</div>
+        <span class="ev ev-phase">🚀 INICIA LANZAMIENTO</span>
+        <span class="ev ev-std">Warm Up · 9am</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">Activar listas lanzamiento · mensajes a barrido previo</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · com normal aún</div>
+        </div>
+      </div>
+
+      <!-- May 12 Mar — F2a Cool Down -->
+      <div class="cd f2a">
+        <div class="dn">12</div>
+        <span class="ev ev-std">Cool Down · 9am</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">Calentar leads lanzamiento · FUP Quiz pendientes sem 1</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · cerrar MST antes del 14 vale $300</div>
+        </div>
+      </div>
+
+      <!-- May 13 Mié — F2a Warm Up + LIVE Invitado -->
+      <div class="cd f2a">
+        <div class="dn">13</div>
+        <span class="ev ev-phase">Último día com. normal MDD</span>
+        <span class="ev ev-std">Warm Up · 9am</span>
+        <span class="ev ev-live">Live Invitado 7pm</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">Máx cierre MDD $90 hoy · mañana baja a $20</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · urgencia: hoy com. normal</div>
+        </div>
+      </div>
+
+      <!-- May 14 Jue — F2b · CARRITO ABRE -->
+      <div class="cd f2b">
+        <div class="dn">14</div>
+        <span class="ev ev-key">🛒 CARRITO ABRE</span>
+        <span class="ev ev-std">Cool Down · 9am</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">Lanzamiento full · llamadas activas · cerrar calientes</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · MST $300 · MDD ya a $20</div>
+        </div>
+      </div>
+
+      <!-- May 15 Vie — F2b Victory -->
+      <div class="cd f2b">
+        <div class="dn">15</div>
+        <span class="ev ev-std">Victory · 9am</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">Cierre agresivo lanzamiento · viernes = alta decisión</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · antes del fin de semana</div>
+        </div>
+      </div>
+
+      <!-- May 16 Sáb -->
+      <div class="cd we"><div class="dn">16</div><div class="cd-txt" style="margin-top:4px;font-size:9px;color:#8B2020;font-weight:600;">FUP WA activo · carrito sigue abierto lunes</div></div>
+
+      <!-- FILA 4: May 17–23 -->
+      <!-- May 17 Dom -->
+      <div class="cd we"><div class="dn">17</div><div class="cd-txt" style="margin-top:4px;font-size:9px;color:#8B2020;">FUP WA · preparar cierre lunes 18</div></div>
+
+      <!-- May 18 Lun — F2b Warm Up -->
+      <div class="cd f2b">
+        <div class="dn">18</div>
+        <span class="ev ev-std">Warm Up · 9am</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">Lanzamiento · reagendar no-respuestas fin de sem · llamadas</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · carrito cierra mañana</div>
+        </div>
+      </div>
+
+      <!-- May 19 Mar — F2b Cool Down · CARRITO CIERRA -->
+      <div class="cd f2b">
+        <div class="dn">19</div>
+        <span class="ev ev-key">🔒 CARRITO CIERRA HOY</span>
+        <span class="ev ev-std">Cool Down · 9am</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">Presión máxima · 3 opciones a todo lead tibio · cero pendientes</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · cierre del día con urgencia real</div>
+        </div>
+      </div>
+
+      <!-- May 20 Mié — F2c Warm Up + LIVE Maestría -->
+      <div class="cd f2c">
+        <div class="dn">20</div>
+        <span class="ev ev-phase">FUP URGENTE</span>
+        <span class="ev ev-std">Warm Up · 9am</span>
+        <span class="ev ev-live">Live Maestría 7pm</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">FUP rezagados lanzamiento · llamadas directas</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · MST sigue $300</div>
+        </div>
+      </div>
+
+      <!-- May 21 Jue — F2c Cool Down -->
+      <div class="cd f2c">
+        <div class="dn">21</div>
+        <span class="ev ev-std">Cool Down · 9am</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">FUP calientes del Live anoche · separar acceso vs deseo</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · MDD lanzam $20 · MST $300</div>
+        </div>
+      </div>
+
+      <!-- May 22 Vie — F2c Victory -->
+      <div class="cd f2c">
+        <div class="dn">22</div>
+        <span class="ev ev-std">Victory · 9am</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">Métricas mes · rezagados lanzam · plan de pago últimos</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · categorizar leads barrido post-25</div>
+        </div>
+      </div>
+
+      <!-- May 23 Sáb -->
+      <div class="cd we"><div class="dn">23</div><div class="cd-txt" style="margin-top:4px;font-size:9px;color:#8B5A14;">FUP WA · última ronda rezagados</div></div>
+
+      <!-- FILA 5: May 24–30 -->
+      <!-- May 24 Dom -->
+      <div class="cd we"><div class="dn">24</div><div class="cd-txt" style="margin-top:4px;font-size:9px;color:#8B5A14;">Clasificar lista barrido para el 26</div></div>
+
+      <!-- May 25 Lun — F2c Warm Up · ÚLTIMO DÍA COM LANZAMIENTO -->
+      <div class="cd f2c">
+        <div class="dn">25</div>
+        <span class="ev ev-key">⏰ ÚLTIMO DÍA COM LANZAM.</span>
+        <span class="ev ev-std">Warm Up · 9am</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">Cerrar TODO rezagado hoy · mañana vuelve com normal</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · MST $300 · MDD hoy $20 (último día)</div>
+        </div>
+      </div>
+
+      <!-- May 26 Mar — F3 · COM NORMAL VUELVE -->
+      <div class="cd f3">
+        <div class="dn">26</div>
+        <span class="ev ev-phase">✅ COM NORMAL VUELVE</span>
+        <span class="ev ev-std">Cool Down · 9am</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">Barrido caliente: leads que dijeron "después del lanzamiento"</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · MDD vuelve a $90</div>
+        </div>
+      </div>
+
+      <!-- May 27 Mié — F3 Warm Up + LIVE Caso éxito -->
+      <div class="cd f3">
+        <div class="dn">27</div>
+        <span class="ev ev-std">Warm Up · 9am</span>
+        <span class="ev ev-live">Live Caso éxito 7pm</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">Barrido · leads tibios lanzamiento → invitar a MST</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · 1 MDD aquí = 4.5 MDD del lanzamiento</div>
+        </div>
+      </div>
+
+      <!-- May 28 Jue — F3 Cool Down -->
+      <div class="cd f3">
+        <div class="dn">28</div>
+        <span class="ev ev-std">Cool Down · 9am</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">Barrido + FUP calientes Live · cerrar MST pendientes</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · pipeline barrido</div>
+        </div>
+      </div>
+
+      <!-- May 29 Vie — F3 Victory CIERRE DE MES -->
+      <div class="cd f3">
+        <div class="dn">29</div>
+        <span class="ev ev-phase">🏁 CIERRE DE MES</span>
+        <span class="ev ev-std">Victory · 9am</span>
+        <div class="cd-am">
+          <div class="cd-am-lbl">Mañana</div>
+          <div class="cd-txt">Métricas finales mes · leads a nurture 90 días · plan junio</div>
+          <div class="cd-pm-lbl">Tarde</div>
+          <div class="cd-txt">5 citas Quiz · cerrar lo que quede</div>
+        </div>
+      </div>
+
+      <!-- May 30 Sáb -->
+      <div class="cd we"><div class="dn">30</div></div>
+
+      <!-- FILA 6: May 31 Dom + vacíos -->
+      <div class="cd we"><div class="dn">31</div></div>
+      <div class="cd empty"></div>
+      <div class="cd empty"></div>
+      <div class="cd empty"></div>
+      <div class="cd empty"></div>
+      <div class="cd empty"></div>
+      <div class="cd empty"></div>
+
+    </div><!-- /cal -->
+
+    <!-- LEYENDA -->
+    <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;padding:12px 16px;background:var(--white);border:1px solid var(--gray-light);border-radius:6px;font-size:11px;">
+      <div style="display:flex;align-items:center;gap:7px;"><div style="width:14px;height:14px;background:var(--f1-bg);border-left:3px solid var(--f1-ac);border-radius:2px;"></div>Fase 1: Pre-launch</div>
+      <div style="display:flex;align-items:center;gap:7px;"><div style="width:14px;height:14px;background:var(--f2a-bg);border-left:3px solid var(--f2a-ac);border-radius:2px;"></div>Fase 2a: Calentamiento</div>
+      <div style="display:flex;align-items:center;gap:7px;"><div style="width:14px;height:14px;background:var(--f2b-bg);border-left:3px solid var(--f2b-ac);border-radius:2px;"></div>Fase 2b: Carrito Abierto</div>
+      <div style="display:flex;align-items:center;gap:7px;"><div style="width:14px;height:14px;background:var(--f2c-bg);border-left:3px solid var(--f2c-ac);border-radius:2px;"></div>Fase 2c: FUP Urgente</div>
+      <div style="display:flex;align-items:center;gap:7px;"><div style="width:14px;height:14px;background:var(--f3-bg);border-left:3px solid var(--f3-ac);border-radius:2px;"></div>Fase 3: Barrido + Quiz</div>
+      <div style="display:flex;align-items:center;gap:7px;"><div style="width:14px;height:14px;background:var(--plum);border-radius:2px;"></div>Zoom Live 7pm</div>
+    </div>
+  </div>
+
+  <!-- CALCULADORA -->
+  <div class="sec">
+    <div class="sec-h">Calculadora Mayo <span>— mueve los sliders, todo se recalcula</span></div>
+    <div class="calc-wrap">
+      <div class="calc-top">
+        <h3>Proyección de comisión</h3>
+        <div class="kpis">
+          <div class="kpi"><div class="kpi-l">V. Quiz</div><div class="kpi-v" id="kq">0</div></div>
+          <div class="kpi"><div class="kpi-l">V. Lanzam.</div><div class="kpi-v" id="kl">0</div></div>
+          <div class="kpi"><div class="kpi-l">Total ventas</div><div class="kpi-v" id="kt">0</div></div>
+          <div class="kpi"><div class="kpi-l">Total comisión</div><div class="kpi-v gold" id="kc">$0</div></div>
+        </div>
+      </div>
+      <div class="calc-body">
+        <div class="crow hdr">
+          <div>Fuente / Fase</div><div>Cantidad</div><div>Ventas</div><div>Com/v</div><div>Ticket</div><div style="text-align:right">Ingreso</div>
+        </div>
+
+        <!-- MST Quiz - siempre normal -->
+        <div class="crow">
+          <div class="pn" style="border-left:3px solid var(--f1-ac);padding-left:7px;">MST · Quiz (todo el mes)<small>Fases 1,2a,2b,2c,3 · siempre $300</small></div>
+          <input type="range" id="mst" min="0" max="12" value="4" oninput="rc()">
+          <div class="rv" id="rv-mst">4</div>
+          <div class="tc">$300</div><div class="tc">$10K</div>
+          <div class="rc" id="r-mst">$1,200</div>
+        </div>
+
+        <!-- MDD Quiz F1+F2a+F3 normal -->
+        <div class="crow">
+          <div class="pn" style="border-left:3px solid var(--f1-ac);padding-left:7px;">MDD · Quiz com. normal<small>Fases 1, 2a, 3 · May 1–13 + 26–29 · $90</small></div>
+          <input type="range" id="mddN" min="0" max="20" value="9" oninput="rc()">
+          <div class="rv" id="rv-mddN">9</div>
+          <div class="tc">$90</div><div class="tc">$1,995</div>
+          <div class="rc" id="r-mddN">$810</div>
+        </div>
+
+        <!-- MDD Quiz F2b+F2c lanzamiento rates -->
+        <div class="crow" style="background:#FFF5F3;">
+          <div class="pn" style="border-left:3px solid var(--f2b-ac);padding-left:7px;">MDD · Quiz com. lanzamiento<small>Fases 2b, 2c · May 14–25 · $20</small></div>
+          <input type="range" id="mddL" min="0" max="15" value="3" oninput="rc()">
+          <div class="rv" id="rv-mddL">3</div>
+          <div class="tc" style="color:var(--f2b-ac);font-weight:700;">$20</div><div class="tc">$1,995</div>
+          <div class="rc" id="r-mddL">$60</div>
+        </div>
+
+        <!-- Lanzamiento - 60 meta -->
+        <div class="crow" style="background:#FFF0EC;">
+          <div class="pn" style="border-left:3px solid var(--f2b-ac);padding-left:7px;">MDD · Lanzamiento (meta 60)<small>May 14–25 · $20 contado</small></div>
+          <input type="range" id="lanz" min="0" max="80" value="60" oninput="rc()">
+          <div class="rv" id="rv-lanz">60</div>
+          <div class="tc" style="color:var(--f2b-ac);font-weight:700;">$20</div><div class="tc">$1,995</div>
+          <div class="rc" id="r-lanz">$1,200</div>
+        </div>
+
+        <!-- Barrido post-lanzamiento -->
+        <div class="crow">
+          <div class="pn" style="border-left:3px solid var(--f3-ac);padding-left:7px;">Barrido post-lanzamiento<small>Fase 3 · May 26–29 · $90 normal</small></div>
+          <input type="range" id="barr" min="0" max="20" value="5" oninput="rc()">
+          <div class="rv" id="rv-barr">5</div>
+          <div class="tc">$90</div><div class="tc">$1,995</div>
+          <div class="rc" id="r-barr">$450</div>
+        </div>
+
+        <!-- Códigos -->
+        <div class="crow">
+          <div class="pn">Códigos del Dinero<small>FUP seguimientos · $30</small></div>
+          <input type="range" id="cdd" min="0" max="8" value="2" oninput="rc()">
+          <div class="rv" id="rv-cdd">2</div>
+          <div class="tc">$30</div><div class="tc">$420</div>
+          <div class="rc" id="r-cdd">$60</div>
+        </div>
+
+        <!-- TOTAL -->
+        <div class="crow" style="border-top:2px solid var(--gold-light);">
+          <div class="pn" style="font-weight:700;color:var(--navy);">TOTAL MAYO</div>
+          <div></div>
+          <div class="rv" id="rv-tot" style="font-size:16px;">0</div>
+          <div></div>
+          <div class="tc" style="font-family:'Fraunces',serif;font-weight:700;color:var(--navy);font-size:12px;" id="fact-tot">$0</div>
+          <div class="rc big" id="r-tot">$0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BARRAS -->
+    <div class="bars">
+      <h4>¿Cómo va el mes?</h4>
+
+      <div class="bar">
+        <div class="bar-h">
+          <div class="bar-l">Ventas lanzamiento <span class="badge b-l">meta: 60</span></div>
+          <div class="bv" id="bv-lanz">0/60</div>
+        </div>
+        <div class="bar-track"><div class="bar-fill" id="bf-lanz" style="width:0%"></div></div>
+        <div class="bmarks">
+          <span class="bm">0</span>
+          <span class="bm" id="bm-l30">30</span>
+          <span class="bm" id="bm-l60">60 meta</span>
+          <span class="bm" id="bm-l80">80+</span>
+        </div>
+      </div>
+
+      <div class="bar">
+        <div class="bar-h">
+          <div class="bar-l">Comisión total mes <span class="badge b-n">mínimo: $1.5K</span></div>
+          <div class="bv" id="bv-com">$0</div>
+        </div>
+        <div class="bar-track"><div class="bar-fill" id="bf-com" style="width:0%"></div></div>
+        <div class="bmarks">
+          <span class="bm">$0</span>
+          <span class="bm" id="bm-c15">$1.5K</span>
+          <span class="bm" id="bm-c2k">$2K meta</span>
+          <span class="bm" id="bm-c3k">$3K</span>
+          <span class="bm">$4K+</span>
+        </div>
+      </div>
+
+      <div class="bar">
+        <div class="bar-h">
+          <div class="bar-l">Facturación total mes <span class="badge b-m">hito bono: $25K</span></div>
+          <div class="bv" id="bv-fact">$0</div>
+        </div>
+        <div class="bar-track"><div class="bar-fill" id="bf-fact" style="width:0%"></div></div>
+        <div class="bmarks">
+          <span class="bm">$0</span>
+          <span class="bm" id="bm-f25">$25K bono</span>
+          <span class="bm" id="bm-f60">$60K</span>
+          <span class="bm" id="bm-f100">$100K</span>
+          <span class="bm">$120K+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIPS CLAVE -->
+  <div class="sec">
+    <div class="sec-h">Claves estratégicas del mes</div>
+    <div class="alert-box">
+      ⚠️ <strong>El error más caro de mayo:</strong> pausar el Quiz por el lanzamiento. 1 MST cerrada en Quiz Fase 1 o Fase 3 = $300 = 15 ventas de lanzamiento en comisión. El Quiz y el lanzamiento no compiten — son paralelos. Las mañanas son de lanzamiento/barrido, las tardes son de Quiz siempre.
+    </div>
+    <div class="tips">
+      <div class="tip">
+        <div class="tip-i">📅</div>
+        <div class="tip-t">May 13 es tu día de cierre más rentable de la primera quincena</div>
+        <div class="tip-b">
+          Último día de comisión normal para MDD. Cualquier Máquina que cierres hoy vale $90. Mañana (May 14) baja a $20. <strong>Prioriza citas con leads más calientes para hoy.</strong>
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip-i">🔥</div>
+        <div class="tip-t">May 19 es el día de mayor presión del mes — úsalo bien</div>
+        <div class="tip-b">
+          Carrito cierra hoy. La urgencia es real y los leads lo saben. <strong>No dejes lead tibio sin un toque directo hoy.</strong> Llama, no solo WA. 3 opciones claras: entra hoy, plan de pagos, o lo dejo para junio.
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip-i">⭐</div>
+        <div class="tip-t">May 26–29 son los días más rentables por venta del mes</div>
+        <div class="tip-b">
+          Comisión normal vuelve. Tienes pipeline caliente del lanzamiento (leads que ya vieron a Álvaro, ya saben qué es MDD). <strong>1 MDD aquí = $90. El equivalente del lanzamiento eran 4.5 ventas.</strong> Prioriza barrido caliente + MST pendientes.
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip-i">📊</div>
+        <div class="tip-t">Métrica clave para los Victory del mes</div>
+        <div class="tip-b">
+          Cada viernes: (1) ventas lanzamiento acumuladas vs 60, (2) MST cerradas del mes, (3) comisión acumulada. <strong>Si llegas al Victory del 15 con menos de 20 ventas de lanzamiento, ajusta el FUP de inmediato.</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    David Muñoz · Luque Academy · <em>Plan específico Mayo 2026 · 21 días hábiles · 5 citas Quiz/día</em>
+  </div>
+
 </div>
-<!-- FIN SECCIÓN BONUS -->
 
-    <!-- 💡 SECCIÓN IA INTERACTIVA (Mantenida como valor extra del sitio) -->
-    <section class="py-20 bg-fintec-light/50 border-y border-slate-200">
-        <div class="container mx-auto px-4 max-w-3xl text-center">
-            <h2 class="text-2xl font-heading font-extrabold text-fintec-dark mb-2">Haz una prueba ahora mismo</h2>
-            <p class="text-slate-600 mb-8 text-sm">Cuéntale a nuestro Consultor AI tu mayor duda (ej: "Siento que pago mucho laboratorio"). Obtén un consejo gratis en segundos.</p>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-left relative z-10">
-                <textarea id="painInput" rows="2" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-fintec-main/20 outline-none text-sm resize-none" placeholder="Escribe aquí tu situación..."></textarea>
-                <div class="mt-4 flex justify-between items-center">
-                    <span class="text-xs text-slate-400"><i class="fas fa-lock"></i> 100% Privado</span>
-                    <button onclick="analyzePainPoint()" id="analyzeBtn" class="bg-fintec-dark hover:bg-slate-800 text-white px-6 py-2 rounded-lg font-bold text-sm transition flex items-center gap-2"><i class="fas fa-robot"></i> Analizar gratis</button>
-                </div>
-                <div id="aiResult" class="hidden mt-6 p-4 bg-fintec-light border-l-4 border-fintec-main rounded-r-lg text-sm text-slate-700 shadow-inner"></div>
-            </div>
-        </div>
-    </section>
+<script>
+function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+function fmtK(n){
+  if(n>=100000) return '$'+(n/1000).toFixed(0)+'K';
+  if(n>=1000) return '$'+(n/1000).toFixed(1)+'K';
+  return '$'+Math.round(n);
+}
 
-    <!-- 🔴 SECCIÓN 7 y 8: RESUMEN DE VALOR Y CTA PRINCIPAL (EL BUNDLE CENTRADO) -->
-    <section id="oferta" class="py-24 bg-white">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-fintec-dark">¿Qué obtienes hoy?</h2>
-                <p class="text-slate-500 mt-4 text-lg">Todo lo que necesitas en un solo paquete, con acceso inmediato.</p>
-            </div>
-            
-            <div class="bg-slate-50 rounded-[2.5rem] p-8 md:p-14 shadow-floating border border-slate-200 relative overflow-hidden max-w-3xl mx-auto">
-                <!-- Barra superior decorativa -->
-                <div class="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-fintec-main via-fintec-accent to-fintec-main"></div>
-                
-                <h3 class="text-2xl font-bold text-fintec-dark text-center mb-8 font-heading">El Kit Incluye:</h3>
+function rc(){
+  const mst  = +document.getElementById('mst').value;
+  const mddN = +document.getElementById('mddN').value;
+  const mddL = +document.getElementById('mddL').value;
+  const lanz = +document.getElementById('lanz').value;
+  const barr = +document.getElementById('barr').value;
+  const cdd  = +document.getElementById('cdd').value;
 
-                <!-- Lista centralizada estilo ticket -->
-                <div class="max-w-md mx-auto space-y-4 mb-10">
-                    <div class="flex items-center justify-between text-slate-700 font-medium pb-2 border-b border-slate-200 border-dashed">
-                        <div class="flex items-center gap-3"><i class="fas fa-check-circle text-fintec-main"></i> Brújula de Rentabilidad</div>
-                        <span class="text-slate-400 text-sm line-through">$47</span>
-                    </div>
-                    <div class="flex items-center justify-between text-slate-700 font-medium pb-2 border-b border-slate-200 border-dashed">
-                        <div class="flex items-center gap-3"><i class="fas fa-check-circle text-fintec-main"></i> Calculadora de Costos</div>
-                        <span class="text-slate-400 text-sm line-through">$67</span>
-                    </div>
-                    <div class="flex items-center justify-between text-slate-700 font-medium pb-2 border-b border-slate-200 border-dashed">
-                        <div class="flex items-center gap-3"><i class="fas fa-check-circle text-fintec-main"></i> Simulador de Escenarios</div>
-                        <span class="text-slate-400 text-sm line-through">$57</span>
-                    </div>
-                    <div class="flex items-center justify-between text-slate-700 font-medium pb-2 border-b border-slate-200 border-dashed">
-                        <div class="flex items-center gap-3"><i class="fas fa-check-circle text-fintec-main"></i> Comunidad Privada VIP</div>
-                        <span class="text-slate-400 text-sm line-through">$97</span>
-                    </div>
-                    <div class="flex items-center justify-between text-fintec-accent font-bold bg-orange-50 px-4 py-3 rounded-xl border border-orange-100 shadow-sm mt-4">
-                        <div class="flex items-center gap-3"><i class="fas fa-gift text-lg"></i> BONUS: 7 Errores Financieros</div>
-                        <span class="text-slate-400 text-sm line-through font-normal">$27</span>
-                    </div>
-                </div>
+  ['mst','mddN','mddL','lanz','barr','cdd'].forEach(id=>{
+    document.getElementById('rv-'+id).textContent = eval(id);
+  });
 
-                <!-- PRECIO CENTRALIZADO -->
-                <div class="text-center mb-10">
-                    <p class="text-slate-400 text-sm font-bold uppercase tracking-widest mb-1">TOTAL REAL: <span class="line-through">$295 USD</span></p>
-                    <p class="text-fintec-main text-xs font-bold uppercase tracking-widest mb-3 mt-6">Tu inversión hoy (Acceso Fundador)</p>
-                    <div class="text-7xl md:text-8xl font-extrabold text-fintec-dark font-heading leading-none">$37</div>
-                    <p class="text-slate-500 font-medium mt-2">Dólares Americanos</p>
-                </div>
+  const cMst  = mst  * 300;
+  const cMddN = mddN * 90;
+  const cMddL = mddL * 20;
+  const cLanz = lanz * 20;
+  const cBarr = barr * 90;
+  const cCdd  = cdd  * 30;
+  const cTot  = cMst + cMddN + cMddL + cLanz + cBarr + cCdd;
 
-                <!-- CTA (Botón de Compra) -->
-                <!-- REEMPLAZA EL HREF CON TU LINK DE PAGO DE HOTMART -->
-                <a href="https://pay.hotmart.com/N103453634P?checkoutMode=10" target="_blank" class="btn-magnetic w-full block py-6 rounded-2xl text-xl md:text-2xl font-extrabold text-white text-center shadow-glow mb-6 transform transition hover:scale-[1.02]">
-                    👉 QUIERO MI KIT DE RENTABILIDAD
-                </a>
-                
-                <!-- Beneficios bajo el CTA -->
-                <div class="flex flex-col md:flex-row justify-center gap-6 text-xs font-medium text-slate-500 bg-white py-4 px-6 rounded-xl border border-slate-100">
-                    <span class="flex items-center justify-center gap-2"><i class="fas fa-unlock text-fintec-main text-lg"></i> Acceso Inmediato</span>
-                    <span class="hidden md:block w-px bg-slate-200"></span>
-                    <span class="flex items-center justify-center gap-2"><i class="fas fa-shield-alt text-fintec-success text-lg"></i> Garantía 7 días</span>
-                </div>
-            </div>
+  const fMst  = mst  * 10000;
+  const fMddN = mddN * 1995;
+  const fMddL = mddL * 1995;
+  const fLanz = lanz * 1995;
+  const fBarr = barr * 1995;
+  const fCdd  = cdd  * 420;
+  const fTot  = fMst + fMddN + fMddL + fLanz + fBarr + fCdd;
 
-            <!-- Agitación Costo de Inacción (Debajo del Bundle) -->
-            <div class="max-w-3xl mx-auto bg-red-50 border border-red-100 rounded-2xl p-8 text-center mt-8 shadow-sm">
-                <p class="text-red-700 font-bold text-lg mb-3">¿Cuánto te está costando cada mes no saber esto?</p>
-                <p class="text-sm md:text-base text-red-600/90 leading-relaxed">
-                    Si llevas 6 meses sin claridad financiera, dejando ir aunque sea $300 al mes en decisiones mal tomadas, precios mal calculados o costos que no controlas... <strong class="text-red-800 bg-red-100 px-2 py-1 rounded">Ya perdiste $1,800.</strong> El kit cuesta $37. Una sola decisión mejor tomada te lo devuelve el mismo día.
-                </p>
-            </div>
-        </div>
-    </section>
+  document.getElementById('r-mst').textContent  = fmt(cMst);
+  document.getElementById('r-mddN').textContent = fmt(cMddN);
+  document.getElementById('r-mddL').textContent = fmt(cMddL);
+  document.getElementById('r-lanz').textContent = fmt(cLanz);
+  document.getElementById('r-barr').textContent = fmt(cBarr);
+  document.getElementById('r-cdd').textContent  = fmt(cCdd);
+  document.getElementById('r-tot').textContent  = fmt(cTot);
+  document.getElementById('rv-tot').textContent = mst+mddN+mddL+lanz+barr+cdd;
+  document.getElementById('fact-tot').textContent = fmtK(fTot);
 
-    <!-- 🔴 SECCIÓN 9: OBJECIONES (FAQ) -->
-    <section class="py-20 bg-slate-50 border-t border-slate-200">
-        <div class="container mx-auto px-4 max-w-3xl">
-            <h2 class="text-3xl font-bold text-fintec-dark text-center mb-10 font-heading">Resolvamos las dudas silenciosas</h2>
-            <div class="space-y-4">
-                <details class="group bg-white p-6 rounded-xl cursor-pointer border border-slate-200 shadow-sm transition hover:border-fintec-main">
-                    <summary class="font-bold text-slate-800 text-sm md:text-base flex justify-between items-center select-none">
-                        "¿Y si no soy bueno con los números?"
-                        <span class="text-fintec-main font-bold text-xl group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <p class="text-slate-600 text-sm mt-4 leading-relaxed border-t border-slate-100 pt-4">
-                        Estas herramientas están diseñadas para médicos y clínicos, no para contadores. Si sabes cuánto pagas de arriendo y cuántos pacientes atiendes al mes, puedes usarlas. No se necesita nada más. Las fórmulas ya están listas.
-                    </p>
-                </details>
+  document.getElementById('kq').textContent = mst+mddN+mddL+barr+cdd;
+  document.getElementById('kl').textContent = lanz;
+  document.getElementById('kt').textContent = mst+mddN+mddL+lanz+barr+cdd;
+  document.getElementById('kc').textContent = fmt(cTot);
 
-                <details class="group bg-white p-6 rounded-xl cursor-pointer border border-slate-200 shadow-sm transition hover:border-fintec-main">
-                    <summary class="font-bold text-slate-800 text-sm md:text-base flex justify-between items-center select-none">
-                        "¿Esto funciona para mi tipo de clínica?"
-                        <span class="text-fintec-main font-bold text-xl group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <p class="text-slate-600 text-sm mt-4 leading-relaxed border-t border-slate-100 pt-4">
-                        Sí. El sistema funciona para consultorios odontológicos, clínicas médicas, centros de estética, spas médicos y cualquier negocio de salud donde los ingresos dependen de procedimientos, insumos y tiempo clínico.
-                    </p>
-                </details>
+  // Fases (distribución aproximada)
+  const cNormTotal = cMst + cMddN + cBarr + cCdd;
+  // F1: 6/13 días normales (sin lanzamiento); F2a: 3/13; F3: 4/13
+  document.getElementById('fi1').textContent  = fmt(Math.round(cNormTotal * 0.46));
+  document.getElementById('fi2a').textContent = fmt(Math.round(cNormTotal * 0.23));
+  document.getElementById('fi2b').textContent = fmt(Math.round(cLanz * 0.55 + cMddL * 0.55));
+  document.getElementById('fi2c').textContent = fmt(Math.round(cLanz * 0.45 + cMddL * 0.45));
+  document.getElementById('fi3').textContent  = fmt(Math.round(cNormTotal * 0.31));
+  document.getElementById('total-mes').textContent = fmt(cTot);
+  document.getElementById('total-sub').textContent = (mst+mddN+mddL+lanz+barr+cdd)+' ventas · '+fmtK(fTot)+' facturación';
 
-                <details class="group bg-white p-6 rounded-xl cursor-pointer border border-slate-200 shadow-sm transition hover:border-fintec-main">
-                    <summary class="font-bold text-slate-800 text-sm md:text-base flex justify-between items-center select-none">
-                        "¿Por qué tan barato si vale tanto?"
-                        <span class="text-fintec-main font-bold text-xl group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <p class="text-slate-600 text-sm mt-4 leading-relaxed border-t border-slate-100 pt-4">
-                        Porque este es el primer paso. Queremos que entres, veas los resultados inmediatos y confíes en nosotros. Si estas herramientas te dan claridad, vas a querer nuestro acompañamiento más profundo después. Todos ganan cuando empezamos bien.
-                    </p>
-                </details>
+  // BARRAS
+  function setBar(fillId, pct, ...bms){
+    const fill = document.getElementById(fillId);
+    fill.style.width = Math.min(pct, 100)+'%';
+    const c = pct>=100?'bgrn':pct>=66?'bgld':pct>=33?'borg':'bred';
+    fill.className = 'bar-fill '+c;
+    bms.forEach(([id, threshold]) => {
+      document.getElementById(id).className = 'bm'+(pct>=threshold*100/60?' ok':'');
+    });
+  }
 
-                <details class="group bg-white p-6 rounded-xl cursor-pointer border border-slate-200 shadow-sm transition hover:border-fintec-main">
-                    <summary class="font-bold text-slate-800 text-sm md:text-base flex justify-between items-center select-none">
-                        "¿Qué pasa si no me sirve?"
-                        <span class="text-fintec-main font-bold text-xl group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <p class="text-slate-600 text-sm mt-4 leading-relaxed border-t border-slate-100 pt-4">
-                        Tienes 7 días respaldados por Hotmart para pedir tu dinero de vuelta. Sin formularios, sin explicaciones, sin llamadas incómodas. Creemos al 100% en lo que construimos.
-                    </p>
-                </details>
-            </div>
-        </div>
-    </section>
+  // Lanzamiento bar
+  const lpct = (lanz/60)*100;
+  const bfL = document.getElementById('bf-lanz');
+  bfL.style.width = Math.min(lpct,100)+'%';
+  bfL.className = 'bar-fill '+(lanz>=60?'bgrn':lanz>=30?'bgld':'bred');
+  document.getElementById('bv-lanz').textContent = lanz+'/60';
+  document.getElementById('bm-l30').className = 'bm'+(lanz>=30?' ok':'');
+  document.getElementById('bm-l60').className = 'bm'+(lanz>=60?' ok':lanz>=30?' on':'');
+  document.getElementById('bm-l80').className = 'bm'+(lanz>=80?' ok':'');
 
-    <!-- 🔴 SECCIÓN 10: CIERRE EMOCIONAL -->
-    <section class="py-24 bg-fintec-dark text-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-tech-grid opacity-20 pointer-events-none"></div>
-        <div class="container mx-auto px-4 max-w-3xl relative z-10 text-center">
-            
-            <h2 class="text-3xl font-heading font-extrabold mb-8">Una última cosa antes de que decidas.</h2>
-            
-            <div class="text-slate-300 text-lg leading-relaxed font-light space-y-6 mb-12 text-left bg-slate-900/80 backdrop-blur-sm p-8 md:p-12 rounded-3xl border border-slate-700 shadow-2xl">
-                <p>Dentro de 12 meses vas a estar en uno de dos lugares.</p>
-                <p><strong>En el primero</strong>, sigues haciendo lo mismo. Los mismos precios al ojo, los mismos meses confusos, el mismo agotamiento de trabajar mucho para ganar poco. Y la misma pregunta sin respuesta: <em>¿para qué monté esto?</em></p>
-                <p><strong>En el segundo</strong>, sabes exactamente cuánto genera tu clínica, cuánto te queda a ti, y qué mover para crecer. Tomas decisiones con datos. Duermes mejor. Y empiezas a sentir que el sacrificio de todos esos años de estudio está valiendo la pena.</p>
-                <div class="pt-6 border-t border-slate-700 mt-6">
-                    <p class="text-xl">La diferencia entre esos dos futuros no es esfuerzo. Ya tienes de sobra. <br><strong class="text-white text-2xl mt-2 block font-heading">Es información. Y hoy cuesta $37.</strong></p>
-                </div>
-            </div>
+  // Comisión bar
+  const cpct = (cTot/4000)*100;
+  const bfC = document.getElementById('bf-com');
+  bfC.style.width = Math.min(cpct,100)+'%';
+  bfC.className = 'bar-fill '+(cTot>=2000?'bgrn':cTot>=1500?'bgld':cTot>=1200?'borg':'bred');
+  document.getElementById('bv-com').textContent = fmt(cTot);
+  document.getElementById('bm-c15').className = 'bm'+(cTot>=1500?' ok':cTot>=1200?' on':'');
+  document.getElementById('bm-c2k').className = 'bm'+(cTot>=2000?' ok':cTot>=1500?' on':'');
+  document.getElementById('bm-c3k').className = 'bm'+(cTot>=3000?' ok':cTot>=2000?' on':'');
 
-            <!-- Botón de Cierre (Hotmart) -->
-            <a href="https://pay.hotmart.com/N103453634P?checkoutMode=10" target="_blank" class="btn-magnetic w-full md:w-auto inline-flex items-center justify-center gap-3 text-white font-extrabold py-5 px-12 rounded-xl text-xl shadow-glow mb-6">
-                👉 EMPEZAR AHORA — $37 USD
-            </a>
+  // Facturación bar
+  const fpct = (fTot/120000)*100;
+  const bfF = document.getElementById('bf-fact');
+  bfF.style.width = Math.min(fpct,100)+'%';
+  bfF.className = 'bar-fill '+(fTot>=60000?'bgrn':fTot>=25000?'bgld':'borg');
+  document.getElementById('bv-fact').textContent = fmtK(fTot);
+  document.getElementById('bm-f25').className = 'bm'+(fTot>=25000?' ok':' on');
+  document.getElementById('bm-f60').className = 'bm'+(fTot>=60000?' ok':fTot>=25000?' on':'');
+  document.getElementById('bm-f100').className = 'bm'+(fTot>=100000?' ok':fTot>=60000?' on':'');
+}
 
-            <div class="text-xs text-slate-500 font-medium space-y-2">
-                <p>Acceso inmediato · Garantía 7 días · Cupos fundadores limitados</p>
-                <p class="mt-4 pt-4 border-t border-slate-800 text-[10px] text-slate-600 max-w-lg mx-auto">Este no es un producto de entretenimiento. Es una herramienta de trabajo diseñada para dueños de clínicas que van en serio.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Simple -->
-    <footer class="bg-black text-slate-500 py-10 text-sm border-t border-slate-900 relative z-10">
-        <div class="container mx-auto px-4 flex flex-col justify-center items-center gap-6">
-            <!-- Botón WhatsApp Fijo -->
-            <a href="https://wa.me/message/IJJJ4DDKVZWCA1" target="_blank" class="bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 transition transform hover:scale-105 shadow-lg mb-2">
-                <i class="fab fa-whatsapp text-xl"></i> Tengo una pregunta antes de comprar
-            </a>
-            
-            <p class="text-xs">&copy; 2026 Fintec Consultores. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- Script IA -->
-    <script>
-        const apiKey = "AIzaSyC0JHL4t5Hyh3JYCzUN-7Sxy_t3O-Def8M"; 
-
-        async function analyzePainPoint() {
-            const input = document.getElementById('painInput').value;
-            const btn = document.getElementById('analyzeBtn');
-            const resultArea = document.getElementById('aiResult');
-            
-            if (!input.trim()) { alert("Por favor describe tu situación."); return; }
-
-            const originalBtnText = btn.innerHTML;
-            btn.innerHTML = '<span class="typing-indicator"><span></span><span></span><span></span></span>';
-            btn.disabled = true;
-            resultArea.classList.add('hidden');
-
-            try {
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{
-                            parts: [{
-                                text: `Actúa como consultor financiero experto en clínicas. El usuario tiene este problema: "${input}". 
-                                Responde en español, corto (<50 palabras), muy empático y directo al dolor financiero del médico.
-                                Termina con: "La solución está en el Kit de Rentabilidad."`
-                            }]
-                        }]
-                    })
-                });
-
-                const data = await response.json();
-                if(data.error) throw new Error(data.error.message);
-
-                const text = data.candidates[0].content.parts[0].text;
-                const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-fintec-main">$1</strong>');
-
-                resultArea.innerHTML = `<p class="leading-relaxed"><i class="fas fa-robot mr-2 text-fintec-main"></i> ${formattedText}</p>`;
-                resultArea.classList.remove('hidden');
-
-            } catch (e) {
-                console.error(e);
-                resultArea.innerHTML = '<div class="text-red-500 text-sm"><i class="fas fa-exclamation-triangle"></i> Hubo un error de conexión. Verifica tu internet.</div>';
-                resultArea.classList.remove('hidden');
-            } finally {
-                btn.innerHTML = originalBtnText;
-                btn.disabled = false;
-            }
-        }
-    </script>
-
+rc();
+</script>
 </body>
-
 </html>
-
-
-
-
