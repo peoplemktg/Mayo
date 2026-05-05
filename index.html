@@ -2,835 +2,1161 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Plan Mayo 2026 — David Muñoz</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Cash Flow · David Muñoz</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink:#0F1729; --navy:#1F3864; --gold:#C9A84C; --gold-light:#F5EDD4;
-    --cream:#FAF7F0; --cream-dark:#F2EDE0; --gray:#6B7280; --gray-light:#E5E7EB;
-    --white:#FFFFFF; --green:#2D7A3B; --green-bg:#E8F5EA;
-    --red:#9B3939; --plum:#4A2668;
-    --f1-bg:#E3EDF7; --f1-ac:#1F3864;
-    --f2a-bg:#F5EDD4; --f2a-ac:#7A6614;
-    --f2b-bg:#F8E0DC; --f2b-ac:#8B2020;
-    --f2c-bg:#FCE8C4; --f2c-ac:#8B5A14;
-    --f3-bg:#DCEEE4; --f3-ac:#1A5C2A;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:var(--ink);padding:28px 16px;line-height:1.5;}
-  .page{max-width:1140px;margin:0 auto;}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  /* HEADER */
-  .hdr{text-align:center;margin-bottom:32px;padding-bottom:24px;position:relative;}
-  .hdr::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80px;height:2px;background:var(--gold);}
-  .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px;}
-  h1{font-family:'Fraunces',serif;font-size:44px;font-weight:700;color:var(--navy);letter-spacing:-1px;margin-bottom:6px;}
-  h1 em{font-style:italic;color:var(--gold);}
-  .stitle{font-size:14px;color:var(--gray);}
+:root {
+  --bg:       #faf7f4;
+  --surface:  #ffffff;
+  --surface2: #f4f0eb;
+  --border:   #e8e0d6;
+  --border2:  #d9cfc4;
+  --ink:      #1c1814;
+  --ink2:     #3d3530;
+  --muted:    #9c8f84;
+  --muted2:   #c4b9b0;
 
-  /* SECCIÓN */
-  .sec{margin-bottom:32px;}
-  .sec-h{font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--navy);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--gold-light);display:flex;align-items:center;gap:10px;}
-  .sec-h span{font-size:12px;color:var(--gray);font-family:'Inter',sans-serif;font-weight:400;}
+  --terracota:   #c4522a;
+  --terracota-l: #f7ede8;
+  --terracota-m: #f0d0c4;
 
-  /* FASES OVERVIEW */
-  .fases{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:10px;}
-  .fase{border-radius:6px;padding:13px 15px;border-left:4px solid;}
-  .fase.f1{background:var(--f1-bg);border-left-color:var(--f1-ac);}
-  .fase.f2a{background:var(--f2a-bg);border-left-color:var(--f2a-ac);}
-  .fase.f2b{background:var(--f2b-bg);border-left-color:var(--f2b-ac);}
-  .fase.f2c{background:var(--f2c-bg);border-left-color:var(--f2c-ac);}
-  .fase.f3{background:var(--f3-bg);border-left-color:var(--f3-ac);}
-  .fn{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;margin-bottom:3px;}
-  .f1 .fn{color:var(--f1-ac);} .f2a .fn{color:var(--f2a-ac);} .f2b .fn{color:var(--f2b-ac);} .f2c .fn{color:var(--f2c-ac);} .f3 .fn{color:var(--f3-ac);}
-  .fase h4{font-family:'Fraunces',serif;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px;}
-  .fase-d{font-size:11px;color:var(--gray);margin-bottom:5px;}
-  .fase-com{font-size:11px;font-weight:600;}
-  .f1 .fase-com,.f2a .fase-com,.f3 .fase-com{color:var(--green);}
-  .f2b .fase-com,.f2c .fase-com{color:var(--f2b-ac);}
-  .fase-ing{font-family:'Fraunces',serif;font-size:20px;font-weight:700;margin-top:6px;}
-  .f1 .fase-ing{color:var(--f1-ac);} .f2a .fase-ing{color:var(--f2a-ac);} .f2b .fase-ing{color:var(--f2b-ac);} .f2c .fase-ing{color:var(--f2c-ac);} .f3 .fase-ing{color:var(--f3-ac);}
+  --amber:    #b8720a;
+  --amber-l:  #fdf3e3;
+  --amber-m:  #f5deb3;
 
-  .total-bar{background:var(--navy);color:white;padding:14px 22px;border-radius:6px;display:flex;justify-content:space-between;align-items:center;}
-  .total-bar .lbl{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#A0A8B8;}
-  .total-bar .val{font-family:'Fraunces',serif;font-size:30px;font-weight:700;color:var(--gold);}
-  .total-bar .sub{font-size:12px;color:#D0D4DE;margin-top:2px;}
+  --sage:     #4a7c5f;
+  --sage-l:   #eaf3ee;
+  --sage-m:   #c4dece;
 
-  /* CALENDARIO */
-  .cal-hdr{display:grid;grid-template-columns:repeat(7,1fr);background:var(--navy);color:white;border-radius:6px 6px 0 0;}
-  .cal-hdr div{padding:9px 4px;text-align:center;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-right:1px solid rgba(255,255,255,0.08);}
-  .cal-hdr div:last-child{border-right:none;}
-  .cal-hdr .we{color:#A0A8B8;background:rgba(0,0,0,0.08);}
+  --clay:     #8c6a4e;
+  --clay-l:   #f5ede6;
 
-  .cal{display:grid;grid-template-columns:repeat(7,1fr);border:1px solid var(--gray-light);border-top:none;border-radius:0 0 6px 6px;overflow:hidden;}
-  .cd{min-height:120px;padding:8px 9px;border-right:1px solid var(--gray-light);border-bottom:1px solid var(--gray-light);background:white;position:relative;font-size:10px;}
-  .cd:nth-child(7n){border-right:none;}
+  --sand:     #c9a96e;
+}
 
-  /* Fase backgrounds para días del calendario */
-  .cd.f1{background:var(--f1-bg);}
-  .cd.f2a{background:var(--f2a-bg);}
-  .cd.f2b{background:var(--f2b-bg);}
-  .cd.f2c{background:var(--f2c-bg);}
-  .cd.f3{background:var(--f3-bg);}
-  .cd.we{background:#F8F8F8;}
-  .cd.empty{background:var(--cream-dark);}
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
 
-  .dn{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--navy);line-height:1;margin-bottom:4px;}
-  .cd.we .dn,.cd.empty .dn{color:var(--gray-light);}
+/* ── HEADER ── */
+.header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 20px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
 
-  /* Tags del calendario */
-  .ev{font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:2px;margin-bottom:2px;display:block;line-height:1.3;letter-spacing:0.3px;text-transform:uppercase;}
-  .ev-phase{color:white;}
-  .f1 .ev-phase{background:var(--f1-ac);}
-  .f2a .ev-phase{background:var(--f2a-ac);}
-  .f2b .ev-phase{background:var(--f2b-ac);}
-  .f2c .ev-phase{background:var(--f2c-ac);}
-  .f3 .ev-phase{background:var(--f3-ac);}
-  .ev-key{background:var(--red);color:white;}
-  .ev-live{background:var(--plum);color:white;}
-  .ev-std{background:rgba(31,56,100,0.12);color:var(--navy);}
-  .ev-we{background:rgba(201,168,76,0.2);color:#7A6614;}
+.header h1 {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--ink);
+}
 
-  /* Bloques de rutina en el calendario */
-  .cd-am{margin-top:3px;}
-  .cd-am-lbl{font-size:8px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:0.5px;}
-  .cd-pm-lbl{font-size:8px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:0.5px;margin-top:3px;}
-  .cd-txt{font-size:9px;color:var(--gray);line-height:1.3;}
+.header-sub {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 400;
+  margin-top: 1px;
+  letter-spacing: 0.2px;
+}
 
-  /* CALCULADORA */
-  .calc-wrap{background:var(--white);border:1px solid var(--gray-light);border-radius:6px;overflow:hidden;}
-  .calc-top{background:var(--navy);color:white;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
-  .calc-top h3{font-family:'Fraunces',serif;font-size:17px;font-weight:600;}
-  .kpis{display:flex;gap:18px;}
-  .kpi{text-align:center;}
-  .kpi-l{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#A0A8B8;}
-  .kpi-v{font-family:'Fraunces',serif;font-size:19px;font-weight:700;color:white;}
-  .kpi-v.gold{color:var(--gold);font-size:24px;}
-  .calc-body{padding:16px 22px;}
-  .crow{display:grid;grid-template-columns:155px 1fr 58px 68px 68px 100px;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--gray-light);}
-  .crow:last-child{border-bottom:none;}
-  .crow.hdr{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gray);font-weight:600;padding-bottom:6px;}
-  .pn{font-weight:600;font-size:12px;}
-  .pn small{font-weight:400;font-size:10px;color:var(--gray);display:block;}
-  input[type="range"]{width:100%;accent-color:var(--gold);cursor:pointer;}
-  .rv{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--navy);text-align:center;}
-  .tc{font-size:10px;color:var(--gray);text-align:center;}
-  .rc{font-family:'Fraunces',serif;font-weight:700;font-size:14px;color:var(--gold);text-align:right;}
-  .rc.big{font-size:22px;color:var(--green);}
+.trm-chip {
+  background: var(--amber-l);
+  border: 1px solid var(--amber-m);
+  color: var(--amber);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
 
-  /* BARRAS */
-  .bars{background:var(--white);border:1px solid var(--gray-light);border-radius:6px;padding:18px 22px;margin-top:14px;}
-  .bars h4{font-family:'Fraunces',serif;font-size:16px;color:var(--navy);font-weight:600;margin-bottom:14px;}
-  .bar{margin-bottom:14px;}
-  .bar:last-child{margin-bottom:0;}
-  .bar-h{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;}
-  .bar-l{color:var(--gray);display:flex;align-items:center;gap:8px;}
-  .bv{font-family:'Fraunces',serif;font-weight:700;color:var(--navy);font-size:13px;}
-  .badge{font-size:9px;padding:2px 6px;border-radius:3px;font-weight:700;text-transform:uppercase;}
-  .b-n{background:var(--cream-dark);color:var(--navy);}
-  .b-l{background:var(--f2b-bg);color:var(--f2b-ac);}
-  .b-m{background:var(--green-bg);color:var(--green);}
-  .bar-track{height:10px;background:var(--gray-light);border-radius:5px;overflow:hidden;}
-  .bar-fill{height:100%;border-radius:5px;transition:width 0.3s;}
-  .bred{background:var(--red);}
-  .borg{background:#C47020;}
-  .bgld{background:var(--gold);}
-  .bgrn{background:var(--green);}
-  .bmarks{display:flex;justify-content:space-between;margin-top:3px;}
-  .bm{font-size:9px;color:var(--gray);}
-  .bm.on{color:var(--gold);font-weight:700;}
-  .bm.ok{color:var(--green);font-weight:700;}
+/* ── NAV ── */
+.nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0 12px;
+}
+.nav::-webkit-scrollbar { display: none; }
 
-  /* TIPS */
-  .alert-box{background:var(--f2b-bg);border:1px solid #D4614A;border-radius:6px;padding:13px 17px;font-size:13px;color:var(--f2b-ac);line-height:1.7;margin-bottom:14px;}
-  .alert-box strong{color:#6B0000;}
-  .tips{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-  .tip{background:var(--white);border:1px solid var(--gray-light);border-radius:6px;padding:15px 17px;}
-  .tip-i{font-size:20px;margin-bottom:7px;}
-  .tip-t{font-family:'Fraunces',serif;font-size:14px;font-weight:600;color:var(--navy);margin-bottom:5px;}
-  .tip-b{font-size:12px;color:var(--gray);line-height:1.6;}
-  .tip-b strong{color:var(--ink);}
+.nav-btn {
+  font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 11px 14px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: all 0.18s;
+}
 
-  .footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid var(--gray-light);font-size:12px;color:var(--gray);}
-  .footer em{color:var(--gold);font-style:italic;}
+.nav-btn.active {
+  color: var(--terracota);
+  border-bottom-color: var(--terracota);
+  font-weight: 700;
+}
+
+/* ── PANELS ── */
+.main { padding: 16px; max-width: 560px; margin: 0 auto; }
+.panel { display: none; }
+.panel.active { display: block; }
+
+/* ── METRICS GRID ── */
+.mg { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.mg-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+.metric {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 14px;
+}
+.metric.full { grid-column: 1 / -1; }
+.metric.m-terra { background: var(--terracota-l); border-color: var(--terracota-m); }
+.metric.m-amber { background: var(--amber-l); border-color: var(--amber-m); }
+.metric.m-sage  { background: var(--sage-l);  border-color: var(--sage-m); }
+.metric.m-clay  { background: var(--clay-l);  border-color: #e0cfc4; }
+
+.m-lbl {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.m-val {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.metric.m-terra .m-val { color: var(--terracota); }
+.metric.m-amber .m-val { color: var(--amber); }
+.metric.m-sage  .m-val { color: var(--sage); }
+.metric.m-clay  .m-val { color: var(--clay); }
+
+.m-sub {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+/* ── PROGRESS BAR ── */
+.prog-wrap { margin-bottom: 12px; }
+.prog-head { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px; font-weight: 500; }
+.prog-head span:last-child { color: var(--muted); font-weight: 400; }
+.prog-track { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.prog-fill { height: 100%; border-radius: 4px; transition: width 0.7s ease; }
+
+/* ── CARD ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+/* ── ROW LIST ── */
+.row-list { margin-bottom: 12px; }
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+  gap: 10px;
+}
+.row:last-child { border-bottom: none; }
+.row:first-child { padding-top: 0; }
+
+.row-lbl { font-size: 13px; font-weight: 500; color: var(--ink2); flex: 1; }
+.row-lbl small { display: block; font-size: 11px; color: var(--muted); font-weight: 400; margin-top: 1px; }
+.row-val { font-size: 14px; font-weight: 700; color: var(--ink); white-space: nowrap; }
+
+.row-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--ink);
+  border-radius: 10px;
+  margin-top: 4px;
+}
+.row-total span { font-size: 11px; font-weight: 600; color: #b8afa8; text-transform: uppercase; letter-spacing: 0.5px; }
+.row-total strong { font-size: 17px; font-weight: 800; color: #fff; }
+
+/* ── BADGE ── */
+.badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+.b-terra  { background: var(--terracota-l); color: var(--terracota); border: 1px solid var(--terracota-m); }
+.b-amber  { background: var(--amber-l); color: var(--amber); border: 1px solid var(--amber-m); }
+.b-sage   { background: var(--sage-l); color: var(--sage); border: 1px solid var(--sage-m); }
+.b-clay   { background: var(--clay-l); color: var(--clay); border: 1px solid #e0cfc4; }
+.b-muted  { background: var(--surface2); color: var(--muted); border: 1px solid var(--border); }
+
+/* ── ALERT ── */
+.alert {
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  border: 1px solid;
+}
+.alert-terra  { background: var(--terracota-l); border-color: var(--terracota-m); }
+.alert-amber  { background: var(--amber-l);  border-color: var(--amber-m); }
+.alert-sage   { background: var(--sage-l);   border-color: var(--sage-m); }
+
+.alert-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.alert-terra .alert-title { color: var(--terracota); }
+.alert-amber .alert-title { color: var(--amber); }
+.alert-sage  .alert-title { color: var(--sage); }
+
+.alert p { font-size: 12px; color: var(--ink2); line-height: 1.7; }
+
+/* ── SECTION LABEL ── */
+.slabel {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 18px 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.slabel::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ── INPUT ── */
+.inp-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  gap: 10px;
+}
+.inp-row:last-child { border-bottom: none; }
+.inp-row:first-child { padding-top: 0; }
+
+.inp-lbl { font-size: 13px; font-weight: 500; flex: 1; color: var(--ink2); }
+.inp-lbl small { display: block; font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+.inp {
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 10px;
+  width: 120px;
+  text-align: right;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.inp:focus { border-color: var(--terracota); background: var(--surface); }
+
+.inp-display {
+  font-size: 14px;
+  font-weight: 700;
+  text-align: right;
+  min-width: 110px;
+  color: var(--ink);
+}
+
+/* ── TOTALS BOX ── */
+.totals-box {
+  background: var(--surface2);
+  border-radius: 10px;
+  padding: 14px;
+  margin-top: 10px;
+}
+.totals-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+.totals-row:not(:last-child) { border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 3px; }
+.totals-row .t-lbl { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.totals-row .t-val { font-size: 15px; font-weight: 800; }
+
+/* ── DEBT CARD ── */
+.debt-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+
+.dh { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; gap: 8px; }
+.d-name { font-size: 15px; font-weight: 700; color: var(--ink); }
+.d-name small { display: block; font-size: 11px; color: var(--muted); font-weight: 400; margin-top: 2px; }
+.d-amount { font-size: 16px; font-weight: 800; text-align: right; }
+
+.d-bar { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; margin-bottom: 6px; }
+.d-fill { height: 100%; border-radius: 3px; background: var(--sage); transition: width 0.6s ease; }
+
+.d-meta { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-bottom: 10px; }
+
+.abono-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.abono-lbl { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; flex: 1; }
+
+.abono-inp {
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 9px;
+  width: 100px;
+  text-align: right;
+  outline: none;
+}
+.abono-inp:focus { border-color: var(--sage); background: var(--surface); }
+
+.abono-btn {
+  background: var(--sage-l);
+  border: 1px solid var(--sage-m);
+  color: var(--sage);
+  font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.abono-btn:active { background: var(--sage-m); }
+
+/* ── COLCHÓN HERO ── */
+.colchon-hero {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px 20px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.ch-pct { font-size: 56px; font-weight: 800; letter-spacing: -2px; color: var(--amber); line-height: 1; }
+.ch-lbl { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
+.ch-meta { font-size: 14px; font-weight: 600; color: var(--ink2); margin-top: 8px; }
+
+/* ── TIMELINE ── */
+.timeline { position: relative; padding-left: 22px; }
+.timeline::before { content: ''; position: absolute; left: 7px; top: 10px; bottom: 10px; width: 1px; background: var(--border); }
+
+.t-item { position: relative; margin-bottom: 18px; }
+.t-dot { position: absolute; left: -18px; top: 5px; width: 10px; height: 10px; border-radius: 50%; border: 2px solid; }
+.d-terra  { border-color: var(--terracota); background: var(--terracota-l); }
+.d-sage   { border-color: var(--sage);  background: var(--sage-l); }
+.d-amber  { border-color: var(--amber); background: var(--amber-l); }
+.d-clay   { border-color: var(--clay);  background: var(--clay-l); }
+.d-muted  { border-color: var(--muted2); background: var(--surface2); }
+
+.t-date { font-size: 10px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; }
+.t-title { font-size: 14px; font-weight: 700; color: var(--ink); margin: 3px 0 4px; }
+.t-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+.t-amount { font-size: 13px; font-weight: 700; margin-top: 4px; }
+
+/* ── STEP ── */
+.step { display: flex; gap: 12px; margin-bottom: 12px; }
+.step-n {
+  width: 26px; height: 26px; min-width: 26px;
+  background: var(--terracota);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.step-b h4 { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+.step-b p { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+/* ── INCOME CARD ── */
+.inc-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+
+.inc-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; gap: 8px; }
+.inc-title { font-size: 14px; font-weight: 700; color: var(--ink); }
+.inc-range { font-size: 13px; font-weight: 700; color: var(--sage); white-space: nowrap; }
+.inc-tag { font-size: 10px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.inc-desc { font-size: 12px; color: var(--muted); line-height: 1.7; }
+
+.phase-lbl {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--amber);
+  background: var(--amber-l);
+  border: 1px solid var(--amber-m);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+/* ── COVERAGE BAR ── */
+.coverage-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+@media (min-width: 560px) {
+  .main { padding: 20px 24px; }
+}
 </style>
 </head>
 <body>
-<div class="page">
 
-  <div class="hdr">
-    <div class="eyebrow">Plan mensual específico</div>
-    <h1>Mayo <em>2026</em></h1>
-    <p class="stitle">Quiz 5 citas/día todos los días hábiles · Lanzamiento May 11–19 · Carrito May 14–19 · Com. normal vuelve May 26</p>
+<div class="header">
+  <div>
+    <h1>Cash Flow</h1>
+    <div class="header-sub">David Muñoz · Mayo 2026 · TRM $3.600</div>
   </div>
+  <div style="display:flex;align-items:center;gap:8px;">
+    <span id="save-indicator" style="font-size:10px;font-weight:600;color:var(--sage);background:var(--sage-l);border:1px solid var(--sage-m);padding:3px 9px;border-radius:20px;opacity:0;transition:opacity 0.4s;">✓ Guardado</span>
+    <div class="trm-chip">TRM $3.600</div>
+    <button onclick="resetMes()" style="background:none;border:1px solid var(--border2);color:var(--muted);font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:600;padding:4px 9px;border-radius:20px;cursor:pointer;">Reset</button>
+  </div>
+</div>
 
-  <!-- FASES -->
-  <div class="sec">
-    <div class="sec-h">Vista general del mes <span>— 21 días hábiles, 5 citas cada uno</span></div>
-    <div class="fases">
-      <div class="fase f1">
-        <div class="fn">Fase 1</div>
-        <h4>Pre-launch</h4>
-        <div class="fase-d">May 1, 4–8 · 6 días</div>
-        <div class="fase-com">Com. normal · MST $300 · MDD $90</div>
-        <div class="fase-ing" id="fi1">$0</div>
-      </div>
-      <div class="fase f2a">
-        <div class="fn">Fase 2a</div>
-        <h4>Calentamiento</h4>
-        <div class="fase-d">May 11–13 · 3 días</div>
-        <div class="fase-com">Com. normal aún · carrito no abre</div>
-        <div class="fase-ing" id="fi2a">$0</div>
-      </div>
-      <div class="fase f2b">
-        <div class="fn">Fase 2b</div>
-        <h4>Carrito Abierto</h4>
-        <div class="fase-d">May 14–19 · 4 días hábiles</div>
-        <div class="fase-com">Lanzamiento · MDD $20 · MST $300</div>
-        <div class="fase-ing" id="fi2b">$0</div>
-      </div>
-      <div class="fase f2c">
-        <div class="fn">Fase 2c</div>
-        <h4>FUP Urgente</h4>
-        <div class="fase-d">May 20–25 · 4 días hábiles</div>
-        <div class="fase-com">Lanzamiento · MDD $20 · MST $300</div>
-        <div class="fase-ing" id="fi2c">$0</div>
-      </div>
-      <div class="fase f3">
-        <div class="fn">Fase 3</div>
-        <h4>Barrido + Quiz</h4>
-        <div class="fase-d">May 26–29 · 4 días hábiles</div>
-        <div class="fase-com">Com. normal · MST $300 · MDD $90</div>
-        <div class="fase-ing" id="fi3">$0</div>
-      </div>
+<div class="nav">
+  <button class="nav-btn active" onclick="showPanel('resumen',this)">Resumen</button>
+  <button class="nav-btn" onclick="showPanel('ingresos',this)">Ingresos</button>
+  <button class="nav-btn" onclick="showPanel('gastos',this)">Gastos</button>
+  <button class="nav-btn" onclick="showPanel('deudas',this)">Deudas</button>
+  <button class="nav-btn" onclick="showPanel('colchon',this)">Colchón</button>
+  <button class="nav-btn" onclick="showPanel('timing',this)">Timing</button>
+  <button class="nav-btn" onclick="showPanel('mas',this)">Ingresos+</button>
+</div>
+
+<div class="main">
+
+<!-- RESUMEN -->
+<div id="panel-resumen" class="panel active">
+
+  <div class="mg">
+    <div class="metric m-sage">
+      <div class="m-lbl">Ingresado</div>
+      <div class="m-val" id="r-ingresado">$0</div>
+      <div class="m-sub">este mes</div>
     </div>
-    <div class="total-bar">
-      <div>
-        <div class="lbl">Total mes proyectado</div>
-        <div class="sub" id="total-sub">Ajusta los sliders en la calculadora</div>
-      </div>
-      <div class="val" id="total-mes">$0</div>
+    <div class="metric" id="r-margen-card">
+      <div class="m-lbl">Margen</div>
+      <div class="m-val" id="r-margen">$0</div>
+      <div class="m-sub">vs gastos + diezmo</div>
+    </div>
+    <div class="metric m-terra">
+      <div class="m-lbl">Gastos fijos</div>
+      <div class="m-val">$3.336.000</div>
+      <div class="m-sub">mensual</div>
+    </div>
+    <div class="metric m-clay">
+      <div class="m-lbl">Diezmo</div>
+      <div class="m-val" id="r-diezmo">$0</div>
+      <div class="m-sub">10% de ingresos</div>
     </div>
   </div>
 
-  <!-- CALENDARIO -->
-  <div class="sec">
-    <div class="sec-h">Calendario Mayo 2026 <span>— cada día hábil con mañana + 5 citas tarde</span></div>
-
-    <div class="cal-hdr">
-      <div class="we">Dom</div>
-      <div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div>
-      <div class="we">Sáb</div>
-    </div>
-
-    <div class="cal">
-
-      <!-- FILA 1: vacíos (Dom-Jue de semana pasada) + May 1 (Vie) + May 2 (Sáb) -->
-      <div class="cd empty"><div class="dn"></div></div>
-      <div class="cd empty"><div class="dn"></div></div>
-      <div class="cd empty"><div class="dn"></div></div>
-      <div class="cd empty"><div class="dn"></div></div>
-      <div class="cd empty"><div class="dn"></div></div>
-
-      <!-- May 1 Vie — F1 Victory -->
-      <div class="cd f1">
-        <div class="dn">1</div>
-        <span class="ev ev-std">Victory · Juanjo 9am</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">FUP pipeline abril · activar asistentes clase</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz 13:30–18:15</div>
-        </div>
-      </div>
-      <!-- May 2 Sáb -->
-      <div class="cd we"><div class="dn">2</div><div class="cd-txt" style="margin-top:4px;font-size:9px;">FUP WhatsApp</div></div>
-
-      <!-- FILA 2: May 3–9 -->
-      <!-- May 3 Dom -->
-      <div class="cd we"><div class="dn">3</div></div>
-
-      <!-- May 4 Lun — F1 Warm Up -->
-      <div class="cd f1">
-        <div class="dn">4</div>
-        <span class="ev ev-std">Warm Up · Juanjo 9am</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">FUP día 1/3 leads · 13 asistentes clase</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · pitch MST→MDD</div>
-        </div>
-      </div>
-
-      <!-- May 5 Mar — F1 Cool Down -->
-      <div class="cd f1">
-        <div class="dn">5</div>
-        <span class="ev ev-std">Cool Down · 9am</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">FUP día 3 leads · 13 asistentes clase</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · pitch MST→MDD</div>
-        </div>
-      </div>
-
-      <!-- May 6 Mié — F1 Warm Up + LIVE -->
-      <div class="cd f1">
-        <div class="dn">6</div>
-        <span class="ev ev-std">Warm Up · 9am</span>
-        <span class="ev ev-live">Live Máquina 7pm</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">FUP día 5 · nurturing 21 leads</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz + prep Live noche</div>
-        </div>
-      </div>
-
-      <!-- May 7 Jue — F1 Cool Down -->
-      <div class="cd f1">
-        <div class="dn">7</div>
-        <span class="ev ev-std">Cool Down · 9am</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">FUP día 7 · cerrar ventana leads May 1 · calientes Live</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · pitch MST→MDD</div>
-        </div>
-      </div>
-
-      <!-- May 8 Vie — F1 Victory -->
-      <div class="cd f1">
-        <div class="dn">8</div>
-        <span class="ev ev-std">Victory · 9am</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">Métricas sem 1 · activar tibios CRM 10/día</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · preparar listas lanzamiento</div>
-        </div>
-      </div>
-
-      <!-- May 9 Sáb -->
-      <div class="cd we"><div class="dn">9</div><div class="cd-txt" style="margin-top:4px;font-size:9px;">FUP WA · preparar estrategia lanzam.</div></div>
-
-      <!-- FILA 3: May 10–16 -->
-      <!-- May 10 Dom -->
-      <div class="cd we"><div class="dn">10</div><div class="cd-txt" style="margin-top:4px;font-size:9px;">Revisar lista lanzamiento</div></div>
-
-      <!-- May 11 Lun — F2a Warm Up · LAUNCH STARTS -->
-      <div class="cd f2a">
-        <div class="dn">11</div>
-        <span class="ev ev-phase">🚀 INICIA LANZAMIENTO</span>
-        <span class="ev ev-std">Warm Up · 9am</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">Activar listas lanzamiento · mensajes a barrido previo</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · com normal aún</div>
-        </div>
-      </div>
-
-      <!-- May 12 Mar — F2a Cool Down -->
-      <div class="cd f2a">
-        <div class="dn">12</div>
-        <span class="ev ev-std">Cool Down · 9am</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">Calentar leads lanzamiento · FUP Quiz pendientes sem 1</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · cerrar MST antes del 14 vale $300</div>
-        </div>
-      </div>
-
-      <!-- May 13 Mié — F2a Warm Up + LIVE Invitado -->
-      <div class="cd f2a">
-        <div class="dn">13</div>
-        <span class="ev ev-phase">Último día com. normal MDD</span>
-        <span class="ev ev-std">Warm Up · 9am</span>
-        <span class="ev ev-live">Live Invitado 7pm</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">Máx cierre MDD $90 hoy · mañana baja a $20</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · urgencia: hoy com. normal</div>
-        </div>
-      </div>
-
-      <!-- May 14 Jue — F2b · CARRITO ABRE -->
-      <div class="cd f2b">
-        <div class="dn">14</div>
-        <span class="ev ev-key">🛒 CARRITO ABRE</span>
-        <span class="ev ev-std">Cool Down · 9am</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">Lanzamiento full · llamadas activas · cerrar calientes</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · MST $300 · MDD ya a $20</div>
-        </div>
-      </div>
-
-      <!-- May 15 Vie — F2b Victory -->
-      <div class="cd f2b">
-        <div class="dn">15</div>
-        <span class="ev ev-std">Victory · 9am</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">Cierre agresivo lanzamiento · viernes = alta decisión</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · antes del fin de semana</div>
-        </div>
-      </div>
-
-      <!-- May 16 Sáb -->
-      <div class="cd we"><div class="dn">16</div><div class="cd-txt" style="margin-top:4px;font-size:9px;color:#8B2020;font-weight:600;">FUP WA activo · carrito sigue abierto lunes</div></div>
-
-      <!-- FILA 4: May 17–23 -->
-      <!-- May 17 Dom -->
-      <div class="cd we"><div class="dn">17</div><div class="cd-txt" style="margin-top:4px;font-size:9px;color:#8B2020;">FUP WA · preparar cierre lunes 18</div></div>
-
-      <!-- May 18 Lun — F2b Warm Up -->
-      <div class="cd f2b">
-        <div class="dn">18</div>
-        <span class="ev ev-std">Warm Up · 9am</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">Lanzamiento · reagendar no-respuestas fin de sem · llamadas</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · carrito cierra mañana</div>
-        </div>
-      </div>
-
-      <!-- May 19 Mar — F2b Cool Down · CARRITO CIERRA -->
-      <div class="cd f2b">
-        <div class="dn">19</div>
-        <span class="ev ev-key">🔒 CARRITO CIERRA HOY</span>
-        <span class="ev ev-std">Cool Down · 9am</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">Presión máxima · 3 opciones a todo lead tibio · cero pendientes</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · cierre del día con urgencia real</div>
-        </div>
-      </div>
-
-      <!-- May 20 Mié — F2c Warm Up + LIVE Maestría -->
-      <div class="cd f2c">
-        <div class="dn">20</div>
-        <span class="ev ev-phase">FUP URGENTE</span>
-        <span class="ev ev-std">Warm Up · 9am</span>
-        <span class="ev ev-live">Live Maestría 7pm</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">FUP rezagados lanzamiento · llamadas directas</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · MST sigue $300</div>
-        </div>
-      </div>
-
-      <!-- May 21 Jue — F2c Cool Down -->
-      <div class="cd f2c">
-        <div class="dn">21</div>
-        <span class="ev ev-std">Cool Down · 9am</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">FUP calientes del Live anoche · separar acceso vs deseo</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · MDD lanzam $20 · MST $300</div>
-        </div>
-      </div>
-
-      <!-- May 22 Vie — F2c Victory -->
-      <div class="cd f2c">
-        <div class="dn">22</div>
-        <span class="ev ev-std">Victory · 9am</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">Métricas mes · rezagados lanzam · plan de pago últimos</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · categorizar leads barrido post-25</div>
-        </div>
-      </div>
-
-      <!-- May 23 Sáb -->
-      <div class="cd we"><div class="dn">23</div><div class="cd-txt" style="margin-top:4px;font-size:9px;color:#8B5A14;">FUP WA · última ronda rezagados</div></div>
-
-      <!-- FILA 5: May 24–30 -->
-      <!-- May 24 Dom -->
-      <div class="cd we"><div class="dn">24</div><div class="cd-txt" style="margin-top:4px;font-size:9px;color:#8B5A14;">Clasificar lista barrido para el 26</div></div>
-
-      <!-- May 25 Lun — F2c Warm Up · ÚLTIMO DÍA COM LANZAMIENTO -->
-      <div class="cd f2c">
-        <div class="dn">25</div>
-        <span class="ev ev-key">⏰ ÚLTIMO DÍA COM LANZAM.</span>
-        <span class="ev ev-std">Warm Up · 9am</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">Cerrar TODO rezagado hoy · mañana vuelve com normal</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · MST $300 · MDD hoy $20 (último día)</div>
-        </div>
-      </div>
-
-      <!-- May 26 Mar — F3 · COM NORMAL VUELVE -->
-      <div class="cd f3">
-        <div class="dn">26</div>
-        <span class="ev ev-phase">✅ COM NORMAL VUELVE</span>
-        <span class="ev ev-std">Cool Down · 9am</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">Barrido caliente: leads que dijeron "después del lanzamiento"</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · MDD vuelve a $90</div>
-        </div>
-      </div>
-
-      <!-- May 27 Mié — F3 Warm Up + LIVE Caso éxito -->
-      <div class="cd f3">
-        <div class="dn">27</div>
-        <span class="ev ev-std">Warm Up · 9am</span>
-        <span class="ev ev-live">Live Caso éxito 7pm</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">Barrido · leads tibios lanzamiento → invitar a MST</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · 1 MDD aquí = 4.5 MDD del lanzamiento</div>
-        </div>
-      </div>
-
-      <!-- May 28 Jue — F3 Cool Down -->
-      <div class="cd f3">
-        <div class="dn">28</div>
-        <span class="ev ev-std">Cool Down · 9am</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">Barrido + FUP calientes Live · cerrar MST pendientes</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · pipeline barrido</div>
-        </div>
-      </div>
-
-      <!-- May 29 Vie — F3 Victory CIERRE DE MES -->
-      <div class="cd f3">
-        <div class="dn">29</div>
-        <span class="ev ev-phase">🏁 CIERRE DE MES</span>
-        <span class="ev ev-std">Victory · 9am</span>
-        <div class="cd-am">
-          <div class="cd-am-lbl">Mañana</div>
-          <div class="cd-txt">Métricas finales mes · leads a nurture 90 días · plan junio</div>
-          <div class="cd-pm-lbl">Tarde</div>
-          <div class="cd-txt">5 citas Quiz · cerrar lo que quede</div>
-        </div>
-      </div>
-
-      <!-- May 30 Sáb -->
-      <div class="cd we"><div class="dn">30</div></div>
-
-      <!-- FILA 6: May 31 Dom + vacíos -->
-      <div class="cd we"><div class="dn">31</div></div>
-      <div class="cd empty"></div>
-      <div class="cd empty"></div>
-      <div class="cd empty"></div>
-      <div class="cd empty"></div>
-      <div class="cd empty"></div>
-      <div class="cd empty"></div>
-
-    </div><!-- /cal -->
-
-    <!-- LEYENDA -->
-    <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;padding:12px 16px;background:var(--white);border:1px solid var(--gray-light);border-radius:6px;font-size:11px;">
-      <div style="display:flex;align-items:center;gap:7px;"><div style="width:14px;height:14px;background:var(--f1-bg);border-left:3px solid var(--f1-ac);border-radius:2px;"></div>Fase 1: Pre-launch</div>
-      <div style="display:flex;align-items:center;gap:7px;"><div style="width:14px;height:14px;background:var(--f2a-bg);border-left:3px solid var(--f2a-ac);border-radius:2px;"></div>Fase 2a: Calentamiento</div>
-      <div style="display:flex;align-items:center;gap:7px;"><div style="width:14px;height:14px;background:var(--f2b-bg);border-left:3px solid var(--f2b-ac);border-radius:2px;"></div>Fase 2b: Carrito Abierto</div>
-      <div style="display:flex;align-items:center;gap:7px;"><div style="width:14px;height:14px;background:var(--f2c-bg);border-left:3px solid var(--f2c-ac);border-radius:2px;"></div>Fase 2c: FUP Urgente</div>
-      <div style="display:flex;align-items:center;gap:7px;"><div style="width:14px;height:14px;background:var(--f3-bg);border-left:3px solid var(--f3-ac);border-radius:2px;"></div>Fase 3: Barrido + Quiz</div>
-      <div style="display:flex;align-items:center;gap:7px;"><div style="width:14px;height:14px;background:var(--plum);border-radius:2px;"></div>Zoom Live 7pm</div>
-    </div>
+  <div class="metric m-amber full" style="margin-bottom:12px;">
+    <div class="m-lbl">Falta para cubrir gastos</div>
+    <div class="m-val" id="r-falta">$3.336.000</div>
+    <div class="m-sub" id="r-falta-sub">ingresos pendientes este mes</div>
   </div>
 
-  <!-- CALCULADORA -->
-  <div class="sec">
-    <div class="sec-h">Calculadora Mayo <span>— mueve los sliders, todo se recalcula</span></div>
-    <div class="calc-wrap">
-      <div class="calc-top">
-        <h3>Proyección de comisión</h3>
-        <div class="kpis">
-          <div class="kpi"><div class="kpi-l">V. Quiz</div><div class="kpi-v" id="kq">0</div></div>
-          <div class="kpi"><div class="kpi-l">V. Lanzam.</div><div class="kpi-v" id="kl">0</div></div>
-          <div class="kpi"><div class="kpi-l">Total ventas</div><div class="kpi-v" id="kt">0</div></div>
-          <div class="kpi"><div class="kpi-l">Total comisión</div><div class="kpi-v gold" id="kc">$0</div></div>
-        </div>
-      </div>
-      <div class="calc-body">
-        <div class="crow hdr">
-          <div>Fuente / Fase</div><div>Cantidad</div><div>Ventas</div><div>Com/v</div><div>Ticket</div><div style="text-align:right">Ingreso</div>
-        </div>
-
-        <!-- MST Quiz - siempre normal -->
-        <div class="crow">
-          <div class="pn" style="border-left:3px solid var(--f1-ac);padding-left:7px;">MST · Quiz (todo el mes)<small>Fases 1,2a,2b,2c,3 · siempre $300</small></div>
-          <input type="range" id="mst" min="0" max="12" value="4" oninput="rc()">
-          <div class="rv" id="rv-mst">4</div>
-          <div class="tc">$300</div><div class="tc">$10K</div>
-          <div class="rc" id="r-mst">$1,200</div>
-        </div>
-
-        <!-- MDD Quiz F1+F2a+F3 normal -->
-        <div class="crow">
-          <div class="pn" style="border-left:3px solid var(--f1-ac);padding-left:7px;">MDD · Quiz com. normal<small>Fases 1, 2a, 3 · May 1–13 + 26–29 · $90</small></div>
-          <input type="range" id="mddN" min="0" max="20" value="9" oninput="rc()">
-          <div class="rv" id="rv-mddN">9</div>
-          <div class="tc">$90</div><div class="tc">$1,995</div>
-          <div class="rc" id="r-mddN">$810</div>
-        </div>
-
-        <!-- MDD Quiz F2b+F2c lanzamiento rates -->
-        <div class="crow" style="background:#FFF5F3;">
-          <div class="pn" style="border-left:3px solid var(--f2b-ac);padding-left:7px;">MDD · Quiz com. lanzamiento<small>Fases 2b, 2c · May 14–25 · $20</small></div>
-          <input type="range" id="mddL" min="0" max="15" value="3" oninput="rc()">
-          <div class="rv" id="rv-mddL">3</div>
-          <div class="tc" style="color:var(--f2b-ac);font-weight:700;">$20</div><div class="tc">$1,995</div>
-          <div class="rc" id="r-mddL">$60</div>
-        </div>
-
-        <!-- Lanzamiento - 60 meta -->
-        <div class="crow" style="background:#FFF0EC;">
-          <div class="pn" style="border-left:3px solid var(--f2b-ac);padding-left:7px;">MDD · Lanzamiento (meta 60)<small>May 14–25 · $20 contado</small></div>
-          <input type="range" id="lanz" min="0" max="80" value="60" oninput="rc()">
-          <div class="rv" id="rv-lanz">60</div>
-          <div class="tc" style="color:var(--f2b-ac);font-weight:700;">$20</div><div class="tc">$1,995</div>
-          <div class="rc" id="r-lanz">$1,200</div>
-        </div>
-
-        <!-- Barrido post-lanzamiento -->
-        <div class="crow">
-          <div class="pn" style="border-left:3px solid var(--f3-ac);padding-left:7px;">Barrido post-lanzamiento<small>Fase 3 · May 26–29 · $90 normal</small></div>
-          <input type="range" id="barr" min="0" max="20" value="5" oninput="rc()">
-          <div class="rv" id="rv-barr">5</div>
-          <div class="tc">$90</div><div class="tc">$1,995</div>
-          <div class="rc" id="r-barr">$450</div>
-        </div>
-
-        <!-- Códigos -->
-        <div class="crow">
-          <div class="pn">Códigos del Dinero<small>FUP seguimientos · $30</small></div>
-          <input type="range" id="cdd" min="0" max="8" value="2" oninput="rc()">
-          <div class="rv" id="rv-cdd">2</div>
-          <div class="tc">$30</div><div class="tc">$420</div>
-          <div class="rc" id="r-cdd">$60</div>
-        </div>
-
-        <!-- TOTAL -->
-        <div class="crow" style="border-top:2px solid var(--gold-light);">
-          <div class="pn" style="font-weight:700;color:var(--navy);">TOTAL MAYO</div>
-          <div></div>
-          <div class="rv" id="rv-tot" style="font-size:16px;">0</div>
-          <div></div>
-          <div class="tc" style="font-family:'Fraunces',serif;font-weight:700;color:var(--navy);font-size:12px;" id="fact-tot">$0</div>
-          <div class="rc big" id="r-tot">$0</div>
-        </div>
-      </div>
+  <div class="coverage-card">
+    <div class="prog-head"><span>Cobertura del mes</span><span id="cov-pct">0%</span></div>
+    <div class="prog-track">
+      <div class="prog-fill" id="cov-bar" style="width:0%;background:var(--sage);"></div>
     </div>
-
-    <!-- BARRAS -->
-    <div class="bars">
-      <h4>¿Cómo va el mes?</h4>
-
-      <div class="bar">
-        <div class="bar-h">
-          <div class="bar-l">Ventas lanzamiento <span class="badge b-l">meta: 60</span></div>
-          <div class="bv" id="bv-lanz">0/60</div>
-        </div>
-        <div class="bar-track"><div class="bar-fill" id="bf-lanz" style="width:0%"></div></div>
-        <div class="bmarks">
-          <span class="bm">0</span>
-          <span class="bm" id="bm-l30">30</span>
-          <span class="bm" id="bm-l60">60 meta</span>
-          <span class="bm" id="bm-l80">80+</span>
-        </div>
-      </div>
-
-      <div class="bar">
-        <div class="bar-h">
-          <div class="bar-l">Comisión total mes <span class="badge b-n">mínimo: $1.5K</span></div>
-          <div class="bv" id="bv-com">$0</div>
-        </div>
-        <div class="bar-track"><div class="bar-fill" id="bf-com" style="width:0%"></div></div>
-        <div class="bmarks">
-          <span class="bm">$0</span>
-          <span class="bm" id="bm-c15">$1.5K</span>
-          <span class="bm" id="bm-c2k">$2K meta</span>
-          <span class="bm" id="bm-c3k">$3K</span>
-          <span class="bm">$4K+</span>
-        </div>
-      </div>
-
-      <div class="bar">
-        <div class="bar-h">
-          <div class="bar-l">Facturación total mes <span class="badge b-m">hito bono: $25K</span></div>
-          <div class="bv" id="bv-fact">$0</div>
-        </div>
-        <div class="bar-track"><div class="bar-fill" id="bf-fact" style="width:0%"></div></div>
-        <div class="bmarks">
-          <span class="bm">$0</span>
-          <span class="bm" id="bm-f25">$25K bono</span>
-          <span class="bm" id="bm-f60">$60K</span>
-          <span class="bm" id="bm-f100">$100K</span>
-          <span class="bm">$120K+</span>
-        </div>
-      </div>
-    </div>
+    <div style="font-size:11px;color:var(--muted);margin-top:6px;" id="cov-label">Meta: $3.336.000</div>
   </div>
 
-  <!-- TIPS CLAVE -->
-  <div class="sec">
-    <div class="sec-h">Claves estratégicas del mes</div>
-    <div class="alert-box">
-      ⚠️ <strong>El error más caro de mayo:</strong> pausar el Quiz por el lanzamiento. 1 MST cerrada en Quiz Fase 1 o Fase 3 = $300 = 15 ventas de lanzamiento en comisión. El Quiz y el lanzamiento no compiten — son paralelos. Las mañanas son de lanzamiento/barrido, las tardes son de Quiz siempre.
-    </div>
-    <div class="tips">
-      <div class="tip">
-        <div class="tip-i">📅</div>
-        <div class="tip-t">May 13 es tu día de cierre más rentable de la primera quincena</div>
-        <div class="tip-b">
-          Último día de comisión normal para MDD. Cualquier Máquina que cierres hoy vale $90. Mañana (May 14) baja a $20. <strong>Prioriza citas con leads más calientes para hoy.</strong>
-        </div>
-      </div>
-      <div class="tip">
-        <div class="tip-i">🔥</div>
-        <div class="tip-t">May 19 es el día de mayor presión del mes — úsalo bien</div>
-        <div class="tip-b">
-          Carrito cierra hoy. La urgencia es real y los leads lo saben. <strong>No dejes lead tibio sin un toque directo hoy.</strong> Llama, no solo WA. 3 opciones claras: entra hoy, plan de pagos, o lo dejo para junio.
-        </div>
-      </div>
-      <div class="tip">
-        <div class="tip-i">⭐</div>
-        <div class="tip-t">May 26–29 son los días más rentables por venta del mes</div>
-        <div class="tip-b">
-          Comisión normal vuelve. Tienes pipeline caliente del lanzamiento (leads que ya vieron a Álvaro, ya saben qué es MDD). <strong>1 MDD aquí = $90. El equivalente del lanzamiento eran 4.5 ventas.</strong> Prioriza barrido caliente + MST pendientes.
-        </div>
-      </div>
-      <div class="tip">
-        <div class="tip-i">📊</div>
-        <div class="tip-t">Métrica clave para los Victory del mes</div>
-        <div class="tip-b">
-          Cada viernes: (1) ventas lanzamiento acumuladas vs 60, (2) MST cerradas del mes, (3) comisión acumulada. <strong>Si llegas al Victory del 15 con menos de 20 ventas de lanzamiento, ajusta el FUP de inmediato.</strong>
-        </div>
-      </div>
-    </div>
+  <div class="alert alert-terra">
+    <div class="alert-title">🔥 Interés activo: $263.000/mes</div>
+    <p>Richard ($200K) + Pablo ($63K) en puro interés cada mes. Liquidar Richard es la prioridad #1.</p>
   </div>
 
-  <div class="footer">
-    David Muñoz · Luque Academy · <em>Plan específico Mayo 2026 · 21 días hábiles · 5 citas Quiz/día</em>
+  <div class="slabel">Deudas con interés</div>
+  <div class="mg">
+    <div class="metric m-terra">
+      <div class="m-lbl">Richard · 10%/mes</div>
+      <div class="m-val" style="font-size:20px;" id="r-richard">$2.000.000</div>
+      <div class="m-sub">$200K interés/mes</div>
+    </div>
+    <div class="metric m-amber">
+      <div class="m-lbl">Pablo · 3%/mes</div>
+      <div class="m-val" style="font-size:20px;" id="r-pablo">$2.100.000</div>
+      <div class="m-sub">$63K interés/mes</div>
+    </div>
   </div>
 
 </div>
 
+<!-- INGRESOS -->
+<div id="panel-ingresos" class="panel">
+
+  <div class="card">
+    <div class="card-title">Registra lo que ha entrado</div>
+    <div class="inp-row">
+      <div class="inp-lbl">Salario base <small>Llega días 28–31</small></div>
+      <input class="inp" id="i-salario" type="number" placeholder="0" value="0" oninput="calcular()">
+    </div>
+    <div class="inp-row">
+      <div class="inp-lbl">Comisiones <small>En dólares · TRM $3.500</small></div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <input class="inp" id="i-usd" type="number" placeholder="0" value="0" style="width:80px;" oninput="calcular()">
+        <span style="font-size:12px;font-weight:600;color:var(--muted);">USD</span>
+      </div>
+    </div>
+    <div class="inp-row">
+      <div class="inp-lbl">En COP <small id="i-cop-lbl">= $0</small></div>
+      <div class="inp-display" id="i-cop" style="color:var(--sage);">$0</div>
+    </div>
+    <div class="inp-row">
+      <div class="inp-lbl">Otro ingreso <small>Cualquier entrada extra</small></div>
+      <input class="inp" id="i-otro" type="number" placeholder="0" value="0" oninput="calcular()">
+    </div>
+    <div class="totals-box">
+      <div class="totals-row">
+        <span class="t-lbl">Total ingresado</span>
+        <span class="t-val" id="i-total" style="color:var(--sage);">$0</span>
+      </div>
+      <div class="totals-row">
+        <span class="t-lbl">Diezmo (sale primero)</span>
+        <span class="t-val" id="i-diezmo" style="color:var(--clay);font-size:14px;">$0</span>
+      </div>
+      <div class="totals-row" style="border:none;padding:0;margin:0;">
+        <span class="t-lbl">Disponible real</span>
+        <span class="t-val" id="i-disponible" style="color:var(--amber);">$0</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Distribución sugerida</div>
+    <div class="inp-row">
+      <div class="inp-lbl">Gastos del mes</div>
+      <div class="inp-display" style="color:var(--terracota);">$3.336.000</div>
+    </div>
+    <div class="inp-row">
+      <div class="inp-lbl">Colchón (10%)</div>
+      <div class="inp-display" id="d-colchon" style="color:var(--amber);">$0</div>
+    </div>
+    <div class="inp-row">
+      <div class="inp-lbl">Para deudas</div>
+      <div class="inp-display" id="d-deudas" style="color:var(--sage);">$0</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- GASTOS -->
+<div id="panel-gastos" class="panel">
+
+  <div class="card">
+    <div class="card-title">Gastos fijos mensuales</div>
+    <div class="row-list">
+      <div class="row"><div class="row-lbl">Renta</div><div class="row-val">$650.000</div></div>
+      <div class="row"><div class="row-lbl">Agua, luz, gas, internet</div><div class="row-val">$300.000</div></div>
+      <div class="row"><div class="row-lbl">Mercado</div><div class="row-val">$500.000</div></div>
+      <div class="row"><div class="row-lbl">Salud familiar</div><div class="row-val">$550.000</div></div>
+      <div class="row"><div class="row-lbl">Medicina Rafaela (GLP)</div><div class="row-val">$350.000</div></div>
+      <div class="row"><div class="row-lbl">Rainbow · Homeschool Elías</div><div class="row-val">$360.000</div></div>
+      <div class="row"><div class="row-lbl">Natación Elías</div><div class="row-val">$326.000</div></div>
+      <div class="row"><div class="row-lbl">Perros</div><div class="row-val">$160.000</div></div>
+      <div class="row">
+        <div class="row-lbl">Aseo hogar <small style="color:var(--sage);">Reducido 50%</small></div>
+        <div class="row-val" style="color:var(--sage);">$240.000</div>
+      </div>
+      <div class="row"><div class="row-lbl">Uñas Rafaela</div><div class="row-val">$100.000</div></div>
+      <div class="row"><div class="row-lbl">Gym</div><div class="row-val">$50.000</div></div>
+    </div>
+    <div class="row-total"><span>Total fijos/mes</span><strong>$3.336.000</strong></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Extra mayo 2026</div>
+    <div class="row-list">
+      <div class="row">
+        <div class="row-lbl">Muebles · cuota mayo</div>
+        <div class="row-val" style="color:var(--amber);">$800.000</div>
+      </div>
+      <div class="row">
+        <div class="row-lbl">Nevera · cuota</div>
+        <div class="row-val" style="color:var(--amber);">$257.000</div>
+      </div>
+    </div>
+    <div class="row-total"><span>Total mayo</span><strong>$4.393.000</strong></div>
+  </div>
+
+</div>
+
+<!-- DEUDAS -->
+<div id="panel-deudas" class="panel">
+
+  <div class="alert alert-terra">
+    <div class="alert-title">$263.000/mes en interés puro</div>
+    <p>Richard $200K + Pablo $63K cada mes sin reducir el saldo. Registra cada abono para ver el avance.</p>
+  </div>
+
+  <div class="slabel">Con interés — liquidar primero</div>
+
+  <div class="debt-card">
+    <div class="dh">
+      <div class="d-name">Richard <small>10% mensual · día 10</small></div>
+      <div style="text-align:right;">
+        <div class="d-amount" style="color:var(--terracota);" id="dd-richard">$2.000.000</div>
+        <span class="badge b-terra" style="margin-top:4px;display:inline-block;">Urgente</span>
+      </div>
+    </div>
+    <div class="d-bar"><div class="d-fill" id="db-richard" style="width:0%;background:var(--sage);"></div></div>
+    <div class="d-meta"><span id="dp-richard">0% pagado</span><span>Original $2.000.000</span></div>
+    <div class="abono-row">
+      <span class="abono-lbl">Abonar</span>
+      <input class="abono-inp" id="a-richard" type="number" placeholder="0">
+      <button class="abono-btn" onclick="abonar('richard',2000000)">Registrar</button>
+    </div>
+  </div>
+
+  <div class="debt-card">
+    <div class="dh">
+      <div class="d-name">Pablo <small>3% mensual</small></div>
+      <div style="text-align:right;">
+        <div class="d-amount" style="color:var(--amber);" id="dd-pablo">$2.100.000</div>
+        <span class="badge b-amber" style="margin-top:4px;display:inline-block;">Alta</span>
+      </div>
+    </div>
+    <div class="d-bar"><div class="d-fill" id="db-pablo" style="width:0%;background:var(--sage);"></div></div>
+    <div class="d-meta"><span id="dp-pablo">0% pagado</span><span>Original $2.100.000</span></div>
+    <div class="abono-row">
+      <span class="abono-lbl">Abonar</span>
+      <input class="abono-inp" id="a-pablo" type="number" placeholder="0">
+      <button class="abono-btn" onclick="abonar('pablo',2100000)">Registrar</button>
+    </div>
+  </div>
+
+  <div class="slabel">Cuotas fijas</div>
+
+  <div class="debt-card">
+    <div class="dh">
+      <div class="d-name">Nevera <small>Cuota $257K/mes</small></div>
+      <div class="d-amount" id="dd-nevera">$2.010.000</div>
+    </div>
+    <div class="d-bar"><div class="d-fill" id="db-nevera" style="width:0%;"></div></div>
+    <div class="d-meta"><span id="dp-nevera">0% pagado</span><span>Original $2.010.000</span></div>
+    <div class="abono-row">
+      <span class="abono-lbl">Abonar</span>
+      <input class="abono-inp" id="a-nevera" type="number" placeholder="257000">
+      <button class="abono-btn" onclick="abonar('nevera',2010000)">Registrar</button>
+    </div>
+  </div>
+
+  <div class="debt-card">
+    <div class="dh">
+      <div class="d-name">Muebles <small>$800K mayo · $800K junio</small></div>
+      <div class="d-amount" style="color:var(--amber);" id="dd-muebles">$1.600.000</div>
+    </div>
+    <div class="d-bar"><div class="d-fill" id="db-muebles" style="width:0%;"></div></div>
+    <div class="d-meta"><span id="dp-muebles">0% pagado</span><span>Original $1.600.000</span></div>
+    <div class="abono-row">
+      <span class="abono-lbl">Abonar</span>
+      <input class="abono-inp" id="a-muebles" type="number" placeholder="800000">
+      <button class="abono-btn" onclick="abonar('muebles',1600000)">Registrar</button>
+    </div>
+  </div>
+
+  <div class="slabel">Personales · bola de nieve</div>
+  <div id="dp-container"></div>
+
+</div>
+
+<!-- COLCHÓN -->
+<div id="panel-colchon" class="panel">
+
+  <div class="colchon-hero">
+    <div class="ch-pct" id="c-pct">0%</div>
+    <div class="ch-lbl">Colchón anti-hueco</div>
+    <div class="ch-meta" id="c-meta">$0 de $1.200.000</div>
+  </div>
+
+  <div class="coverage-card">
+    <div class="prog-head"><span>Meta anti-hueco · $1.200.000</span><span id="c-falta">0%</span></div>
+    <div class="prog-track">
+      <div class="prog-fill" id="c-bar" style="width:0%;background:var(--amber);"></div>
+    </div>
+    <div style="font-size:11px;color:var(--muted);margin-top:6px;" id="c-sublabel">Faltan $1.200.000 · Meta en 6 meses</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Depositar al colchón</div>
+    <div class="abono-row" style="border:none;padding:0;">
+      <span class="abono-lbl">Monto</span>
+      <input class="abono-inp" id="c-input" type="number" placeholder="200000" style="width:120px;">
+      <button class="abono-btn" onclick="depositarColchon()">Depositar</button>
+    </div>
+  </div>
+
+  <div class="coverage-card">
+    <div class="prog-head"><span>Meta emergencias · $10.008.000</span><span id="e-pct">0%</span></div>
+    <div class="prog-track">
+      <div class="prog-fill" id="e-bar" style="width:0%;background:var(--sage);"></div>
+    </div>
+    <div style="font-size:11px;color:var(--muted);margin-top:6px;" id="e-meta">$0 de $10.008.000 · 3 meses de gastos</div>
+  </div>
+
+  <div class="slabel">Cómo construirlo</div>
+  <div class="step"><div class="step-n">1</div><div class="step-b"><h4>Cuenta separada hoy</h4><p>Nequi o Daviplata diferente. Ese dinero no existe para el día a día.</p></div></div>
+  <div class="step"><div class="step-n">2</div><div class="step-b"><h4>Orden cuando llega plata</h4><p>Diezmo → Colchón → Gastos → Deudas. Siempre ese orden.</p></div></div>
+  <div class="step"><div class="step-n">3</div><div class="step-b"><h4>$200K/mes → listo en 6 meses</h4><p>Con el colchón completo, la semana 1 del mes deja de endeudarte.</p></div></div>
+
+</div>
+
+<!-- TIMING -->
+<div id="panel-timing" class="panel">
+
+  <div class="alert alert-terra">
+    <div class="alert-title">Mayo 2026 — números reales</div>
+    <p>670 USD el lunes 11 = $2.412.000 · Salario $1.200.000 el 25 de mayo.<br>Total: $3.612.000 · Diezmo: $361.200 · Disponible: $3.250.800<br>Déficit vs gastos: <strong>-$85.200</strong> — se cubre con el salario.</p>
+  </div>
+
+  <div class="slabel">Calendario de mayo</div>
+
+  <div class="timeline">
+    <div class="t-item">
+      <div class="t-dot d-terra"></div>
+      <div class="t-date">Semana del 5 al 9 · Ahora</div>
+      <div class="t-title">Zona de riesgo</div>
+      <div class="t-desc">Sin comisiones todavía. Cubrir mínimos con lo disponible. No pedir más de lo estrictamente necesario.</div>
+    </div>
+    <div class="t-item">
+      <div class="t-dot d-sage"></div>
+      <div class="t-date">Lunes 11 de mayo</div>
+      <div class="t-title">Llegan comisiones 💰</div>
+      <div class="t-desc">670 USD × $3.600 TRM</div>
+      <div class="t-amount" style="color:var(--sage);">$2.412.000 COP</div>
+    </div>
+    <div class="t-item">
+      <div class="t-dot d-amber"></div>
+      <div class="t-date">Apenas lleguen · día 11</div>
+      <div class="t-title">Orden de pagos inmediato</div>
+      <div class="t-desc">① Diezmo $241.200 &nbsp;② Muebles $800.000 &nbsp;③ Richard interés $200.000 &nbsp;④ Gastos urgentes con el resto ($1.170.800)</div>
+    </div>
+    <div class="t-item">
+      <div class="t-dot d-muted"></div>
+      <div class="t-date">Día 23</div>
+      <div class="t-title">Enviar cuenta de cobro</div>
+      <div class="t-desc">Salario base $1.200.000.</div>
+    </div>
+    <div class="t-item">
+      <div class="t-dot d-sage"></div>
+      <div class="t-date">25 de mayo</div>
+      <div class="t-title">Llega salario base 💰</div>
+      <div class="t-desc">Diezmo $120.000 · Disponible $1.080.000 para cerrar gastos del mes y tapar el déficit de $85.200.</div>
+      <div class="t-amount" style="color:var(--sage);">$1.200.000 COP</div>
+    </div>
+    <div class="t-item">
+      <div class="t-dot d-clay"></div>
+      <div class="t-date">Fin de mayo</div>
+      <div class="t-title">Guardar para semana 1 de junio</div>
+      <div class="t-desc">Si queda algo del salario, guardarlo. Eso tapa el hueco de los primeros días de junio.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- INGRESOS+ -->
+<div id="panel-mas" class="panel">
+
+  <div class="alert alert-sage">
+    <div class="alert-title">La meta: comisiones = bono, no supervivencia</div>
+    <p>El camino: audiencia → infoproducto → clientes para el servicio. Un carril a la vez.</p>
+  </div>
+
+  <div class="phase-lbl">Ahora mismo</div>
+
+  <div class="inc-card">
+    <div class="inc-header"><div class="inc-title">261 leads Luque no contactados</div><div class="inc-range">+$150–400 USD</div></div>
+    <div class="inc-tag">Esta semana · cero inversión</div>
+    <div class="inc-desc">Tienes acceso directo. Leads con intención. Contactarlos proactivamente puede generar 2–5 citas sin esperar el embudo de Juanjo.</div>
+  </div>
+
+  <div class="inc-card">
+    <div class="inc-header"><div class="inc-title">Reunión Juanjo — 25 citas/semana</div><div class="inc-range">Sistemático</div></div>
+    <div class="inc-tag">Lunes · ve con el número</div>
+    <div class="inc-desc">Necesitas 25 citas/semana para cerrar 5 ventas/mes. Hoy tienes 2. Es un problema del embudo tan tuyo como de Juanjo.</div>
+  </div>
+
+  <div class="phase-lbl" style="margin-top:6px;">Paralelo · construir audiencia</div>
+
+  <div class="inc-card">
+    <div class="inc-header"><div class="inc-title">TikTok · 1 video/día · 60 segundos</div><div class="inc-range">Mes 3+</div></div>
+    <div class="inc-tag">Sin inversión · 1 hora/día</div>
+    <div class="inc-desc">Tema: empresarios con negocio físico que quieren vender digital. No necesitas perfección — necesitas consistencia. 90 días de contenido = audiencia real.</div>
+  </div>
+
+  <div class="inc-card">
+    <div class="inc-header"><div class="inc-title">Validar nicho — 10 mensajes ya</div><div class="inc-range">Esta semana</div></div>
+    <div class="inc-tag">30 minutos · $0 inversión</div>
+    <div class="inc-desc">"¿Cuál es tu mayor dolor con las ventas hoy? ¿Lo digital te ayudaría?" El patrón de las respuestas es tu nicho y tu oferta.</div>
+  </div>
+
+  <div class="phase-lbl" style="margin-top:6px;">Mes 3–4 · con audiencia</div>
+
+  <div class="inc-card">
+    <div class="inc-header"><div class="inc-title">Infoproducto — canal digital para negocios físicos</div><div class="inc-range">$97–197 USD</div></div>
+    <div class="inc-tag">Cuando el nicho esté validado</div>
+    <div class="inc-desc">Tu conocimiento de funnels, WhatsApp Business y CRM empaquetado para empresarios. La audiencia de TikTok es el mercado natural.</div>
+  </div>
+
+  <div class="inc-card">
+    <div class="inc-header"><div class="inc-title">Servicio de implementación</div><div class="inc-range">$300–500 USD</div></div>
+    <div class="inc-tag">El infoproducto genera los clientes</div>
+    <div class="inc-desc">Quien compra el infoproducto y quiere que se lo implementen, te paga directamente. 2–3 clientes/mes = $600–1.500 USD extra.</div>
+  </div>
+
+  <div class="phase-lbl" style="margin-top:6px;">Mes 6+ · ecosistema</div>
+
+  <div class="inc-card">
+    <div class="inc-header"><div class="inc-title">Comunidad mensual $15–20 USD</div><div class="inc-range">$300–600 USD/mes</div></div>
+    <div class="inc-tag">Recurrente · predecible</div>
+    <div class="inc-desc">20–30 empresarios pagando mensual. Esto convierte las comisiones de Luque en bono, no en sustento.</div>
+  </div>
+
+  <div class="alert alert-amber" style="margin-top:4px;">
+    <div class="alert-title">📌 El orden que funciona</div>
+    <p>Esta semana: leads Luque + 10 mensajes a empresarios.<br>
+    Desde mañana: 1 TikTok/día sobre el problema del nicho.<br>
+    Mes 3: infoproducto a la audiencia.<br>
+    Mes 4–5: servicio de implementación.<br>
+    Mes 6+: comunidad recurrente.<br><br>
+    No gastes en ads hasta que hayas vendido orgánico.</p>
+  </div>
+
+</div>
+</div>
+
 <script>
-function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
-function fmtK(n){
-  if(n>=100000) return '$'+(n/1000).toFixed(0)+'K';
-  if(n>=1000) return '$'+(n/1000).toFixed(1)+'K';
-  return '$'+Math.round(n);
+const GASTOS = 3336000;
+const COLCHON_META = 1200000;
+const EMERG_META = 10008000;
+const TRM = 3600;
+const STORAGE_KEY = 'cashflow_david_mayo2026';
+
+// ── GUARDAR EN LOCALSTORAGE ──
+function guardar() {
+  const data = {
+    salario: document.getElementById('i-salario').value,
+    usd:     document.getElementById('i-usd').value,
+    otro:    document.getElementById('i-otro').value,
+    colchon: state.colchon,
+    deudas:  state.deudas
+  };
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch(e) {}
 }
 
-function rc(){
-  const mst  = +document.getElementById('mst').value;
-  const mddN = +document.getElementById('mddN').value;
-  const mddL = +document.getElementById('mddL').value;
-  const lanz = +document.getElementById('lanz').value;
-  const barr = +document.getElementById('barr').value;
-  const cdd  = +document.getElementById('cdd').value;
+// ── CARGAR DESDE LOCALSTORAGE ──
+function cargar() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return false;
+    const data = JSON.parse(raw);
+    document.getElementById('i-salario').value = data.salario || 1200000;
+    document.getElementById('i-usd').value     = data.usd     || 670;
+    document.getElementById('i-otro').value    = data.otro    || 0;
+    state.colchon = data.colchon || 0;
+    if (data.deudas) Object.assign(state.deudas, data.deudas);
+    return true;
+  } catch(e) { return false; }
+}
 
-  ['mst','mddN','mddL','lanz','barr','cdd'].forEach(id=>{
-    document.getElementById('rv-'+id).textContent = eval(id);
-  });
+// ── RESET MES ──
+function resetMes() {
+  if (!confirm('¿Resetear todos los datos del mes? Esto borra ingresos y abonos registrados.')) return;
+  try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+  location.reload();
+}
 
-  const cMst  = mst  * 300;
-  const cMddN = mddN * 90;
-  const cMddL = mddL * 20;
-  const cLanz = lanz * 20;
-  const cBarr = barr * 90;
-  const cCdd  = cdd  * 30;
-  const cTot  = cMst + cMddN + cMddL + cLanz + cBarr + cCdd;
-
-  const fMst  = mst  * 10000;
-  const fMddN = mddN * 1995;
-  const fMddL = mddL * 1995;
-  const fLanz = lanz * 1995;
-  const fBarr = barr * 1995;
-  const fCdd  = cdd  * 420;
-  const fTot  = fMst + fMddN + fMddL + fLanz + fBarr + fCdd;
-
-  document.getElementById('r-mst').textContent  = fmt(cMst);
-  document.getElementById('r-mddN').textContent = fmt(cMddN);
-  document.getElementById('r-mddL').textContent = fmt(cMddL);
-  document.getElementById('r-lanz').textContent = fmt(cLanz);
-  document.getElementById('r-barr').textContent = fmt(cBarr);
-  document.getElementById('r-cdd').textContent  = fmt(cCdd);
-  document.getElementById('r-tot').textContent  = fmt(cTot);
-  document.getElementById('rv-tot').textContent = mst+mddN+mddL+lanz+barr+cdd;
-  document.getElementById('fact-tot').textContent = fmtK(fTot);
-
-  document.getElementById('kq').textContent = mst+mddN+mddL+barr+cdd;
-  document.getElementById('kl').textContent = lanz;
-  document.getElementById('kt').textContent = mst+mddN+mddL+lanz+barr+cdd;
-  document.getElementById('kc').textContent = fmt(cTot);
-
-  // Fases (distribución aproximada)
-  const cNormTotal = cMst + cMddN + cBarr + cCdd;
-  // F1: 6/13 días normales (sin lanzamiento); F2a: 3/13; F3: 4/13
-  document.getElementById('fi1').textContent  = fmt(Math.round(cNormTotal * 0.46));
-  document.getElementById('fi2a').textContent = fmt(Math.round(cNormTotal * 0.23));
-  document.getElementById('fi2b').textContent = fmt(Math.round(cLanz * 0.55 + cMddL * 0.55));
-  document.getElementById('fi2c').textContent = fmt(Math.round(cLanz * 0.45 + cMddL * 0.45));
-  document.getElementById('fi3').textContent  = fmt(Math.round(cNormTotal * 0.31));
-  document.getElementById('total-mes').textContent = fmt(cTot);
-  document.getElementById('total-sub').textContent = (mst+mddN+mddL+lanz+barr+cdd)+' ventas · '+fmtK(fTot)+' facturación';
-
-  // BARRAS
-  function setBar(fillId, pct, ...bms){
-    const fill = document.getElementById(fillId);
-    fill.style.width = Math.min(pct, 100)+'%';
-    const c = pct>=100?'bgrn':pct>=66?'bgld':pct>=33?'borg':'bred';
-    fill.className = 'bar-fill '+c;
-    bms.forEach(([id, threshold]) => {
-      document.getElementById(id).className = 'bm'+(pct>=threshold*100/60?' ok':'');
-    });
+window.addEventListener('DOMContentLoaded', () => {
+  const cargado = cargar();
+  if (!cargado) {
+    // Valores por defecto mayo 2026
+    document.getElementById('i-salario').value = 1200000;
+    document.getElementById('i-usd').value = 670;
   }
+  calcular();
+  // Renderizar saldos de deudas cargadas
+  refrescarDeudas();
+});
 
-  // Lanzamiento bar
-  const lpct = (lanz/60)*100;
-  const bfL = document.getElementById('bf-lanz');
-  bfL.style.width = Math.min(lpct,100)+'%';
-  bfL.className = 'bar-fill '+(lanz>=60?'bgrn':lanz>=30?'bgld':'bred');
-  document.getElementById('bv-lanz').textContent = lanz+'/60';
-  document.getElementById('bm-l30').className = 'bm'+(lanz>=30?' ok':'');
-  document.getElementById('bm-l60').className = 'bm'+(lanz>=60?' ok':lanz>=30?' on':'');
-  document.getElementById('bm-l80').className = 'bm'+(lanz>=80?' ok':'');
+const state = {
+  colchon: 0,
+  deudas: {
+    richard: 2000000, pablo: 2100000, nevera: 2010000, muebles: 1600000,
+    poncho: 1200000, carolina: 1010000, jaime: 550000, joona: 500000,
+    mama: 330000, mery: 348000, navaventa: 320000,
+    omega: 140000, alfonso: 100000, backendlogo: 100000
+  }
+};
 
-  // Comisión bar
-  const cpct = (cTot/4000)*100;
-  const bfC = document.getElementById('bf-com');
-  bfC.style.width = Math.min(cpct,100)+'%';
-  bfC.className = 'bar-fill '+(cTot>=2000?'bgrn':cTot>=1500?'bgld':cTot>=1200?'borg':'bred');
-  document.getElementById('bv-com').textContent = fmt(cTot);
-  document.getElementById('bm-c15').className = 'bm'+(cTot>=1500?' ok':cTot>=1200?' on':'');
-  document.getElementById('bm-c2k').className = 'bm'+(cTot>=2000?' ok':cTot>=1500?' on':'');
-  document.getElementById('bm-c3k').className = 'bm'+(cTot>=3000?' ok':cTot>=2000?' on':'');
+const ORI = { ...state.deudas };
 
-  // Facturación bar
-  const fpct = (fTot/120000)*100;
-  const bfF = document.getElementById('bf-fact');
-  bfF.style.width = Math.min(fpct,100)+'%';
-  bfF.className = 'bar-fill '+(fTot>=60000?'bgrn':fTot>=25000?'bgld':'borg');
-  document.getElementById('bv-fact').textContent = fmtK(fTot);
-  document.getElementById('bm-f25').className = 'bm'+(fTot>=25000?' ok':' on');
-  document.getElementById('bm-f60').className = 'bm'+(fTot>=60000?' ok':fTot>=25000?' on':'');
-  document.getElementById('bm-f100').className = 'bm'+(fTot>=100000?' ok':fTot>=60000?' on':'');
+function fmt(n) {
+  const abs = Math.abs(Math.round(n));
+  return (n < 0 ? '-' : '') + '$' + abs.toLocaleString('es-CO');
 }
 
-rc();
+function calcular() {
+  const sal  = parseFloat(document.getElementById('i-salario').value) || 0;
+  const usd  = parseFloat(document.getElementById('i-usd').value) || 0;
+  const otro = parseFloat(document.getElementById('i-otro').value) || 0;
+  const cop  = usd * TRM;
+
+  document.getElementById('i-cop').textContent = fmt(cop);
+  document.getElementById('i-cop-lbl').textContent = '= ' + fmt(cop) + ' COP';
+
+  const total = sal + cop + otro;
+  const diezmo = total * 0.1;
+  const disp = total - diezmo;
+  const margen = disp - GASTOS;
+  const colchonSug = Math.max(0, disp * 0.10);
+  const deudasSug  = Math.max(0, disp - GASTOS - colchonSug);
+
+  document.getElementById('i-total').textContent = fmt(total);
+  document.getElementById('i-diezmo').textContent = fmt(diezmo);
+  document.getElementById('i-disponible').textContent = fmt(disp);
+  document.getElementById('d-colchon').textContent = fmt(colchonSug);
+  document.getElementById('d-deudas').textContent  = deudasSug > 0 ? fmt(deudasSug) : '$0';
+
+  document.getElementById('r-ingresado').textContent = fmt(total);
+  document.getElementById('r-diezmo').textContent    = fmt(diezmo);
+  document.getElementById('r-margen').textContent    = fmt(margen);
+
+  const mc = document.getElementById('r-margen-card');
+  mc.className = 'metric ' + (margen >= 0 ? 'm-sage' : 'm-terra');
+
+  const falta = Math.max(0, GASTOS - disp);
+  document.getElementById('r-falta').textContent    = falta > 0 ? fmt(falta) : '✓ Cubierto';
+  document.getElementById('r-falta-sub').textContent = falta > 0 ? 'para cubrir gastos este mes' : 'Gastos cubiertos';
+
+  const pct = Math.min(100, Math.round((disp / GASTOS) * 100));
+  const bar = document.getElementById('cov-bar');
+  bar.style.width = pct + '%';
+  bar.style.background = pct >= 100 ? 'var(--sage)' : pct >= 60 ? 'var(--amber)' : 'var(--terracota)';
+  document.getElementById('cov-pct').textContent = pct + '%';
+  document.getElementById('cov-label').textContent = 'Meta: ' + fmt(GASTOS);
+
+  document.getElementById('r-richard').textContent = fmt(state.deudas.richard);
+  document.getElementById('r-pablo').textContent   = fmt(state.deudas.pablo);
+  guardar();
+  mostrarGuardado();
+}
+
+function abonar(id, ori) {
+  const inp = document.getElementById('a-' + id);
+  const monto = parseFloat(inp.value) || 0;
+  if (monto <= 0) return;
+  state.deudas[id] = Math.max(0, state.deudas[id] - monto);
+  inp.value = '';
+  const saldo = state.deudas[id];
+  const pagado = ori - saldo;
+  const pct = Math.round((pagado / ori) * 100);
+  document.getElementById('dd-' + id).textContent = saldo === 0 ? '✓ PAGADO' : fmt(saldo);
+  if (saldo === 0) document.getElementById('dd-' + id).style.color = 'var(--sage)';
+  document.getElementById('db-' + id).style.width = pct + '%';
+  document.getElementById('dp-' + id).textContent = pct + '% pagado';
+  guardar();
+  mostrarGuardado();
+  calcular();
+}
+
+function abonarP(id, ori) {
+  const inp = document.getElementById('ap-' + id);
+  const monto = parseFloat(inp.value) || 0;
+  if (monto <= 0) return;
+  state.deudas[id] = Math.max(0, state.deudas[id] - monto);
+  inp.value = '';
+  const saldo = state.deudas[id];
+  const pagado = ori - saldo;
+  const pct = Math.round((pagado / ori) * 100);
+  document.getElementById('ddp-' + id).textContent = saldo === 0 ? '✓ PAGADO' : fmt(saldo);
+  if (saldo === 0) document.getElementById('ddp-' + id).style.color = 'var(--sage)';
+  document.getElementById('dbp-' + id).style.width = pct + '%';
+  document.getElementById('dpp-' + id).textContent = pct + '% pagado';
+  guardar();
+  mostrarGuardado();
+}
+
+function depositarColchon() {
+  const inp = document.getElementById('c-input');
+  const monto = parseFloat(inp.value) || 0;
+  if (monto <= 0) return;
+  state.colchon = Math.min(COLCHON_META, state.colchon + monto);
+  inp.value = '';
+  actualizarColchon();
+  guardar();
+  mostrarGuardado();
+}
+
+function actualizarColchon() {
+  const pct = Math.round((state.colchon / COLCHON_META) * 100);
+  document.getElementById('c-pct').textContent  = pct + '%';
+  document.getElementById('c-meta').textContent = fmt(state.colchon) + ' de ' + fmt(COLCHON_META);
+  document.getElementById('c-bar').style.width  = pct + '%';
+  document.getElementById('c-falta').textContent = pct + '%';
+  document.getElementById('c-sublabel').textContent = 'Faltan ' + fmt(COLCHON_META - state.colchon);
+  const epct = Math.round((state.colchon / EMERG_META) * 100);
+  document.getElementById('e-bar').style.width  = epct + '%';
+  document.getElementById('e-pct').textContent  = epct + '%';
+  document.getElementById('e-meta').textContent = fmt(state.colchon) + ' de ' + fmt(EMERG_META) + ' · 3 meses de gastos';
+}
+
+function mostrarGuardado() {
+  const el = document.getElementById('save-indicator');
+  if (!el) return;
+  el.style.opacity = '1';
+  setTimeout(() => { el.style.opacity = '0'; }, 1800);
+}
+
+function refrescarDeudas() {
+  // Refrescar deudas principales
+  const main = ['richard','pablo','nevera','muebles'];
+  const ori  = {richard:2000000,pablo:2100000,nevera:2010000,muebles:1600000};
+  main.forEach(id => {
+    const saldo = state.deudas[id];
+    const pagado = ori[id] - saldo;
+    const pct = Math.round((pagado / ori[id]) * 100);
+    const el = document.getElementById('dd-' + id);
+    if (el) { el.textContent = saldo === 0 ? '✓ PAGADO' : fmt(saldo); if (saldo===0) el.style.color='var(--sage)'; }
+    const bar = document.getElementById('db-' + id);
+    if (bar) bar.style.width = pct + '%';
+    const pEl = document.getElementById('dp-' + id);
+    if (pEl) pEl.textContent = pct + '% pagado';
+  });
+  // Personales
+  const personales = ['poncho','carolina','jaime','joona','mama','mery','navaventa','omega','alfonso','backendlogo'];
+  const oriP = {poncho:1200000,carolina:1010000,jaime:550000,joona:500000,mama:330000,mery:348000,navaventa:320000,omega:140000,alfonso:100000,backendlogo:100000};
+  personales.forEach(id => {
+    const saldo = state.deudas[id];
+    const pagado = oriP[id] - saldo;
+    const pct = Math.round((pagado / oriP[id]) * 100);
+    const el = document.getElementById('ddp-' + id);
+    if (el) { el.textContent = saldo === 0 ? '✓ PAGADO' : fmt(saldo); if (saldo===0) el.style.color='var(--sage)'; }
+    const bar = document.getElementById('dbp-' + id);
+    if (bar) bar.style.width = pct + '%';
+    const pEl = document.getElementById('dpp-' + id);
+    if (pEl) pEl.textContent = pct + '% pagado';
+  });
+  actualizarColchon();
+}
+  const list = [
+    { id:'poncho',      label:'Poncho',      ori:1200000 },
+    { id:'carolina',    label:'Carolina',    ori:1010000 },
+    { id:'jaime',       label:'Jaime',       ori:550000 },
+    { id:'joona',       label:'Joona',       ori:500000 },
+    { id:'mama',        label:'Mamá',        ori:330000 },
+    { id:'mery',        label:'Mery',        ori:348000 },
+    { id:'navaventa',   label:'Navaventa',   ori:320000 },
+    { id:'omega',       label:'Omega',       ori:140000 },
+    { id:'alfonso',     label:'Alfonso',     ori:100000 },
+    { id:'backendlogo', label:'Backendlogo', ori:100000 },
+  ];
+  document.getElementById('dp-container').innerHTML = list.map(d => `
+    <div class="debt-card">
+      <div class="dh">
+        <div class="d-name">${d.label}</div>
+        <div class="d-amount" id="ddp-${d.id}">${fmt(d.ori)}</div>
+      </div>
+      <div class="d-bar"><div class="d-fill" id="dbp-${d.id}" style="width:0%;"></div></div>
+      <div class="d-meta"><span id="dpp-${d.id}">0% pagado</span><span>Original ${fmt(d.ori)}</span></div>
+      <div class="abono-row">
+        <span class="abono-lbl">Abonar</span>
+        <input class="abono-inp" id="ap-${d.id}" type="number" placeholder="0">
+        <button class="abono-btn" onclick="abonarP('${d.id}',${d.ori})">Registrar</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function showPanel(name, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+
+renderPersonales();
+// No llamar calcular() aquí, lo hace el DOMContentLoaded
 </script>
 </body>
 </html>
